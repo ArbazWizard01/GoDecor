@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRightOutlined } from '@ant-design/icons';
+import { useNavigate } from 'react-router-dom';
 import {
   SectionWrapper,
   HeaderRow,
@@ -46,6 +47,7 @@ const servicesData = [
 ];
 
 const ServicesSection = () => {
+  const navigate = useNavigate()
   return (
     <SectionWrapper>
       <HeaderRow>
@@ -53,7 +55,7 @@ const ServicesSection = () => {
           <SectionTitle>Our Decor Services</SectionTitle>
           <SectionSubtitle>Comprehensive solutions for every space in your home</SectionSubtitle>
         </TitleGroup>
-        <OutlineButton>
+        <OutlineButton onClick={() => navigate('services')}>
           Explore More <ArrowRightOutlined />
         </OutlineButton>
       </HeaderRow>
@@ -65,7 +67,7 @@ const ServicesSection = () => {
             <CardContent>
               <CardTitle>{service.title}</CardTitle>
               <CardDescription>{service.description}</CardDescription>
-              <CardLink>
+              <CardLink onClick={() => navigate('packages')}>
                 Explore Packages <ArrowRightOutlined style={{ fontSize: '0.8rem' }}/>
               </CardLink>
             </CardContent>

@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "antd";
+import { useNavigate } from "react-router-dom";
 import {
   SectionWrapper,
   InnerContainer,
@@ -12,6 +13,7 @@ import {
 } from "./VideoSection.styles";
 
 const VideoSection = () => {
+  const navigate = useNavigate()
   return (
     <SectionWrapper>
       <InnerContainer>
@@ -34,6 +36,7 @@ const VideoSection = () => {
               height: "auto",
               marginTop: "8px",
             }}
+            onClick={() =>navigate('contact')}
           >
             Schedule Consultation
           </Button>

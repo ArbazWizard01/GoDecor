@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import {
   HeroWrapper,
   GradientMask,
@@ -10,30 +11,39 @@ import {
   PrimaryButton,
   SecondaryButton,
   StatsContainer,
-  StatBox
-} from './Hero.styles';
+  StatBox,
+} from "./Hero.styles";
 
 const Hero = () => {
+  const navigate = useNavigate();
+
   return (
     <HeroWrapper>
       <GradientMask />
 
       <ContentContainer>
         <TopTagline>India's Trusted Home Decor Platform</TopTagline>
-        
+
         <HeroTitle>
-          Transform Your<br/> Space. <br/>
-          <span>Elevate</span> Your <br/>
+          Transform Your
+          <br /> Space. <br />
+          <span>Elevate</span> Your <br />
           Everyday Living.
         </HeroTitle>
-        
+
         <HeroSubtitle>
-          Premium, end-to-end home decor solutions — thoughtfully designed and flawlessly executed for every style and every budget.
+          Premium, end-to-end home decor solutions — thoughtfully designed and
+          flawlessly executed for every style and every budget.
         </HeroSubtitle>
-        
+
         <ButtonsWrapper>
-          <PrimaryButton>Explore Packages</PrimaryButton>
-          <SecondaryButton>Learn More</SecondaryButton>
+          <PrimaryButton onClick={() => navigate("/packages")}>
+            Explore Packages
+          </PrimaryButton>
+
+          <SecondaryButton onClick={() => navigate("/about")}>
+            Learn More
+          </SecondaryButton>
         </ButtonsWrapper>
       </ContentContainer>
 
