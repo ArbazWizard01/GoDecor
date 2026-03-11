@@ -1,0 +1,48 @@
+/* 1. Global Reset & Box Sizing (Fixes the padding/spacing issues) */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+  background-color: #f9f9f9;
+  font-family: 'Inter', sans-serif;
+}
+
+/* --- ANT DESIGN NAVBAR OVERRIDES --- */
+
+/* 2. Stretching underline effect for Navbar Links */
+.glass-menu .ant-menu-item {
+  position: relative;
+  background: transparent !important;
+}
+
+.glass-menu .ant-menu-item::after {
+  content: '';
+  position: absolute;
+  bottom: 18px; 
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #1a56db;
+  transition: all 0.3s ease-in-out;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.glass-menu .ant-menu-item:hover::after {
+  width: 60%; 
+}
+
+/* 3. Smooth stretching/scaling effect for buttons */
+.stretch-btn {
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.stretch-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(26, 86, 219, 0.2) !important;
+}
