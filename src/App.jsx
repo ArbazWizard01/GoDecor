@@ -7,6 +7,7 @@ import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import ProjectsPage from './pages/ProjectsPage';
 import ScrollToTop from './components/common/ScrollToTop';
+import BudgetPage from './pages/BudgetPage';
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/calculator" element={<BudgetPage />} />
         
       </Routes>
     </Router>
