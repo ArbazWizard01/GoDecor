@@ -1,5 +1,7 @@
 import React from 'react';
 import { ArrowRightOutlined, CheckCircleFilled } from '@ant-design/icons';
+
+// 1. Local layout imports (Notice we removed ProjectCard, CardContent, etc.)
 import {
   SectionWrapper,
   Container,
@@ -14,13 +16,14 @@ import {
   IconWrapper,
   GridTitle,
   ProjectGrid,
-  ProjectCard,
-  ProjectImage,
-  CardContent,
-  CardTitle,
   CardMeta,
   ViewLink
-} from './BedroomProjects.styles'; // Reusing identical styles!
+} from './BedroomProjects.styles'; 
+
+// 2. Import the GLOBAL premium card!
+import { 
+  GlobalCard, GlobalCardImage, GlobalCardContent, GlobalCardTitle 
+} from '../common/PremiumCard.styles';
 
 const BedroomProjects = () => {
   return (
@@ -67,32 +70,33 @@ const BedroomProjects = () => {
         <GridTitle>Bedroom Projects Delivered.</GridTitle>
         <ProjectGrid>
           
-          <ProjectCard>
-            <ProjectImage src="https://images.pexels.com/photos/6489107/pexels-photo-6489107.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Peaceful Bedroom Retreat" />
-            <CardContent>
-              <CardTitle>Peaceful Bedroom Retreat</CardTitle>
-              <CardMeta>Bangalore<br/>3 Weeks</CardMeta>
+          <GlobalCard>
+            <GlobalCardImage src="https://images.pexels.com/photos/6489107/pexels-photo-6489107.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Peaceful Bedroom Retreat" />
+            <GlobalCardContent>
+              <GlobalCardTitle>Peaceful Bedroom Retreat</GlobalCardTitle>
+              {/* Premium inline metadata */}
+              <CardMeta>Bangalore <span style={{ margin: '0 6px', color: '#d1d5db' }}>•</span> 3 Weeks</CardMeta>
               <ViewLink>View Project <ArrowRightOutlined style={{ fontSize: '0.75rem' }}/></ViewLink>
-            </CardContent>
-          </ProjectCard>
+            </GlobalCardContent>
+          </GlobalCard>
 
-          <ProjectCard>
-            <ProjectImage src="https://images.pexels.com/photos/6489083/pexels-photo-6489083.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Master Bedroom Suite" />
-            <CardContent>
-              <CardTitle>Master Bedroom Suite</CardTitle>
-              <CardMeta>Mumbai<br/>4 Weeks</CardMeta>
+          <GlobalCard>
+            <GlobalCardImage src="https://images.pexels.com/photos/6489083/pexels-photo-6489083.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Master Bedroom Suite" />
+            <GlobalCardContent>
+              <GlobalCardTitle>Master Bedroom Suite</GlobalCardTitle>
+              <CardMeta>Mumbai <span style={{ margin: '0 6px', color: '#d1d5db' }}>•</span> 4 Weeks</CardMeta>
               <ViewLink>View Project <ArrowRightOutlined style={{ fontSize: '0.75rem' }}/></ViewLink>
-            </CardContent>
-          </ProjectCard>
+            </GlobalCardContent>
+          </GlobalCard>
 
-          <ProjectCard>
-            <ProjectImage src="https://images.pexels.com/photos/7061405/pexels-photo-7061405.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Elegant Bedroom Design" />
-            <CardContent>
-              <CardTitle>Elegant Bedroom Design</CardTitle>
-              <CardMeta>Pune<br/>3 Weeks</CardMeta>
+          <GlobalCard>
+            <GlobalCardImage src="https://images.pexels.com/photos/7061405/pexels-photo-7061405.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Elegant Bedroom Design" />
+            <GlobalCardContent>
+              <GlobalCardTitle>Elegant Bedroom Design</GlobalCardTitle>
+              <CardMeta>Pune <span style={{ margin: '0 6px', color: '#d1d5db' }}>•</span> 3 Weeks</CardMeta>
               <ViewLink>View Project <ArrowRightOutlined style={{ fontSize: '0.75rem' }}/></ViewLink>
-            </CardContent>
-          </ProjectCard>
+            </GlobalCardContent>
+          </GlobalCard>
 
         </ProjectGrid>
 

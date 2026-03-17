@@ -49,20 +49,19 @@ export const IntroDesc = styled.p`
   margin: 0;
 `;
 
-/* --- UPGRADED APPROACH BLOCK (The "Toppings") --- */
+/* --- UPGRADED APPROACH BLOCK --- */
 export const ApproachBlock = styled.div`
   width: 100%;
   max-width: 900px;
   margin-bottom: 100px;
   padding: 50px;
-  background-color: #ffffff; /* Crisp white card */
+  background-color: #ffffff; 
   border-radius: 16px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04); /* Premium soft shadow */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04); 
   border: 1px solid rgba(0, 0, 0, 0.02);
   text-align: center;
   position: relative;
 
-  /* Sleek top accent line for the card */
   &::before {
     content: '';
     position: absolute;
@@ -98,7 +97,6 @@ export const ListGrid = styled.div`
   }
 `;
 
-/* Turned list items into beautiful subtle rows */
 export const ListItem = styled.div`
   display: flex;
   align-items: center;
@@ -138,7 +136,7 @@ export const ProjectGrid = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 32px; 
 
   @media (max-width: 992px) {
     grid-template-columns: repeat(2, 1fr);
@@ -149,49 +147,21 @@ export const ProjectGrid = styled.div`
   }
 `;
 
-export const ProjectCard = styled.div`
-  background-color: #ffffff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-  }
-`;
-
-export const ProjectImage = styled.img`
-  width: 100%;
-  height: 240px;
-  object-fit: cover;
-`;
-
-export const CardContent = styled.div`
-  padding: 24px;
-`;
-
-export const CardTitle = styled.h4`
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: #1f2937;
-  margin: 0 0 8px 0;
-`;
-
 export const CardMeta = styled.p`
   font-family: 'Inter', sans-serif;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: #6b7280;
   margin: 0 0 20px 0;
-  line-height: 1.5;
+  text-transform: uppercase; 
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  flex: 1; 
 `;
 
-export const ViewLink = styled.a`
+export const ViewLink = styled.span`
   font-family: 'Inter', sans-serif;
-  font-weight: 500;
-  font-size: 0.9rem;
+  font-weight: 600;
+  font-size: 0.95rem;
   color: #1a56db;
   text-decoration: none;
   display: inline-flex;
@@ -199,8 +169,10 @@ export const ViewLink = styled.a`
   gap: 6px;
   cursor: pointer;
   transition: gap 0.3s ease;
+  margin-top: auto;
 
+  /* FIXED: Changed to a standard self-hover so it doesn't break! */
   &:hover {
-    gap: 10px;
+    gap: 12px; 
   }
 `;

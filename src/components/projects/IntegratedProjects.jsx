@@ -1,5 +1,7 @@
 import React from 'react';
 import { ArrowRightOutlined, CheckCircleFilled } from '@ant-design/icons';
+
+// 1. Local layout imports (Cleaned up!)
 import {
   SectionWrapper,
   Container,
@@ -14,13 +16,14 @@ import {
   IconWrapper,
   GridTitle,
   ProjectGrid,
-  ProjectCard,
-  ProjectImage,
-  CardContent,
-  CardTitle,
   CardMeta,
   ViewLink
-} from './IntegratedProjects.styles'; // Reusing identical styles!
+} from './IntegratedProjects.styles'; 
+
+// 2. Import the GLOBAL premium card
+import { 
+  GlobalCard, GlobalCardImage, GlobalCardContent, GlobalCardTitle 
+} from '../common/PremiumCard.styles';
 
 const IntegratedProjects = () => {
   return (
@@ -66,32 +69,33 @@ const IntegratedProjects = () => {
         <GridTitle>Full Home Projects Delivered.</GridTitle>
         <ProjectGrid>
           
-          <ProjectCard>
-            <ProjectImage src="https://images.pexels.com/photos/1571459/pexels-photo-1571459.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Complete Home Transformation" />
-            <CardContent>
-              <CardTitle>Complete Home Transformation</CardTitle>
-              <CardMeta>Bangalore<br/>10 Weeks</CardMeta>
+          <GlobalCard>
+            <GlobalCardImage src="https://images.pexels.com/photos/1571459/pexels-photo-1571459.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Complete Home Transformation" />
+            <GlobalCardContent>
+              <GlobalCardTitle>Complete Home Transformation</GlobalCardTitle>
+              {/* Premium inline metadata */}
+              <CardMeta>Bangalore <span style={{ margin: '0 6px', color: '#d1d5db' }}>•</span> 10 Weeks</CardMeta>
               <ViewLink>View Project <ArrowRightOutlined style={{ fontSize: '0.75rem' }}/></ViewLink>
-            </CardContent>
-          </ProjectCard>
+            </GlobalCardContent>
+          </GlobalCard>
 
-          <ProjectCard>
-            <ProjectImage src="https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Full Apartment Design" />
-            <CardContent>
-              <CardTitle>Full Apartment Design</CardTitle>
-              <CardMeta>Mumbai<br/>12 Weeks</CardMeta>
+          <GlobalCard>
+            <GlobalCardImage src="https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Full Apartment Design" />
+            <GlobalCardContent>
+              <GlobalCardTitle>Full Apartment Design</GlobalCardTitle>
+              <CardMeta>Mumbai <span style={{ margin: '0 6px', color: '#d1d5db' }}>•</span> 12 Weeks</CardMeta>
               <ViewLink>View Project <ArrowRightOutlined style={{ fontSize: '0.75rem' }}/></ViewLink>
-            </CardContent>
-          </ProjectCard>
+            </GlobalCardContent>
+          </GlobalCard>
 
-          <ProjectCard>
-            <ProjectImage src="https://images.pexels.com/photos/1571463/pexels-photo-1571463.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Integrated Home Design" />
-            <CardContent>
-              <CardTitle>Integrated Home Design</CardTitle>
-              <CardMeta>Pune<br/>10 Weeks</CardMeta>
+          <GlobalCard>
+            <GlobalCardImage src="https://images.pexels.com/photos/1571463/pexels-photo-1571463.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Integrated Home Design" />
+            <GlobalCardContent>
+              <GlobalCardTitle>Integrated Home Design</GlobalCardTitle>
+              <CardMeta>Pune <span style={{ margin: '0 6px', color: '#d1d5db' }}>•</span> 10 Weeks</CardMeta>
               <ViewLink>View Project <ArrowRightOutlined style={{ fontSize: '0.75rem' }}/></ViewLink>
-            </CardContent>
-          </ProjectCard>
+            </GlobalCardContent>
+          </GlobalCard>
 
         </ProjectGrid>
 

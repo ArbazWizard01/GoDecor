@@ -1,33 +1,21 @@
 import React from 'react';
 import { ArrowRightOutlined, CheckCircleFilled } from '@ant-design/icons';
 import {
-  SectionWrapper,
-  Container,
-  IntroBlock,
-  IntroTitle,
-  TitleAccent,
-  IntroDesc,
-  ApproachBlock,
-  ApproachTitle,
-  ListGrid,
-  ListItem,
-  IconWrapper,
-  GridTitle,
-  ProjectGrid,
-  ProjectCard,
-  ProjectImage,
-  CardContent,
-  CardTitle,
-  CardMeta,
-  ViewLink
+  SectionWrapper, Container, IntroBlock, IntroTitle, TitleAccent,
+  IntroDesc, ApproachBlock, ApproachTitle, ListGrid, ListItem,
+  IconWrapper, GridTitle, ProjectGrid, CardMeta, ViewLink
 } from './KitchenProjects.styles';
+
+// IMPORTING THE GLOBAL PREMIUM CARD
+import { 
+  GlobalCard, GlobalCardImage, GlobalCardContent, GlobalCardTitle 
+} from '../common/PremiumCard.styles';
 
 const KitchenProjects = () => {
   return (
     <SectionWrapper>
       <Container>
         
-        {/* Top Philosophy Section */}
         <IntroBlock>
           <IntroTitle>
             We don't design kitchens to impress for a moment.<br/>
@@ -40,7 +28,6 @@ const KitchenProjects = () => {
           </IntroDesc>
         </IntroBlock>
 
-        {/* The New "Elevated" Bullet List Card */}
         <ApproachBlock>
           <ApproachTitle>How We Approach Kitchen Spaces</ApproachTitle>
           <ListGrid>
@@ -63,37 +50,35 @@ const KitchenProjects = () => {
           </ListGrid>
         </ApproachBlock>
 
-        {/* Project Grid with Fixed Pexels Images */}
         <GridTitle>Kitchen Transformations We've Delivered.</GridTitle>
         <ProjectGrid>
           
-          <ProjectCard>
-            <ProjectImage src="https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Modern L-Shaped Kitchen" />
-            <CardContent>
-              <CardTitle>Modern L-Shaped Kitchen</CardTitle>
-              <CardMeta>Bangalore<br/>4 Weeks</CardMeta>
+          <GlobalCard>
+            <GlobalCardImage src="https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Modern L-Shaped Kitchen" />
+            <GlobalCardContent>
+              <GlobalCardTitle>Modern L-Shaped Kitchen</GlobalCardTitle>
+              <CardMeta>Bangalore <span style={{ margin: '0 6px', color: '#d1d5db' }}>•</span> 4 Weeks</CardMeta>
               <ViewLink>View Project <ArrowRightOutlined style={{ fontSize: '0.75rem' }}/></ViewLink>
-            </CardContent>
-          </ProjectCard>
+            </GlobalCardContent>
+          </GlobalCard>
 
-          <ProjectCard>
-            <ProjectImage src="https://images.pexels.com/photos/2062426/pexels-photo-2062426.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Island Kitchen Setup" />
-            <CardContent>
-              <CardTitle>Island Kitchen Setup</CardTitle>
-              <CardMeta>Mumbai<br/>5 Weeks</CardMeta>
+          <GlobalCard>
+            <GlobalCardImage src="https://images.pexels.com/photos/2062426/pexels-photo-2062426.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Island Kitchen Setup" />
+            <GlobalCardContent>
+              <GlobalCardTitle>Island Kitchen Setup</GlobalCardTitle>
+              <CardMeta>Mumbai <span style={{ margin: '0 6px', color: '#d1d5db' }}>•</span> 5 Weeks</CardMeta>
               <ViewLink>View Project <ArrowRightOutlined style={{ fontSize: '0.75rem' }}/></ViewLink>
-            </CardContent>
-          </ProjectCard>
+            </GlobalCardContent>
+          </GlobalCard>
 
-          <ProjectCard>
-            {/* Kept the 3rd image as it was working, but updated the URL parameters for stability */}
-            <ProjectImage src="https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?auto=format&fit=crop&w=600&q=80" alt="Contemporary Kitchen" />
-            <CardContent>
-              <CardTitle>Contemporary Kitchen</CardTitle>
-              <CardMeta>Pune<br/>4 Weeks</CardMeta>
+          <GlobalCard>
+            <GlobalCardImage src="https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?auto=format&fit=crop&w=600&q=80" alt="Contemporary Kitchen" />
+            <GlobalCardContent>
+              <GlobalCardTitle>Contemporary Kitchen</GlobalCardTitle>
+              <CardMeta>Pune <span style={{ margin: '0 6px', color: '#d1d5db' }}>•</span> 4 Weeks</CardMeta>
               <ViewLink>View Project <ArrowRightOutlined style={{ fontSize: '0.75rem' }}/></ViewLink>
-            </CardContent>
-          </ProjectCard>
+            </GlobalCardContent>
+          </GlobalCard>
 
         </ProjectGrid>
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRightOutlined, CheckCircleFilled } from '@ant-design/icons';
+
 import {
   SectionWrapper,
   Container,
@@ -14,13 +15,13 @@ import {
   IconWrapper,
   GridTitle,
   ProjectGrid,
-  ProjectCard,
-  ProjectImage,
-  CardContent,
-  CardTitle,
   CardMeta,
   ViewLink
-} from './LivingProjects.styles'; // Importing the identical styles we copied!
+} from './LivingProjects.styles'; 
+
+import { 
+  GlobalCard, GlobalCardImage, GlobalCardContent, GlobalCardTitle 
+} from '../common/PremiumCard.styles';
 
 const LivingProjects = () => {
   return (
@@ -67,32 +68,33 @@ const LivingProjects = () => {
         <GridTitle>Living Projects Delivered.</GridTitle>
         <ProjectGrid>
           
-          <ProjectCard>
-            <ProjectImage src="https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Contemporary Living Space" />
-            <CardContent>
-              <CardTitle>Contemporary Living Space</CardTitle>
-              <CardMeta>Bangalore<br/>4 Weeks</CardMeta>
+          <GlobalCard>
+            <GlobalCardImage src="https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Contemporary Living Space" />
+            <GlobalCardContent>
+              <GlobalCardTitle>Contemporary Living Space</GlobalCardTitle>
+              {/* Premium inline metadata */}
+              <CardMeta>Bangalore <span style={{ margin: '0 6px', color: '#d1d5db' }}>•</span> 4 Weeks</CardMeta>
               <ViewLink>View Project <ArrowRightOutlined style={{ fontSize: '0.75rem' }}/></ViewLink>
-            </CardContent>
-          </ProjectCard>
+            </GlobalCardContent>
+          </GlobalCard>
 
-          <ProjectCard>
-            <ProjectImage src="https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Elegant Living Layout" />
-            <CardContent>
-              <CardTitle>Elegant Living Layout</CardTitle>
-              <CardMeta>Mumbai<br/>3 Weeks</CardMeta>
+          <GlobalCard>
+            <GlobalCardImage src="https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Elegant Living Layout" />
+            <GlobalCardContent>
+              <GlobalCardTitle>Elegant Living Layout</GlobalCardTitle>
+              <CardMeta>Mumbai <span style={{ margin: '0 6px', color: '#d1d5db' }}>•</span> 3 Weeks</CardMeta>
               <ViewLink>View Project <ArrowRightOutlined style={{ fontSize: '0.75rem' }}/></ViewLink>
-            </CardContent>
-          </ProjectCard>
+            </GlobalCardContent>
+          </GlobalCard>
 
-          <ProjectCard>
-            <ProjectImage src="https://images.pexels.com/photos/1571470/pexels-photo-1571470.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Modern Living Room" />
-            <CardContent>
-              <CardTitle>Modern Living Room</CardTitle>
-              <CardMeta>Pune<br/>4 Weeks</CardMeta>
+          <GlobalCard>
+            <GlobalCardImage src="https://images.pexels.com/photos/1571470/pexels-photo-1571470.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Modern Living Room" />
+            <GlobalCardContent>
+              <GlobalCardTitle>Modern Living Room</GlobalCardTitle>
+              <CardMeta>Pune <span style={{ margin: '0 6px', color: '#d1d5db' }}>•</span> 4 Weeks</CardMeta>
               <ViewLink>View Project <ArrowRightOutlined style={{ fontSize: '0.75rem' }}/></ViewLink>
-            </CardContent>
-          </ProjectCard>
+            </GlobalCardContent>
+          </GlobalCard>
 
         </ProjectGrid>
 
