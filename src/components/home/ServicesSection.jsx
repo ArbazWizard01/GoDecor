@@ -28,14 +28,12 @@ const servicesData = [
     id: 2,
     title: 'Modular Kitchen Solutions',
     description: 'Functional, clutter-free designs engineered for contemporary homes',
-    // Swapped to a clean, empty modular kitchen
     image: 'https://images.unsplash.com/photo-1556911220-bff31c812dba?q=80&w=600&auto=format&fit=crop', 
   },
   {
     id: 3,
     title: 'Bedroom Transformation',
     description: 'Storage-focused, calm, and thoughtfully layered bedroom systems',
-    // Fixed the broken image link
     image: 'https://images.unsplash.com/photo-1505693314120-0d443867891c?q=80&w=600&auto=format&fit=crop',
   },
   {
@@ -47,7 +45,7 @@ const servicesData = [
 ];
 
 const ServicesSection = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   return (
     <SectionWrapper>
       <HeaderRow>

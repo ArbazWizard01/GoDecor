@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ArrowRightOutlined } from "@ant-design/icons";
+import { useNavigate } from "react-router-dom";
 import {
   SectionWrapper,
   HeaderContainer,
@@ -70,10 +71,9 @@ const projectsData = [
 const categories = ["All", "Kitchen", "Living", "Bedroom"];
 
 const ProjectsGallery = () => {
-  /* State to manage the active filter */
+  const navigate = useNavigate()
   const [activeFilter, setActiveFilter] = useState("All");
 
-  /* Filtering Logic */
   const filteredProjects = projectsData.filter((project) =>
     activeFilter === "All" ? true : project.category === activeFilter,
   );
@@ -117,7 +117,7 @@ const ProjectsGallery = () => {
       </GalleryGrid>
 
       {/* --- "SEE ALL" BUTTON --- */}
-      <SeeAllButton>
+      <SeeAllButton onClick={() => navigate('projects')}>
         See All Projects <ArrowRightOutlined />
       </SeeAllButton>
     </SectionWrapper>

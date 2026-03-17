@@ -1,13 +1,18 @@
 import React from 'react';
 import { ArrowRightOutlined } from '@ant-design/icons';
 import { Button } from 'antd';
+
+// Import Swiper React components and the Autoplay module
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import 'swiper/css';
+
 import {
   SectionWrapper,
   HeaderRow,
   TitleGroup,
   SectionTitle,
   SectionSubtitle,
-  CardsSlider,
   SliderCard,
   CardImage,
   CardContent,
@@ -61,25 +66,41 @@ const SignatureConcepts = () => {
         </Button>
       </HeaderRow>
 
-      {/* Replaced CardsGrid with our new CardsSlider */}
-      <CardsSlider>
+      <Swiper
+        modules={[Autoplay]} // Injects the auto-moving logic
+        spaceBetween={24}
+        slidesPerView={1}
+        loop={true} // Infinite looping
+        autoplay={{
+          delay: 3000, // Moves to the next card every 3 seconds
+          disableOnInteraction: false, // Keeps moving even after user clicks/swipes
+        }}
+        grabCursor={true}
+        breakpoints={{
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 }, // Keeps exactly 3 cards perfectly contained
+        }}
+        style={{ paddingBottom: '40px' }} // Room for the drop shadows
+      >
         {conceptsData.map((concept) => (
-          <SliderCard key={concept.id}>
-            <CardImage src={concept.image} alt={concept.title} />
-            <CardContent>
-              <CardTitle>{concept.title}</CardTitle>
-              <CardDescription>{concept.description}</CardDescription>
-              
-              <div style={{ marginTop: 'auto' }}>
-                <CardPrice>Starting from {concept.price}</CardPrice>
-                <CardLink>
-                  Explore Concept <ArrowRightOutlined style={{ fontSize: '0.8rem' }}/>
-                </CardLink>
-              </div>
-            </CardContent>
-          </SliderCard>
+          <SwiperSlide key={concept.id}>
+            <SliderCard>
+              <CardImage src={concept.image} alt={concept.title} />
+              <CardContent>
+                <CardTitle>{concept.title}</CardTitle>
+                <CardDescription>{concept.description}</CardDescription>
+                
+                <div style={{ marginTop: 'auto' }}>
+                  <CardPrice>Starting from {concept.price}</CardPrice>
+                  <CardLink>
+                    Explore Concept <ArrowRightOutlined style={{ fontSize: '0.8rem' }}/>
+                  </CardLink>
+                </div>
+              </CardContent>
+            </SliderCard>
+          </SwiperSlide>
         ))}
-      </CardsSlider>
+      </Swiper>
     </SectionWrapper>
   );
 };

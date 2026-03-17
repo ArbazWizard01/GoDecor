@@ -9,6 +9,7 @@ import {
   Card,
   ImageWrapper,
   CardImage,
+  CardContent, // <-- Newly imported wrapper
   CardTitle,
   CardDesc,
   LearnMoreLink
@@ -45,11 +46,16 @@ const ServiceCollections = () => {
             <ImageWrapper>
               <CardImage src={item.img} alt={item.title} />
             </ImageWrapper>
-            <CardTitle>{item.title}</CardTitle>
-            <CardDesc>{item.desc}</CardDesc>
-            <LearnMoreLink>
-              Learn More <ArrowRightOutlined style={{ fontSize: '0.8rem' }} />
-            </LearnMoreLink>
+            
+            {/* Added CardContent to give the text beautiful inner padding */}
+            <CardContent>
+              <CardTitle>{item.title}</CardTitle>
+              <CardDesc>{item.desc}</CardDesc>
+              <LearnMoreLink>
+                Learn More <ArrowRightOutlined style={{ fontSize: '0.8rem' }} />
+              </LearnMoreLink>
+            </CardContent>
+
           </Card>
         ))}
       </GridContainer>

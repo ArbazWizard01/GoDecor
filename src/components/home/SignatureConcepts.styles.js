@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const SectionWrapper = styled.section`
   padding: 80px 8%;
-  background-color: #f9f8f6;
+  background-color: #fdfbf9; 
 `;
 
 export const HeaderRow = styled.div`
@@ -28,57 +28,42 @@ export const SectionSubtitle = styled.p`
   margin: 0;
 `;
 
-// --- SLIDER STYLES ---
-export const CardsSlider = styled.div`
-  display: flex;
-  gap: 24px;
-  overflow-x: auto; /* Enables horizontal scrolling */
-  scroll-snap-type: x mandatory; /* Snaps cards into place */
-  padding-bottom: 30px; /* Room for drop shadows */
-  margin-right: -8%; /* Lets the slider bleed off the right edge cleanly */
-  padding-right: 8%;
-
-  /* Hides the scrollbar for a clean UI */
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-`;
-
+/* THE UPGRADED PREMIUM CARD */
 export const SliderCard = styled.div`
-  /* Forces the card to take up 1/3 of the space (showing 3 cards) */
-  flex: 0 0 calc(33.333% - 16px); 
-  min-width: 320px; /* Prevents squishing on small screens */
-  scroll-snap-align: start; /* Where the card snaps when scrolling stops */
-  
   background: #ffffff;
-  border-radius: 12px;
+  border-radius: 16px; 
   overflow: hidden;
   display: flex;
   flex-direction: column;
   border: 1px solid #eaeaea;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  box-shadow: 0 16px 24px -8px rgba(0, 0, 0, 0.1); 
+  
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
+  height: 100%;
 
   &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transform: translateY(-8px);
+    box-shadow: 0 24px 32px -10px rgba(0, 0, 0, 0.18); 
+    border-color: #d1d5db;
   }
-
-  /* Responsiveness */
-  @media (max-width: 1024px) { flex: 0 0 calc(50% - 12px); }
-  @media (max-width: 768px) { flex: 0 0 100%; }
 `;
 
-// Reuse the inner parts
 export const CardImage = styled.img`
   width: 100%;
   height: 240px;
   object-fit: cover;
+  transition: transform 0.6s ease;
+
+  /* Re-enabled the smooth zoom effect! */
+  // ${SliderCard}:hover & {
+  //   transform: scale(1.05);
+  // }
 `;
 
 export const CardContent = styled.div`
-  padding: 24px;
+  padding: 28px 24px; 
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -90,6 +75,11 @@ export const CardTitle = styled.h3`
   font-weight: 600;
   color: #1f2937;
   margin: 0 0 12px 0;
+  transition: color 0.3s ease;
+
+  ${SliderCard}:hover & {
+    color: #1a56db;
+  }
 `;
 
 export const CardDescription = styled.p`
@@ -106,7 +96,9 @@ export const CardPrice = styled.p`
   font-size: 0.9rem;
   font-weight: 600;
   color: #1a56db;
-  margin: 0 0 8px 0;
+  margin: 0 0 16px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 `;
 
 export const CardLink = styled.a`
@@ -115,10 +107,13 @@ export const CardLink = styled.a`
   font-weight: 600;
   color: #1a56db;
   text-decoration: none;
-  cursor: pointer;
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  transition: gap 0.3s ease;
+  margin-top: auto;
 
-  &:hover { text-decoration: underline; }
+  ${SliderCard}:hover & {
+    gap: 12px; 
+  }
 `;
