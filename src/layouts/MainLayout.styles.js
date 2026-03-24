@@ -36,19 +36,23 @@ export const GlassNav = styled.div`
 `;
 
 export const Logo = styled.div`
-  font-size: 24px;
-  font-weight: bold;
-  color: #1a1a1a;
-  font-family: 'Inter', sans-serif;
-  cursor: pointer; /* Moved from inline CSS! */
-  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 32px; /* Gives it some breathing room from the "Services" link */
+  cursor: pointer;
+`;
 
-  span {
-    color: #1a56db;
-  }
+
+export const LogoImage = styled.img`
+  height: 24px; /* Dropped from 32px to match the sleekness of the text */
+  width: auto;
+  object-fit: contain;
+  display: block; /* This is the magic rule that removes the invisible spacing under images! */
+  transition: transform 0.3s ease;
 
   &:hover {
-    opacity: 0.8;
+    transform: scale(1.02);
   }
 `;
 
@@ -103,7 +107,6 @@ export const StyledMenu = styled(Menu)`
   }
 `;
 
-/* NEW: Replaces the inline flex div for the right side of the navbar */
 export const RightActions = styled.div`
   display: flex;
   align-items: center;
@@ -138,7 +141,6 @@ export const MobileMenuButton = styled.div`
   }
 `;
 
-/* NEW: Replaces the inline styles on the mobile Menu component */
 export const MobileMenu = styled(Menu)`
   border-right: none !important;
   font-size: 1.1rem;

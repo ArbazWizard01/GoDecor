@@ -1,7 +1,6 @@
 import React from "react";
 import MainLayout from "../layouts/MainLayout";
 
-// Home-specific components
 import Hero from "../components/home/Hero";
 import AboutSection from "../components/home/AboutSection";
 import ServicesSection from "../components/home/ServicesSection";
@@ -12,14 +11,14 @@ import LivingSpaces from "../components/home/LivingSpaces";
 import BedroomConcepts from "../components/home/BedroomConcepts";
 import IntegratedSystems from "../components/home/IntegratedSystems";
 import TimelineSection from "../components/home/TimelineSection";
-import MaterialsSection from "../components/home/MaterialsSection";
-import ProjectsGallery from "../components/home/ProjectsGallery";
 import ClientExperience from "../components/home/ClientExperience";
 import FAQSection from "../components/home/FAQSection";
 import CTASection from "../components/home/CTASection";
 
-// Common components used across multiple pages
 import Footer from "../components/common/Footer";
+import BannerSection from "../components/home/BannerSection";
+import CitiesSection from "../components/home/CitiesSection";
+import PoojaSection from "../components/home/PoojaSection";
 
 const HomePage = () => {
   return (
@@ -27,6 +26,8 @@ const HomePage = () => {
       <Hero />
       <AboutSection />
       <ServicesSection />
+      <BannerSection />
+      <CitiesSection />
       <SignatureConcepts />
       <VideoSection />
       <ModernKitchens />
@@ -34,9 +35,8 @@ const HomePage = () => {
       <BedroomConcepts />
       <IntegratedSystems />
       <TimelineSection />
-      <MaterialsSection />
-      <ProjectsGallery />
       <ClientExperience />
+      <PoojaSection />
       <FAQSection />
       <CTASection />
       <Footer />

@@ -22,7 +22,6 @@ const systemsData = [
     title: 'Smart 2BHK Edition',
     description: 'Complete modular setup across all primary spaces.',
     price: '₹6.8 Lac',
-    // Swapped: Now shows an integrated open-plan living/dining area of a home
     image: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=600&auto=format&fit=crop', 
   },
   {
@@ -45,7 +44,7 @@ const IntegratedSystems = () => {
   return (
     <SectionWrapper>
       <HeaderContainer>
-        <SectionTitle>Integrated Home Systems</SectionTitle>
+        <SectionTitle>All-In-One Home Systems</SectionTitle>
         <TitleAccent />
         <SectionSubtitle>End-to-end solutions combining kitchen, living, and bedroom execution.</SectionSubtitle>
       </HeaderContainer>

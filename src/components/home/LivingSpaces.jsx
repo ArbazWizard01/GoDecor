@@ -64,7 +64,7 @@ const LivingSpaces = () => {
   return (
     <SectionWrapper style={{ backgroundColor: "#f9f8f6" }}>
       <HeaderContainer>
-        <SectionTitle>Contemporary Living Spaces</SectionTitle>
+        <SectionTitle>Living Spaces Reimagined</SectionTitle>
         <TitleAccent />
         <SectionSubtitle>
           Structured layouts and modern finishes built for comfort and clarity.

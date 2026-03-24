@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const HeroWrapper = styled.section`
   background-color: #ffffff; /* This one has a crisp white background in Figma! */
@@ -41,7 +41,7 @@ export const TextContent = styled.div`
 `;
 
 export const Subtitle = styled.span`
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 600;
   font-size: 0.95rem;
   color: #1a56db;
@@ -51,7 +51,7 @@ export const Subtitle = styled.span`
 `;
 
 export const Title = styled.h1`
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 4.5rem;
   color: #1f2937;
   line-height: 1.1;
@@ -67,7 +67,7 @@ export const Title = styled.h1`
 `;
 
 export const Description = styled.p`
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 1.1rem;
   color: #4b5563;
   line-height: 1.6;
@@ -79,7 +79,7 @@ export const Description = styled.p`
 `;
 
 export const ExploreLink = styled.a`
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 600;
   font-size: 1rem;
   color: #1a56db;

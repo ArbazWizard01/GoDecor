@@ -15,7 +15,7 @@ export const Container = styled.div`
   align-items: center;
 `;
 
-/* --- TOP INTRO BLOCK --- */
+
 export const IntroBlock = styled.div`
   text-align: center;
   max-width: 800px;
@@ -47,7 +47,6 @@ export const IntroDesc = styled.p`
   margin: 0;
 `;
 
-/* --- UPGRADED APPROACH BLOCK --- */
 export const ApproachBlock = styled.div`
   width: 100%;
   max-width: 900px;
@@ -115,7 +114,6 @@ export const IconWrapper = styled.div`
   align-items: center;
 `;
 
-/* --- PROJECT GRID --- */
 export const GridTitle = styled.h3`
   font-family: 'Playfair Display', serif;
   font-size: 2.2rem;
@@ -134,7 +132,7 @@ export const ProjectGrid = styled.div`
   @media (max-width: 600px) { grid-template-columns: 1fr; }
 `;
 
-/* Specific local typography for this section */
+
 export const CardMeta = styled.p`
   font-family: 'Inter', sans-serif;
   font-size: 0.8rem;

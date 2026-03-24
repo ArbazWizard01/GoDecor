@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const SectionWrapper = styled.section`
-  background-color: #f8f6f3; /* Warm cream background */
+  background-color: #f8f6f3;
   padding: 100px 5%;
   display: flex;
   justify-content: center;
@@ -21,13 +21,11 @@ export const Container = styled.div`
   }
 `;
 
-/* --- LEFT SIDE: 3-Image Collage --- */
 export const ImageCollage = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
   height: 500px; /* Forces the images to stretch tall */
-
   @media (max-width: 600px) {
     height: 350px;
     gap: 8px;
@@ -52,7 +50,7 @@ export const CollageSlice = styled.div`
 
   @media (max-width: 992px) {
     &:nth-child(2), &:nth-child(3) {
-      transform: none; /* Disables offset on mobile for cleaner stacking */
+      transform: none;
     }
   }
 `;
@@ -63,7 +61,6 @@ export const SliceImg = styled.img`
   object-fit: cover;
 `;
 
-/* --- RIGHT SIDE: Typography --- */
 export const TextContent = styled.div`
   display: flex;
   flex-direction: column;

@@ -1,171 +1,191 @@
 import styled from 'styled-components';
 
-export const HeroWrapper = styled.div`
-  position: relative;
-  width: 100%; 
-  height: 100vh; 
-  min-height: 800px;
+export const HeroSectionWrapper = styled.div`
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 120px 5% 0 5%; 
   display: flex;
-  align-items: center;
-  background-image: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=2000&auto=format&fit=crop');
+  flex-direction: column;
+  background-color: #ffffff;
+`;
+
+export const ImageCard = styled.div`
+  width: 100%;
+  height: 75vh;
+  min-height: 550px;
+  border-radius: 24px;
+  
+  /* THE BIG CHNAGE: Pulling dynamic background image from props! */
+  background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.65)), url(${props => props.$bgImage});
+  
   background-size: cover;
-  background-position: center right;
-  background-repeat: no-repeat;
-  background-color: #f8f6f3;
-  overflow: hidden;
-
-  @media (max-width: 768px) {
-    min-height: 100vh;
-    background-position: 70% center; /* Shifts the image nicely on phones */
-  }
-`;
-
-export const GradientMask = styled.div`
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  /* Solid cream on the left, fading to transparent on the right */
-  background: linear-gradient(to right, rgba(248, 246, 243, 1) 0%, rgba(248, 246, 243, 0.95) 45%, rgba(248, 246, 243, 0) 80%);
-  z-index: 1;
-
-  @media (max-width: 768px) {
-    /* On mobile, gradient goes top-to-bottom so the text is fully readable */
-    background: linear-gradient(to bottom, rgba(248, 246, 243, 0.95) 0%, rgba(248, 246, 243, 0.85) 60%, rgba(248, 246, 243, 0.3) 100%);
-  }
-`;
-
-export const ContentContainer = styled.div`
+  background-position: center;
   position: relative;
-  z-index: 2;
-  max-width: 650px;
-  margin-left: 8%;
-  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 60px;
+  overflow: hidden;
+  
+  /* Adds a smooth fade transition when the image changes */
+  transition: background-image 0.5s ease-in-out;
 
   @media (max-width: 768px) {
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: 0;
-    padding-top: 100px; /* Pushes text below the navbar */
+    padding: 30px;
+    height: 65vh;
+    border-radius: 16px;
   }
 `;
 
-export const TopTagline = styled.p`
-  color: #1a56db;
-  font-weight: 600;
-  font-family: 'Inter', sans-serif;
-  letter-spacing: 0.5px;
-  margin-bottom: 16px;
+export const HeroContent = styled.div`
+  max-width: 500px;
 `;
 
 export const HeroTitle = styled.h1`
   font-family: 'Playfair Display', serif;
   font-size: 4.5rem;
-  color: #1f2937;
-  margin-top: 0;
-  margin-bottom: 24px;
-  line-height: 1.15;
+  line-height: 1.1;
+  color: #ffffff;
+  margin: 0 0 40px 0;
+  font-weight: 600;
 
-  span {
-    color: #1a56db;
-  }
-
-  /* MAGIC FIX FOR MOBILE TEXT SIZE */
   @media (max-width: 768px) {
-    font-size: 2.8rem;
+    font-size: 3rem;
+    margin-bottom: 24px;
   }
+`;
+
+export const SubtitleBox = styled.div`
+  background: rgba(0, 0, 0, 0.25);
+  
+  backdrop-filter: blur(2px); 
+  
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle premium edge */
 `;
 
 export const HeroSubtitle = styled.p`
-  font-size: 1.1rem;
-  color: #4b5563;
   font-family: 'Inter', sans-serif;
-  margin-bottom: 40px;
+  
+  font-size: 0.95rem; 
+  
   line-height: 1.6;
-  max-width: 500px;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
 
   @media (max-width: 768px) {
-    font-size: 1rem;
+    font-size: 0.85rem; /* Scales smaller too */
   }
 `;
 
-export const ButtonsWrapper = styled.div`
+export const HeroControls = styled.div`
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+`;
+
+export const ArrowGroup = styled.div`
   display: flex;
   gap: 16px;
-  flex-wrap: wrap; /* Allows buttons to stack on super small screens */
 `;
 
-export const PrimaryButton = styled.button`
-  height: 50px;
-  padding: 0 32px;
-  border-radius: 25px;
-  background-color: #1a56db;
+export const ArrowBtn = styled.button`
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   color: #fff;
-  border: none;
-  font-weight: 500;
-  font-family: 'Inter', sans-serif;
-  font-size: 1rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
+  backdrop-filter: blur(4px);
   transition: all 0.3s ease;
 
-  &:hover { background-color: #164bb8; }
+  &:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+  }
 `;
 
-export const SecondaryButton = styled.button`
+export const PrimaryBtn = styled.button`
+  background: #ffffff;
+  color: #1f2937;
+  border: none;
   height: 50px;
   padding: 0 32px;
-  border-radius: 25px;
-  background-color: transparent;
-  color: #1a56db;
-  border: 1px solid #1a56db;
-  font-weight: 500;
+  border-radius: 8px;
   font-family: 'Inter', sans-serif;
+  font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  }
+`;
+
+export const StatsRow = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 60px 0;
+  border-bottom: 1px solid #f0f0f0;
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+`;
+
+export const StatItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+`;
+
+export const StatIcon = styled.div`
+  font-size: 1.5rem;
+  color: #1a56db;
+  background: #fdfbf9;
+  border: 1px solid #e5e7eb;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
   transition: all 0.3s ease;
 
-  &:hover { background-color: rgba(26, 86, 219, 0.05); }
-`;
-
-export const StatsContainer = styled.div`
-  position: absolute;
-  bottom: 60px;
-  right: 8%;
-  z-index: 2;
-  display: flex;
-  gap: 50px;
-
-  @media (max-width: 768px) {
-    /* Move stats to bottom-left on mobile so they don't get lost */
-    right: auto;
-    left: 5%;
-    bottom: 30px;
-    gap: 20px;
+  ${StatItem}:hover & {
+    background: #f0f4ff;
+    border-color: #1a56db;
+    transform: translateY(-4px);
   }
 `;
 
-export const StatBox = styled.div`
-  text-align: center;
-
-  h2 {
-    margin: 0;
-    color: #fff;
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-
-    @media (max-width: 768px) {
-      font-size: 1.5rem;
-      color: #1f2937; /* Change to dark grey since mobile background is cream */
-    }
-  }
-
-  p {
-    margin: 0;
-    color: #fff;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
-
-    @media (max-width: 768px) {
-      color: #4b5563; /* Change to dark grey for readability */
-      font-size: 0.8rem;
-    }
-  }
+export const StatText = styled.p`
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #4b5563;
+  margin: 0;
 `;

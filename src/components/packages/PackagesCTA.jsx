@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   CTAWrapper,
   Overlay,
@@ -9,6 +10,7 @@ import {
 } from './PackagesCTA.styles';
 
 const PackagesCTA = () => {
+  const navigate = useNavigate()
   return (
     <CTAWrapper>
       <Overlay />
@@ -17,7 +19,7 @@ const PackagesCTA = () => {
         <CTADesc>
           Let's finalize the package that feels right for your home.
         </CTADesc>
-        <StyledButton shape="round">
+        <StyledButton shape="round" onClick={() => navigate('/contact')}>
           Schedule Consultation
         </StyledButton>
       </ContentContainer>

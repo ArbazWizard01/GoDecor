@@ -72,7 +72,7 @@ const ModernKitchens = () => {
   return (
     <SectionWrapper>
       <HeaderContainer>
-        <SectionTitle>Modern Kitchen Systems</SectionTitle>
+        <SectionTitle>Modern Kitchen, Smarter Living</SectionTitle>
         <TitleAccent />
         <SectionSubtitle>
           Functional design solutions engineered for contemporary homes.

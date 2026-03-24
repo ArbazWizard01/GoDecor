@@ -61,7 +61,7 @@ const BedroomConcepts = () => {
   return (
     <SectionWrapper>
       <HeaderContainer>
-        <SectionTitle>Modern Bedroom Concepts</SectionTitle>
+        <SectionTitle>Designed for Restful Living</SectionTitle>
         <TitleAccent />
         <SectionSubtitle>
           Storage-focused, calm, and thoughtfully layered bedroom systems.

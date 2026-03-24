@@ -20,11 +20,11 @@ const AboutHero = () => {
           <Subtitle>About GoDecor</Subtitle>
           <Title>Designed With Structure.<br/>Delivered With Precision.</Title>
           <Description>
-            GoDecor was built to simplify residential design execution through 
+            GoDecore wa buit to simplify residential design execution through 
             structured planning and coordinated implementation.
           </Description>
           <ExploreLink>
-            View Our Process <ArrowRightOutlined />
+            View Our Proccess <ArrowRightOutlined />
           </ExploreLink>
         </TextContent>
 

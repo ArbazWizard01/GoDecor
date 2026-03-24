@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ArrowRightOutlined } from '@ant-design/icons';
 import {
   SectionWrapper,
@@ -17,10 +18,9 @@ import {
 } from './ServicesCTA.styles';
 
 const ServicesCTA = () => {
+  const navigate = useNavigate()
   return (
     <SectionWrapper>
-      
-      {/* Target Audience Section */}
       <TargetContainer>
         <TargetTitle>Designed for Modern Residential Living.</TargetTitle>
         <TargetDesc>
@@ -31,8 +31,6 @@ const ServicesCTA = () => {
           If you value transparency and long-term durability, this framework is built for you.
         </TargetHighlight>
       </TargetContainer>
-
-      {/* Bottom Image CTA */}
       <CTAWrapper>
         <Overlay />
         <CTAContent>
@@ -41,10 +39,10 @@ const ServicesCTA = () => {
             Schedule a structured consultation and bring clarity to your home transformation.
           </CTADesc>
           <ActionGroup>
-            <PrimaryButton type="primary" shape="round">
+            <PrimaryButton type="primary" shape="round" onClick={() => navigate('/contact')}>
               Schedule Consultation
             </PrimaryButton>
-            <SecondaryLink>
+            <SecondaryLink onClick={( () => navigate('/packages'))}> 
               View Packages <ArrowRightOutlined style={{ fontSize: '0.8rem' }} />
             </SecondaryLink>
           </ActionGroup>

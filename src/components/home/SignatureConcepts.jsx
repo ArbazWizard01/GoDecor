@@ -2,7 +2,6 @@ import React from 'react';
 import { ArrowRightOutlined } from '@ant-design/icons';
 import { Button } from 'antd';
 
-// Import Swiper React components and the Autoplay module
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -58,7 +57,7 @@ const SignatureConcepts = () => {
     <SectionWrapper>
       <HeaderRow>
         <TitleGroup>
-          <SectionTitle>Signature Concepts</SectionTitle>
+          <SectionTitle>Signature Spaces</SectionTitle>
           <SectionSubtitle>A curated selection of our most requested modern transformations.</SectionSubtitle>
         </TitleGroup>
         <Button size="large" style={{ color: '#1a56db', borderColor: '#1a56db', borderRadius: '6px' }}>
@@ -67,20 +66,20 @@ const SignatureConcepts = () => {
       </HeaderRow>
 
       <Swiper
-        modules={[Autoplay]} // Injects the auto-moving logic
+        modules={[Autoplay]} 
         spaceBetween={24}
         slidesPerView={1}
-        loop={true} // Infinite looping
+        loop={true} 
         autoplay={{
-          delay: 3000, // Moves to the next card every 3 seconds
-          disableOnInteraction: false, // Keeps moving even after user clicks/swipes
+          delay: 3000, 
+          disableOnInteraction: false, 
         }}
         grabCursor={true}
         breakpoints={{
           768: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 }, // Keeps exactly 3 cards perfectly contained
+          1024: { slidesPerView: 3 },
         }}
-        style={{ paddingBottom: '40px' }} // Room for the drop shadows
+        style={{ paddingBottom: '40px' }} 
       >
         {conceptsData.map((concept) => (
           <SwiperSlide key={concept.id}>

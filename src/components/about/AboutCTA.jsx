@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ArrowRightOutlined } from '@ant-design/icons';
 import {
   CTAWrapper,
@@ -12,6 +13,7 @@ import {
 } from './AboutCTA.styles';
 
 const AboutCTA = () => {
+  const navigate = useNavigate();
   return (
     <CTAWrapper>
       <Overlay />
@@ -22,10 +24,10 @@ const AboutCTA = () => {
           and define the right system for your home.
         </CTADesc>
         <ActionGroup>
-          <PrimaryButton type="primary" shape="round">
+          <PrimaryButton type="primary" shape="round" onClick={() => navigate('/contact')}>
             Schedule Consultation
           </PrimaryButton>
-          <SecondaryLink>
+          <SecondaryLink onClick={() => navigate('/packages')}>
             View Packages <ArrowRightOutlined style={{ fontSize: '0.8rem' }} />
           </SecondaryLink>
         </ActionGroup>

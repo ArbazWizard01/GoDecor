@@ -1,35 +1,35 @@
-import React, { useState } from 'react';
-import { Layout, Drawer } from 'antd';
-import { MenuOutlined } from '@ant-design/icons';
-import { useNavigate, useLocation } from 'react-router-dom';
-import Footer from '../components/common/Footer';
-import { 
+import React, { useState } from "react";
+import { Layout, Drawer } from "antd";
+import { MenuOutlined } from "@ant-design/icons";
+import { useNavigate, useLocation } from "react-router-dom";
+import Footer from "../components/common/Footer";
+import {
   StyledLayout,
-  NavbarWrapper, 
+  NavbarWrapper,
   GlassNav,
-  Logo, 
-  StyledMenu, 
+  Logo,
+  LogoImage,
+  StyledMenu,
   RightActions,
   ActionButton,
   MobileMenuButton,
-  MobileMenu
-} from './MainLayout.styles';
+  MobileMenu,
+} from "./MainLayout.styles";
 
 const { Content } = Layout;
 
-// Fixed the key to 'budget' so it matches your actual route!
 const navItems = [
-  { key: 'services', label: 'Services' },
-  { key: 'packages', label: 'Packages' },
-  { key: 'projects', label: 'Projects' },
-  { key: 'about', label: 'About' },
-  { key: 'contact', label: 'Contact' },
-  { key: 'budget', label: 'Budget Calculator' } 
+  { key: "services", label: "Services" },
+  { key: "packages", label: "Packages" },
+  { key: "projects", label: "Projects" },
+  { key: "about", label: "About" },
+  { key: "contact", label: "Contact" },
+  { key: "budget", label: "Budget Calculator" },
 ];
 
 const MainLayout = ({ children }) => {
   const [drawerVisible, setDrawerVisible] = useState(false);
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
   const location = useLocation();
 
   const showDrawer = () => setDrawerVisible(true);
@@ -37,39 +37,41 @@ const MainLayout = ({ children }) => {
 
   const handleMenuClick = (e) => {
     navigate(`/${e.key}`);
-    setDrawerVisible(false); // Closes drawer automatically on mobile
+    setDrawerVisible(false);
   };
 
   const goHome = () => {
-    navigate('/');
+    navigate("/");
   };
 
   return (
     <StyledLayout>
       <NavbarWrapper>
         <GlassNav>
-          <Logo onClick={goHome} style={{ cursor: 'pointer' }}>
-            go<span>Decor</span>
+          <Logo
+            onClick={goHome}
+            style={{ cursor: "pointer", display: "flex", alignItems: "center" }}
+          >
+            <LogoImage src="/godecor-text-logo.png" alt="goDecor" />
           </Logo>
-          
-          <StyledMenu 
-            mode="horizontal" 
-            items={navItems} 
-            disabledOverflow={true} 
+
+          <StyledMenu
+            mode="horizontal"
+            items={navItems}
+            disabledOverflow={true}
             onClick={handleMenuClick}
-            selectedKeys={[location.pathname.substring(1)]} 
+            selectedKeys={[location.pathname.substring(1)]}
           />
-          
+
           <RightActions>
-            {/* Wired up the Explore button to route to Projects */}
-            <ActionButton 
-              type="primary" 
-              shape="round" 
-              onClick={() => navigate('/projects')}
+            <ActionButton
+              type="primary"
+              shape="round"
+              onClick={() => navigate("/projects")}
             >
               Explore
             </ActionButton>
-            
+
             <MobileMenuButton onClick={showDrawer}>
               <MenuOutlined />
             </MobileMenuButton>
@@ -84,20 +86,17 @@ const MainLayout = ({ children }) => {
         open={drawerVisible}
         size="default"
       >
-        <MobileMenu 
-          mode="vertical" 
-          items={navItems} 
+        <MobileMenu
+          mode="vertical"
+          items={navItems}
           onClick={handleMenuClick}
-          selectedKeys={[location.pathname.substring(1)]} 
+          selectedKeys={[location.pathname.substring(1)]}
         />
       </Drawer>
 
-      <Content>
-        {children}
-      </Content>
+      <Content>{children}</Content>
 
-      <Footer /> 
-
+      <Footer />
     </StyledLayout>
   );
 };

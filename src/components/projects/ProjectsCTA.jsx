@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   CTAWrapper,
   Overlay,
@@ -8,7 +9,8 @@ import {
   PrimaryButton
 } from './ProjectsCTA.styles';
 
-const ProjectsCTA = () => {
+const ProjectsCTA = () => { 
+  const navigate = useNavigate();
   return (
     <CTAWrapper>
       <Overlay />
@@ -17,7 +19,7 @@ const ProjectsCTA = () => {
         <CTADesc>
           Different Spaces. One Structured Philosophy. Let's begin with a structured consultation.
         </CTADesc>
-        <PrimaryButton shape="round">
+        <PrimaryButton shape="round" onClick={() => navigate('/contact')}>
           Schedule Consultation
         </PrimaryButton>
       </CTAContent>
