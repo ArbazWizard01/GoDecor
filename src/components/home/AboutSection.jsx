@@ -19,7 +19,7 @@ const AboutSection = () => {
     <FullScreenContainer>
       <ImageWrapper>
         <MainImage 
-          src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1920" 
+          src="home_about_banner.png" 
           alt="Modern luxury living space" 
         />
         

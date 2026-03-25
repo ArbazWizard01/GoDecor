@@ -4,7 +4,7 @@ export const HeroSectionWrapper = styled.div`
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 120px 5% 0 5%; 
+  padding: 80px 5% 0 5%; 
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
@@ -12,7 +12,7 @@ export const HeroSectionWrapper = styled.div`
 
 export const ImageCard = styled.div`
   width: 100%;
-  height: 75vh;
+  height: 95vh;
   min-height: 550px;
   border-radius: 24px;
   

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Layout, Drawer } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
+import { FiChevronDown } from "react-icons/fi"; // <-- Brought in the crisp React Icon
 import { useNavigate, useLocation } from "react-router-dom";
 import Footer from "../components/common/Footer";
 import {
@@ -19,7 +20,24 @@ import {
 const { Content } = Layout;
 
 const navItems = [
-  { key: "services", label: "Services" },
+  { 
+    key: "services", 
+    label: (
+      <span className="services-label">
+        Services 
+        <span className="dropdown-circle">
+          <FiChevronDown /> {/* Using the clean Feather icon */}
+        </span>
+      </span>
+    ),
+    children: [
+      { key: "services", label: "Modular Kitchens" },
+      { key: "services", label: "Living Spaces" },
+      { key: "services", label: "Bedroom Designs" },
+      { type: 'divider' }, 
+      { key: "services", label: "View All Services" },
+    ]
+  },
   { key: "packages", label: "Packages" },
   { key: "projects", label: "Projects" },
   { key: "about", label: "About" },
@@ -44,6 +62,8 @@ const MainLayout = ({ children }) => {
     navigate("/");
   };
 
+  const activeKey = location.pathname.substring(1) || "";
+
   return (
     <StyledLayout>
       <NavbarWrapper>
@@ -55,21 +75,21 @@ const MainLayout = ({ children }) => {
             <LogoImage src="/godecor-text-logo.png" alt="goDecor" />
           </Logo>
 
-          <StyledMenu
+          <StyledMenu 
             mode="horizontal"
             items={navItems}
             disabledOverflow={true}
             onClick={handleMenuClick}
-            selectedKeys={[location.pathname.substring(1)]}
+            selectedKeys={[activeKey]}
           />
 
           <RightActions>
             <ActionButton
               type="primary"
-              shape="round"
+              // shape="round"
               onClick={() => navigate("/projects")}
             >
-              Explore
+              Plan Your Space
             </ActionButton>
 
             <MobileMenuButton onClick={showDrawer}>
@@ -87,10 +107,10 @@ const MainLayout = ({ children }) => {
         size="default"
       >
         <MobileMenu
-          mode="vertical"
+          mode="inline"
           items={navItems}
           onClick={handleMenuClick}
-          selectedKeys={[location.pathname.substring(1)]}
+          selectedKeys={[activeKey]}
         />
       </Drawer>
 

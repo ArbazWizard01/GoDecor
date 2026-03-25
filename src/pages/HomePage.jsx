@@ -14,8 +14,6 @@ import TimelineSection from "../components/home/TimelineSection";
 import ClientExperience from "../components/home/ClientExperience";
 import FAQSection from "../components/home/FAQSection";
 import CTASection from "../components/home/CTASection";
-
-import Footer from "../components/common/Footer";
 import BannerSection from "../components/home/BannerSection";
 import CitiesSection from "../components/home/CitiesSection";
 import PoojaSection from "../components/home/PoojaSection";
@@ -39,7 +37,6 @@ const HomePage = () => {
       <PoojaSection />
       <FAQSection />
       <CTASection />
-      <Footer />
     </MainLayout>
   );
 };

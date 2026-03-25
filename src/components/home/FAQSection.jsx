@@ -4,7 +4,7 @@ import {
   SectionWrapper,
   HeaderContainer,
   SectionTitle,
-  TitleAccent,
+  TitleAccent, // <-- Brought this back!
   SectionSubtitle,
   FAQContainer,
   FAQItem,
@@ -34,7 +34,7 @@ const faqData = [
   },
   {
     id: 4,
-    question: "What is the average execution time like?",
+    question: "What is the average execution timeline?",
     answer: "For a standard modular kitchen, execution takes 3-4 weeks. A full 2BHK or 3BHK integrated setup typically ranges from 45 to 60 days from the date of design sign-off."
   },
   {
@@ -60,11 +60,9 @@ const faqData = [
 ];
 
 const FAQSection = () => {
-  // State holds the ID of the currently open FAQ. Null means all are closed.
   const [openId, setOpenId] = useState(null);
 
   const toggleFAQ = (id) => {
-    // If clicking the currently open one, close it. Otherwise, open the new one.
     setOpenId(openId === id ? null : id);
   };
 
@@ -72,20 +70,20 @@ const FAQSection = () => {
     <SectionWrapper>
       <HeaderContainer>
         <SectionTitle>Frequently Asked Questions</SectionTitle>
-        <TitleAccent />
+        <TitleAccent /> {/* <-- Rendered here! */}
         <SectionSubtitle>
           Clear answers to help you plan your space with confidence.
         </SectionSubtitle>
       </HeaderContainer>
 
       <FAQContainer>
-        {faqData.map((faq) => {
+        {faqData.map((faq, index) => {
           const isOpen = openId === faq.id;
           
           return (
-            <FAQItem key={faq.id}>
+            <FAQItem key={faq.id} $isOpen={isOpen}>
               <QuestionHeader onClick={() => toggleFAQ(faq.id)}>
-                <QuestionText>{faq.question}</QuestionText>
+                <QuestionText>{index + 1}. {faq.question}</QuestionText>
                 <IconWrapper $isOpen={isOpen}>
                   <PlusOutlined />
                 </IconWrapper>
