@@ -2,146 +2,175 @@ import styled from 'styled-components';
 
 export const SectionWrapper = styled.section`
   padding: 80px 5%;
-  background-color: #fdfbf9; /* Matched the premium cream background */
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
 
-export const HeaderContainer = styled.div`
-  text-align: center;
-  margin-bottom: 50px;
-  max-width: 800px;
+export const HeaderRow = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  max-width: 1328px;
+  margin: 0 auto 40px auto;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+`;
+
+export const HeaderText = styled.div`
+  text-align: left;
 `;
 
 export const SectionTitle = styled.h2`
   font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
+  font-size: 36px;
   color: #1f2937;
   margin: 0 0 16px 0;
+  font-weight: 600;
 `;
 
 export const TitleAccent = styled.div`
-  width: 60px;
+  width: 160px;
   height: 3px;
   background-color: #1a56db;
-  margin: 0 auto 16px auto;
+  margin: 0 0 16px 0;
+  border-radius: 2px;
 `;
 
 export const SectionSubtitle = styled.p`
   font-family: 'Inter', sans-serif;
-  font-size: 1.05rem;
+  font-size: 16px;
   color: #6b7280;
   margin: 0;
 `;
 
-/* Using a 4-column grid to match your 4 kitchen packages */
-export const CardsGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-
-  @media (max-width: 1200px) { grid-template-columns: repeat(2, 1fr); }
-  @media (max-width: 768px) { grid-template-columns: 1fr; }
+export const SliderControls = styled.div`
+  display: flex;
+  gap: 16px;
 `;
 
-/* THE SQUASHED GALLERY CARD */
+export const ControlButton = styled.button`
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #4b5563;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: #1a56db;
+    color: #1a56db;
+    background: #f8fafc;
+  }
+`;
+
+export const CardsSlider = styled.div`
+  display: flex;
+  gap: 24px;
+  width: 100%;
+  max-width: 1328px;
+  margin: 0 auto;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 16px 8px 40px 8px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;
+
 export const Card = styled.div`
   background: #ffffff;
-  border-radius: 20px;
-  border: 1px solid #f0f0f0;
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05); /* Ghost shadow */
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  overflow: hidden;
   cursor: pointer;
-  transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
-  
-  padding: 12px; /* The inner museum frame */
+  transition: all 0.3s ease;
+  width: 314px;
+  min-width: 314px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
 
   &:hover {
     transform: translateY(-6px);
-    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.08);
-    border-color: #e5e7eb;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+    border-color: #d1d5db;
   }
 `;
 
 export const CardImage = styled.img`
   width: 100%;
-  height: 160px; /* Cinematic, ultra-short proportion */
+  height: 240px;
   object-fit: cover;
-  border-radius: 12px;
 `;
 
 export const CardContent = styled.div`
-  padding: 16px 8px 8px 8px; /* Tightened padding */
+  padding: 20px;
   display: flex;
   flex-direction: column;
   flex: 1;
 `;
 
 export const CardTitle = styled.h3`
-  font-family: 'Playfair Display', serif; /* Luxury Serif */
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: #1f2937;
-  margin: 0 0 12px 0;
-  transition: color 0.3s ease;
-
-  ${Card}:hover & {
-    color: #1a56db;
-  }
-`;
-
-/* STYLING THE BULLET POINTS TO BE COMPACT AND PREMIUM */
-export const FeatureList = styled.ul`
-  list-style: none; /* Removes default ugly browser bullets */
-  padding: 0;
-  margin: 0 0 20px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 8px; /* Tight spacing between list items */
-`;
-
-export const FeatureItem = styled.li`
   font-family: 'Inter', sans-serif;
-  font-size: 0.85rem; /* Shrunk down so it doesn't take up too much vertical space */
-  color: #6b7280;
-  display: flex;
-  align-items: center;
-
-  /* Custom blue bullet points */
-  &::before {
-    content: "•";
-    color: #1a56db;
-    font-size: 1.2rem;
-    margin-right: 8px;
-    line-height: 0.5;
-  }
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 8px 0;
 `;
 
 export const CardPrice = styled.p`
   font-family: 'Inter', sans-serif;
-  font-size: 0.85rem;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 500;
   color: #1a56db;
-  margin: 0 0 6px 0;
+  margin: 0 0 24px 0;
 `;
 
-export const CardLink = styled.span`
-  font-family: 'Inter', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #1a56db;
-  display: inline-flex;
+export const ExploreButton = styled.button`
+  width: 100%;
+  display: flex;
   align-items: center;
-  gap: 6px;
-  transition: gap 0.3s ease;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 0;
+  background: #ffffff;
+  border: 1px solid #1a56db;
+  border-radius: 4px;
+  color: #1a56db;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: auto;
+
+  svg {
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
 
   ${Card}:hover & {
-    gap: 12px; /* Smooth arrow slide */
+    border-color: #1a56db;
+    color: #1a56db;
+  }
+
+  ${Card}:hover & svg {
+    transform: translateX(6px);
   }
 `;

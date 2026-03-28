@@ -11,7 +11,6 @@ import {
   CardContent,
   CardTitle,
   CardDescription,
-  CardFooter,
   CardPrice,
   FullWidthButton
 } from './IntegratedSystems.styles';
@@ -44,9 +43,9 @@ const IntegratedSystems = () => {
   return (
     <SectionWrapper>
       <HeaderContainer>
-        <SectionTitle>All-In-One Home Systems</SectionTitle>
+        <SectionTitle>All-in-One Home Systems</SectionTitle>
         <TitleAccent />
-        <SectionSubtitle>End-to-end solutions combining kitchen, living, and bedroom execution.</SectionSubtitle>
+        <SectionSubtitle>Complete solutions for modern homes.</SectionSubtitle>
       </HeaderContainer>
 
       <CardsGridThreeCol>
@@ -56,11 +55,8 @@ const IntegratedSystems = () => {
             <CardContent>
               <CardTitle>{item.title}</CardTitle>
               <CardDescription>{item.description}</CardDescription>
-
-              <CardFooter>
-                <CardPrice>Starting from {item.price}</CardPrice>
-                <FullWidthButton>Schedule Consultation</FullWidthButton>
-              </CardFooter>
+              <CardPrice>Starting from {item.price}</CardPrice>
+              <FullWidthButton>Schedule Consultation</FullWidthButton>
             </CardContent>
           </Card>
         ))}

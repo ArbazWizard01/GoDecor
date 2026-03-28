@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const SectionWrapper = styled.section`
   padding: 80px 5%;
-  background-color: #f9f8f6; /* Alternating grey background */
+  background-color: #ffffff; /* Alternating grey background */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,8 +22,8 @@ export const SectionTitle = styled.h2`
 `;
 
 export const TitleAccent = styled.div`
-  width: 60px;
-  height: 3px;
+  width: 160px;
+  height: 4px;
   background-color: #1a56db;
   margin: 0 auto 16px auto;
 `;

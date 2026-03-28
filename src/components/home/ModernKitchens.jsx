@@ -1,108 +1,97 @@
-import React from "react";
-import { ArrowRightOutlined } from "@ant-design/icons";
+import React, { useRef } from "react";
+import { ArrowRightOutlined, ArrowLeftOutlined } from "@ant-design/icons";
 import {
   SectionWrapper,
-  HeaderContainer,
+  HeaderRow,
+  HeaderText,
   SectionTitle,
   TitleAccent,
   SectionSubtitle,
-  CardsGrid,
+  SliderControls,
+  ControlButton,
+  CardsSlider,
   Card,
   CardImage,
   CardContent,
   CardTitle,
-  FeatureList,
-  FeatureItem,
   CardPrice,
-  CardLink,
+  ExploreButton,
 } from "../common/CategoryGrid.styles";
 
 const kitchenData = [
   {
     id: 1,
     title: "Compact Modular",
-    features: [
-      "Core modular cabinetry",
-      "Soft-close hardware",
-      "Essential lighting",
-    ],
     price: "₹2.5 Lac",
-    image:
-      "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?q=80&w=600&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?q=80&w=600&auto=format&fit=crop",
   },
   {
     id: 2,
     title: "Urban Standard",
-    features: [
-      "Premium laminate options",
-      "Optimized workflow layout",
-      "Integrated lighting",
-    ],
     price: "₹4.2 Lac",
-    image:
-      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=600&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=600&auto=format&fit=crop",
   },
   {
     id: 3,
     title: "Smart Storage Pro",
-    features: [
-      "Tall units & pull-outs",
-      "Soft-close channels",
-      "Advanced storage systems",
-    ],
     price: "₹6.8 Lac",
-    image:
-      "https://images.unsplash.com/photo-1556911220-bff31c812dba?q=80&w=600&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1556911220-bff31c812dba?q=80&w=600&auto=format&fit=crop",
   },
   {
     id: 4,
-    title: "Luxury Peninsula",
-    features: [
-      "Island/Peninsula layout",
-      "Premium acrylic finishes",
-      "Built-in appliance housing",
-    ],
-    price: "₹9.5 Lac",
-    image:
-      "https://images.unsplash.com/photo-1556909190-eccf4a8bf97a?q=80&w=600&auto=format&fit=crop",
+    title: "Modern Matte Finish",
+    price: "₹7.2 Lac",
+    image: "https://images.unsplash.com/photo-1556909190-eccf4a8bf97a?q=80&w=600&auto=format&fit=crop",
   },
 ];
 
 const ModernKitchens = () => {
+  const sliderRef = useRef(null);
+
+  const scroll = (direction) => {
+    if (sliderRef.current) {
+      const scrollAmount = 338; 
+      sliderRef.current.scrollBy({
+        left: direction === "left" ? -scrollAmount : scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <SectionWrapper>
-      <HeaderContainer>
-        <SectionTitle>Modern Kitchen, Smarter Living</SectionTitle>
-        <TitleAccent />
-        <SectionSubtitle>
-          Functional design solutions engineered for contemporary homes.
-        </SectionSubtitle>
-      </HeaderContainer>
+      <HeaderRow>
+        <HeaderText>
+          <SectionTitle>Modern Kitchens, Smarter Living</SectionTitle>
+          <TitleAccent />
+          <SectionSubtitle>
+            Functional designs built for today's homes.
+          </SectionSubtitle>
+        </HeaderText>
+        <SliderControls>
+          <ControlButton onClick={() => scroll("left")}>
+            <ArrowLeftOutlined style={{ fontSize: "16px" }} />
+          </ControlButton>
+          <ControlButton onClick={() => scroll("right")}>
+            <ArrowRightOutlined style={{ fontSize: "16px" }} />
+          </ControlButton>
+        </SliderControls>
+      </HeaderRow>
 
-      <CardsGrid>
+      <CardsSlider ref={sliderRef}>
         {kitchenData.map((item) => (
           <Card key={item.id}>
             <CardImage src={item.image} alt={item.title} />
             <CardContent>
               <CardTitle>{item.title}</CardTitle>
-
-              <FeatureList>
-                {item.features.map((feature, index) => (
-                  <FeatureItem key={index}>{feature}</FeatureItem>
-                ))}
-              </FeatureList>
-
-              <div style={{ marginTop: "auto" }}>
-                <CardPrice>Starting from {item.price}</CardPrice>
-                <CardLink>
-                  Explore Concept{" "}
-                  <ArrowRightOutlined style={{ fontSize: "0.8rem" }} />
-                </CardLink>
-              </div>
+              <CardPrice>Starting from {item.price}</CardPrice>
+              <ExploreButton>
+                Explore Concept <ArrowRightOutlined style={{ fontSize: "12px" }} />
+              </ExploreButton>
             </CardContent>
           </Card>
         ))}
-      </CardsGrid>
+      </CardsSlider>
     </SectionWrapper>
   );
 };

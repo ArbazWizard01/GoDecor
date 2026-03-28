@@ -17,7 +17,7 @@ const BannerSection = () => {
           <BannerContent>
             <BannerTitle>Beautiful Spaces Begin Here</BannerTitle>
             <BannerButton>
-              Book Consultation <ArrowRightOutlined style={{ fontSize: '0.8rem' }} />
+              Book Consultation <ArrowRightOutlined />
             </BannerButton>
           </BannerContent>
         </BannerCard>

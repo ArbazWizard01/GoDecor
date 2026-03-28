@@ -10,7 +10,6 @@ import ModernKitchens from "../components/home/ModernKitchens";
 import LivingSpaces from "../components/home/LivingSpaces";
 import BedroomConcepts from "../components/home/BedroomConcepts";
 import IntegratedSystems from "../components/home/IntegratedSystems";
-import TimelineSection from "../components/home/TimelineSection";
 import ClientExperience from "../components/home/ClientExperience";
 import FAQSection from "../components/home/FAQSection";
 import CTASection from "../components/home/CTASection";
@@ -32,7 +31,6 @@ const HomePage = () => {
       <LivingSpaces />
       <BedroomConcepts />
       <IntegratedSystems />
-      <TimelineSection />
       <ClientExperience />
       <PoojaSection />
       <FAQSection />

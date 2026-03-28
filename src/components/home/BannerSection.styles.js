@@ -15,7 +15,7 @@ export const Container = styled.div`
 export const BannerCard = styled.div`
   width: 100%;
   height: 280px;
-  border-radius: 24px;
+  border-radius: 12px;
   background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('https://images.pexels.com/photos/1571470/pexels-photo-1571470.jpeg?auto=compress&cs=tinysrgb&w=1920');
   background-size: cover;
   background-position: center;
@@ -26,8 +26,9 @@ export const BannerCard = styled.div`
   box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 
   @media (max-width: 768px) {
-    padding: 0 30px;
-    background-attachment: scroll;
+    padding: 40px 30px;
+    height: 260px; 
+    align-items: stretch; 
   }
 `;
 
@@ -36,17 +37,24 @@ export const BannerContent = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 24px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 100%;
+    justify-content: space-between; 
+    gap: 0;
+  }
 `;
 
 export const BannerTitle = styled.h2`
   font-family: 'Playfair Display', serif;
-  font-size: 3rem;
+  font-size: 48px;
   color: #ffffff;
   margin: 0;
   font-weight: 600;
 
   @media (max-width: 768px) {
-    font-size: 2rem;
+    font-size: 28px; 
   }
 `;
 
@@ -58,12 +66,16 @@ export const BannerButton = styled.button`
   border-radius: 8px;
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 16px;
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 8px;
   transition: transform 0.2s, box-shadow 0.2s;
+
+  svg {
+    font-size: 14px;
+  }
 
   &:hover {
     transform: translateY(-2px);

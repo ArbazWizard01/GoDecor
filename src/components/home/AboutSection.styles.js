@@ -36,34 +36,34 @@ export const TopTextOverlay = styled.div`
   max-width: 800px;
 
   @media (max-width: 768px) {
-    top: 10%;
+    top: 6%; 
     left: 5%;
   }
 `;
 
 export const Title = styled.h2`
   font-family: 'Playfair Display', serif;
-  font-size: 3.2rem;
+  font-size: 51px;
   color: #ffffff;
   margin: 0 0 10px 0;
   font-weight: 500;
   text-shadow: 0 2px 10px rgba(0,0,0,0.3);
 
   @media (max-width: 768px) {
-    font-size: 2.2rem;
+    font-size: 32px;
   }
 `;
 
 export const Subtitle = styled.p`
   font-family: 'Inter', sans-serif;
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 1.6;
   color: #ffffff;
   margin: 0;
   text-shadow: 0 2px 8px rgba(0,0,0,0.4);
 
   @media (max-width: 768px) {
-    font-size: 0.9rem;
+    font-size: 14px;
   }
 `;
 
@@ -82,19 +82,23 @@ export const BottomGlassCard = styled.div`
 
   @media (max-width: 768px) {
     left: 5%;
-    bottom: 20%;
-    padding: 20px;
+    bottom: 14%;
+    padding: 16px;
     max-width: 90%;
   }
 `;
 
 export const CardText = styled.p`
   font-family: 'Inter', sans-serif;
-  font-size: 0.9rem;
+  font-size: 14px;
   line-height: 1.6;
   color: #ffffff;
   margin: 0;
   text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+
+  @media (max-width: 768px) {
+    font-size: 13px;
+  }
 `;
 
 export const ExploreButton = styled.button`
@@ -110,7 +114,7 @@ export const ExploreButton = styled.button`
   border-radius: 4px;
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 14px;
   cursor: pointer;
   transition: transform 0.2s;
 

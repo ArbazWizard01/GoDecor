@@ -28,7 +28,7 @@ import {
 const heroSlides = [
   {
     image:
-      "https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg?auto=compress&cs=tinysrgb&w=1920",
+      "Hero_Image.png",
     title: (
       <>
         Belong
@@ -54,7 +54,7 @@ const heroSlides = [
   },
   {
     image:
-      "https://images.pexels.com/photos/6489083/pexels-photo-6489083.jpeg?auto=compress&cs=tinysrgb&w=1920", // Bedroom image
+      "https://images.pexels.com/photos/6489083/pexels-photo-6489083.jpeg?auto=compress&cs=tinysrgb&w=1920",
     title: (
       <>
         Quiet

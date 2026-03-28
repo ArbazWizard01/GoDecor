@@ -8,17 +8,18 @@ export const HeroSectionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
+
+  @media (max-width: 768px) {
+    padding: 90px 5% 0 5%; 
+  }
 `;
 
 export const ImageCard = styled.div`
   width: 100%;
   height: 95vh;
   min-height: 550px;
-  border-radius: 24px;
-  
-  /* THE BIG CHNAGE: Pulling dynamic background image from props! */
+  border-radius: 12px;
   background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.65)), url(${props => props.$bgImage});
-  
   background-size: cover;
   background-position: center;
   position: relative;
@@ -27,56 +28,62 @@ export const ImageCard = styled.div`
   justify-content: space-between;
   padding: 60px;
   overflow: hidden;
-  
-  /* Adds a smooth fade transition when the image changes */
   transition: background-image 0.5s ease-in-out;
 
   @media (max-width: 768px) {
-    padding: 30px;
-    height: 65vh;
-    border-radius: 16px;
+    padding: 24px;
+    height: 80vh;
+    border-radius: 12px;
   }
 `;
 
 export const HeroContent = styled.div`
   max-width: 500px;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    flex: 1; 
+  }
 `;
 
 export const HeroTitle = styled.h1`
   font-family: 'Playfair Display', serif;
-  font-size: 4.5rem;
+  font-size: 72px;
   line-height: 1.1;
   color: #ffffff;
   margin: 0 0 40px 0;
   font-weight: 600;
 
   @media (max-width: 768px) {
-    font-size: 3rem;
-    margin-bottom: 24px;
+    font-size: 40px;
+    margin-top: 10px;
+    margin-bottom: auto; 
   }
 `;
 
 export const SubtitleBox = styled.div`
-  background: rgba(0, 0, 0, 0.25);
-  
-  backdrop-filter: blur(2px); 
-  
-  padding: 24px;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle premium edge */
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(1px); 
+  padding: 20px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  @media (max-width: 768px) {
+    padding: 16px;
+    margin-bottom: 24px; 
+  }
 `;
 
 export const HeroSubtitle = styled.p`
   font-family: 'Inter', sans-serif;
-  
-  font-size: 0.95rem; 
-  
+  font-size: 15px; 
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.9);
   margin: 0;
 
   @media (max-width: 768px) {
-    font-size: 0.85rem; /* Scales smaller too */
+    font-size: 14px;
   }
 `;
 
@@ -86,26 +93,29 @@ export const HeroControls = styled.div`
   justify-content: space-between;
   width: 100%;
 
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     flex-direction: column;
     align-items: flex-start;
-    gap: 24px;
   }
 `;
 
 export const ArrowGroup = styled.div`
   display: flex;
-  gap: 16px;
+  gap: 26px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const ArrowBtn = styled.button`
   background: rgba(255, 255, 255, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.3);
   color: #fff;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  font-size: 1.2rem;
+  font-size: 22px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -128,13 +138,18 @@ export const PrimaryBtn = styled.button`
   border-radius: 8px;
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 16px;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
 
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-top: auto;
   }
 `;
 
@@ -148,9 +163,12 @@ export const StatsRow = styled.div`
   @media (max-width: 900px) {
     grid-template-columns: repeat(2, 1fr);
   }
+  
+  /* THE FIX: Keep it a 2x2 grid on mobile and tighten the padding/gaps */
   @media (max-width: 600px) {
-    grid-template-columns: 1fr;
-    gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 16px; /* 24px vertical gap, 16px horizontal gap */
+    padding: 32px 0;
   }
 `;
 
@@ -163,7 +181,7 @@ export const StatItem = styled.div`
 `;
 
 export const StatIcon = styled.div`
-  font-size: 1.5rem;
+  font-size: 24px;
   color: #1a56db;
   background: #fdfbf9;
   border: 1px solid #e5e7eb;
@@ -184,7 +202,7 @@ export const StatIcon = styled.div`
 
 export const StatText = styled.p`
   font-family: 'Inter', sans-serif;
-  font-size: 0.95rem;
+  font-size: 15px;
   font-weight: 500;
   color: #4b5563;
   margin: 0;

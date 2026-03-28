@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ArrowRightOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
 import {
@@ -79,6 +79,26 @@ const servicesData = [
 
 const ServicesSection = () => {
   const navigate = useNavigate();
+  const [isVisible, setIsVisible] = useState(false);
+  const gridRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect(); 
+        }
+      },
+      { threshold: 0.15 } 
+    );
+
+    if (gridRef.current) {
+      observer.observe(gridRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <SectionWrapper>
@@ -89,13 +109,13 @@ const ServicesSection = () => {
             <SectionSubtitle>Complete decor solutions tailored for your needs.</SectionSubtitle>
           </TitleGroup>
           <OutlineButton onClick={() => navigate('/services')}>
-            Explore More <ArrowRightOutlined style={{ fontSize: '0.8rem' }} />
+            Explore More <ArrowRightOutlined style={{ fontSize: '12px' }} />
           </OutlineButton>
         </HeaderRow>
 
-        <CardsGrid>
-          {servicesData.map((service) => (
-            <Card key={service.id}>
+        <CardsGrid ref={gridRef}>
+          {servicesData.map((service, index) => (
+            <Card key={service.id} $isVisible={isVisible} $delay={`${index * 0.1}s`}>
               <CardImage src={service.image} alt={service.title} />
               <CardContent>
                 <CardTitle>{service.title}</CardTitle>

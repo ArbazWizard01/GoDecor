@@ -1,8 +1,8 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const SectionWrapper = styled.section`
   padding: 80px 8%;
-  background-color: #fdfbf9; 
+  background-color: #fdfbf9;
 `;
 
 export const HeaderRow = styled.div`
@@ -15,37 +15,43 @@ export const HeaderRow = styled.div`
 export const TitleGroup = styled.div``;
 
 export const SectionTitle = styled.h2`
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
+  font-family: "Playfair Display", serif;
+  font-size: 40px;
   color: #1f2937;
   margin: 0 0 8px 0;
 `;
 
 export const SectionSubtitle = styled.p`
-  font-family: 'Inter', sans-serif;
-  font-size: 1.1rem;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
   color: #6b7280;
   margin: 0;
 `;
 
-/* THE UPGRADED PREMIUM CARD */
+export const SwiperWrapper = styled.div`
+  width: 100%;
+  
+  .swiper {
+    padding-top: 16px;
+    padding-bottom: 32px;
+  }
+`;
+
 export const SliderCard = styled.div`
   background: #ffffff;
-  border-radius: 16px; 
+  border-radius: 16px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   border: 1px solid #eaeaea;
-  
-  box-shadow: 0 16px 24px -8px rgba(0, 0, 0, 0.1); 
-  
+  box-shadow: 0 16px 24px -8px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   height: 100%;
 
   &:hover {
     transform: translateY(-8px);
-    box-shadow: 0 24px 32px -10px rgba(0, 0, 0, 0.18); 
+    box-shadow: 0 24px 32px -10px rgba(0, 0, 0, 0.18);
     border-color: #d1d5db;
   }
 `;
@@ -55,23 +61,18 @@ export const CardImage = styled.img`
   height: 240px;
   object-fit: cover;
   transition: transform 0.6s ease;
-
-  /* Re-enabled the smooth zoom effect! */
-  // ${SliderCard}:hover & {
-  //   transform: scale(1.05);
-  // }
 `;
 
 export const CardContent = styled.div`
-  padding: 28px 24px; 
+  padding: 28px 24px;
   display: flex;
   flex-direction: column;
   flex: 1;
 `;
 
 export const CardTitle = styled.h3`
-  font-family: 'Inter', sans-serif;
-  font-size: 1.25rem;
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
   font-weight: 600;
   color: #1f2937;
   margin: 0 0 12px 0;
@@ -83,8 +84,8 @@ export const CardTitle = styled.h3`
 `;
 
 export const CardDescription = styled.p`
-  font-family: 'Inter', sans-serif;
-  font-size: 0.95rem;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
   color: #6b7280;
   line-height: 1.6;
   margin: 0 0 24px 0;
@@ -92,8 +93,8 @@ export const CardDescription = styled.p`
 `;
 
 export const CardPrice = styled.p`
-  font-family: 'Inter', sans-serif;
-  font-size: 0.9rem;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
   font-weight: 600;
   color: #1a56db;
   margin: 0 0 16px 0;
@@ -102,8 +103,8 @@ export const CardPrice = styled.p`
 `;
 
 export const CardLink = styled.a`
-  font-family: 'Inter', sans-serif;
-  font-size: 0.95rem;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
   font-weight: 600;
   color: #1a56db;
   text-decoration: none;
@@ -114,6 +115,6 @@ export const CardLink = styled.a`
   margin-top: auto;
 
   ${SliderCard}:hover & {
-    gap: 12px; 
+    gap: 12px;
   }
 `;
