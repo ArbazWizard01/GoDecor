@@ -6,6 +6,10 @@ export const SectionWrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 768px) {
+    padding: 30px 5%;
+  }
 `;
 
 export const HeaderRow = styled.div`
@@ -19,7 +23,8 @@ export const HeaderRow = styled.div`
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: flex-start;
-    gap: 24px;
+    gap: 16px;
+    margin-bottom: 32px;
   }
 `;
 
@@ -33,6 +38,11 @@ export const SectionTitle = styled.h2`
   color: #1f2937;
   margin: 0 0 16px 0;
   font-weight: 600;
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+    margin: 0 0 12px 0;
+  }
 `;
 
 export const TitleAccent = styled.div`
@@ -41,6 +51,11 @@ export const TitleAccent = styled.div`
   background-color: #1a56db;
   margin: 0 0 16px 0;
   border-radius: 2px;
+
+  @media (max-width: 768px) {
+    width: 100px;
+    margin: 0 0 12px 0;
+  }
 `;
 
 export const SectionSubtitle = styled.p`
@@ -48,11 +63,19 @@ export const SectionSubtitle = styled.p`
   font-size: 16px;
   color: #6b7280;
   margin: 0;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 `;
 
 export const SliderControls = styled.div`
   display: flex;
   gap: 16px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const ControlButton = styled.button`
@@ -112,6 +135,11 @@ export const Card = styled.div`
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
     border-color: #d1d5db;
   }
+
+  @media (max-width: 768px) {
+    width: 280px;
+    min-width: 280px;
+  }
 `;
 
 export const CardImage = styled.img`
@@ -166,8 +194,8 @@ export const ExploreButton = styled.button`
   }
 
   ${Card}:hover & {
-    border-color: #1a56db;
-    color: #1a56db;
+    background: #1a56db;
+    color: #ffffff;
   }
 
   ${Card}:hover & svg {

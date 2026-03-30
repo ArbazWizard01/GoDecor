@@ -1,11 +1,15 @@
 import styled from 'styled-components';
 
 export const FooterWrapper = styled.footer`
-  background-color: #111827; /* Rich dark slate */
+  background-color: #111827;
   padding: 80px 5% 40px 5%;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 768px) {
+    padding: 50px 5% 30px 5%;
+  }
 `;
 
 export const FooterContent = styled.div`
@@ -15,7 +19,6 @@ export const FooterContent = styled.div`
   flex-direction: column;
 `;
 
-/* The 4-Column Link Grid */
 export const TopSection = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -25,9 +28,11 @@ export const TopSection = styled.div`
   @media (max-width: 992px) {
     grid-template-columns: repeat(2, 1fr);
   }
+  
   @media (max-width: 600px) {
-    grid-template-columns: 1fr;
-    gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 16px;
+    margin-bottom: 40px;
   }
 `;
 
@@ -35,30 +40,36 @@ export const LinkColumn = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
+
+  @media (max-width: 600px) {
+    gap: 12px;
+  }
 `;
 
 export const FooterLink = styled.a`
   font-family: 'Inter', sans-serif;
-  font-size: 0.95rem;
-  color: #9ca3af; /* Soft grey text */
+  font-size: 15px;
+  color: #9ca3af;
   text-decoration: none;
   cursor: pointer;
   transition: color 0.3s ease;
 
   &:hover {
-    color: #ffffff; /* Brightens on hover */
+    color: #ffffff;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 14px;
   }
 `;
 
-/* Subtle divider line */
 export const Divider = styled.div`
   width: 100%;
   height: 1px;
-  background-color: #374151; /* Subtle dark border */
+  background-color: #374151;
   margin-bottom: 30px;
 `;
 
-/* Bottom Bar: Logo, Desc, Copyright, Socials */
 export const BottomSection = styled.div`
   display: flex;
   justify-content: space-between;
@@ -69,6 +80,7 @@ export const BottomSection = styled.div`
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: flex-start;
+    gap: 24px;
   }
 `;
 
@@ -82,7 +94,7 @@ export const BrandInfo = styled.div`
 export const FooterLogo = styled.h2`
   font-family: 'Inter', sans-serif;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 24px;
   color: #ffffff;
   margin: 0;
   letter-spacing: -0.5px;
@@ -90,14 +102,19 @@ export const FooterLogo = styled.h2`
 
 export const BrandDescription = styled.p`
   font-family: 'Inter', sans-serif;
-  font-size: 0.85rem;
+  font-size: 14px;
   color: #6b7280;
   margin: 0;
+  line-height: 1.5;
+
+  @media (max-width: 600px) {
+    font-size: 13px;
+  }
 `;
 
 export const Copyright = styled.p`
   font-family: 'Inter', sans-serif;
-  font-size: 0.75rem;
+  font-size: 12px;
   color: #4b5563;
   margin: 4px 0 0 0;
 `;
@@ -109,7 +126,7 @@ export const SocialContainer = styled.div`
 
 export const SocialIcon = styled.a`
   color: #9ca3af;
-  font-size: 1.2rem;
+  font-size: 20px;
   cursor: pointer;
   transition: color 0.3s ease;
 

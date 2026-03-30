@@ -1,7 +1,5 @@
 import React from 'react';
 import { ArrowRightOutlined } from '@ant-design/icons';
-import { Button } from 'antd';
-
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -12,6 +10,7 @@ import {
   TitleGroup,
   SectionTitle,
   SectionSubtitle,
+  StyledAntButton,
   SwiperWrapper,
   SliderCard,
   CardImage,
@@ -61,9 +60,9 @@ const SignatureConcepts = () => {
           <SectionTitle>Signature Spaces</SectionTitle>
           <SectionSubtitle>A curated selection of our most requested modern transformations.</SectionSubtitle>
         </TitleGroup>
-        <Button size="large" style={{ color: '#1a56db', borderColor: '#1a56db', borderRadius: '6px' }}>
+        <StyledAntButton size="large">
           Explore More <ArrowRightOutlined />
-        </Button>
+        </StyledAntButton>
       </HeaderRow>
 
       <SwiperWrapper>

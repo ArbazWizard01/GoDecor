@@ -76,15 +76,16 @@ const ClientExperience = () => {
           <ArrowButton onClick={handlePrev}>
             <LeftOutlined style={{ fontSize: '14px' }} />
           </ArrowButton>
-          <ArrowButton onClick={handleNext}>
-            <RightOutlined style={{ fontSize: '14px' }} />
-          </ArrowButton>
 
           <PaginationIndicator>
             {testimonialsData.map((_, index) => (
               <Dot key={index} $active={index === currentIndex} />
             ))}
           </PaginationIndicator>
+
+          <ArrowButton onClick={handleNext}>
+            <RightOutlined style={{ fontSize: '14px' }} />
+          </ArrowButton>
         </ControlsWrapper>
       </CardContainer>
     </SectionWrapper>

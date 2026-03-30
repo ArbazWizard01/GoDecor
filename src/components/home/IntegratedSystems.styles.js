@@ -2,16 +2,24 @@ import styled from 'styled-components';
 
 export const SectionWrapper = styled.section`
   padding: 80px 5%;
-  background-color: background: #F5F1EB;
+  background-color: #F5F1EB;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 768px) {
+    padding: 60px 5%;
+  }
 `;
 
 export const HeaderContainer = styled.div`
   text-align: center;
   margin-bottom: 40px;
   max-width: 800px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 32px;
+  }
 `;
 
 export const SectionTitle = styled.h2`
@@ -20,6 +28,11 @@ export const SectionTitle = styled.h2`
   color: #1f2937;
   margin: 0 0 16px 0;
   font-weight: 500;
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+    margin: 0 0 12px 0;
+  }
 `;
 
 export const TitleAccent = styled.div`
@@ -28,6 +41,11 @@ export const TitleAccent = styled.div`
   background-color: #1a56db;
   margin: 0 auto 16px auto;
   border-radius: 2px;
+
+  @media (max-width: 768px) {
+    width: 100px;
+    margin: 0 auto 12px auto;
+  }
 `;
 
 export const SectionSubtitle = styled.p`
@@ -35,6 +53,10 @@ export const SectionSubtitle = styled.p`
   font-size: 16px;
   color: #6b7280;
   margin: 0;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 `;
 
 export const CardsGridThreeCol = styled.div`
@@ -50,6 +72,7 @@ export const CardsGridThreeCol = styled.div`
   
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
 `;
 
@@ -81,6 +104,10 @@ export const CardContent = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
+
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
 `;
 
 export const CardTitle = styled.h3`

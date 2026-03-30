@@ -1,28 +1,37 @@
 import styled from 'styled-components';
 
 export const SectionWrapper = styled.section`
-  padding: 60px 5%; 
+  padding: 80px 5%; 
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 768px) {
+    padding: 60px 5%;
+  }
 `;
 
 export const HeaderContainer = styled.div`
   text-align: center;
   margin-bottom: 50px; 
   max-width: 800px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 32px;
+  }
 `;
 
 export const SectionTitle = styled.h2`
   font-family: 'Playfair Display', serif;
-  font-size: 2.8rem;
+  font-size: 40px;
   color: #1f2937;
-  margin: 0 0 16px 0; /* Tweaked to make room for the accent line */
+  margin: 0 0 16px 0;
   font-weight: 600;
 
   @media (max-width: 768px) {
-    font-size: 2.2rem;
+    font-size: 28px;
+    margin: 0 0 12px 0;
   }
 `;
 
@@ -32,13 +41,22 @@ export const TitleAccent = styled.div`
   background-color: #1a56db;
   margin: 0 auto 20px auto;
   border-radius: 2px;
+
+  @media (max-width: 768px) {
+    width: 100px;
+    margin: 0 auto 16px auto;
+  }
 `;
 
 export const SectionSubtitle = styled.p`
   font-family: 'Inter', sans-serif;
-  font-size: 1.05rem;
+  font-size: 16px;
   color: #6b7280;
   margin: 0;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 `;
 
 export const FAQContainer = styled.div`
@@ -46,7 +64,7 @@ export const FAQContainer = styled.div`
   max-width: 750px; 
   display: flex;
   flex-direction: column;
-  gap: 16px; /* THIS creates the distinct separation between cards seen in Figma */
+  gap: 16px;
 `;
 
 export const FAQItem = styled.div`
@@ -54,13 +72,10 @@ export const FAQItem = styled.div`
   padding: 18px 30px;
   transition: all 0.3s ease;
   border-radius: ${props => props.$isOpen ? '24px' : '50px'};
-  
-  /* THE FIX: Removed the harsh border and added the soft Figma drop shadow */
   border: none; 
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04); 
 
   &:hover {
-    /* Slightly lifts the card and darkens the shadow on hover for a premium feel */
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
   }
@@ -74,9 +89,9 @@ export const FAQItem = styled.div`
 export const QuestionHeader = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center; /* This centers them vertically */
+  align-items: center;
   cursor: pointer;
-  gap: 16px; /* Ensures the text never collides with the plus sign */
+  gap: 16px;
   
   &:hover h3 {
     color: #1a56db;
@@ -85,24 +100,32 @@ export const QuestionHeader = styled.div`
 
 export const QuestionText = styled.h3`
   font-family: 'Inter', sans-serif;
-  font-size: 1.1rem; /* BUMPED UP from 0.95rem */
+  font-size: 16px;
   font-weight: 500;
   color: #374151; 
   margin: 0;
-  line-height: 1.4; /* Helps optical alignment with the icon */
+  line-height: 1.4;
   transition: color 0.3s ease;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 `;
 
 export const IconWrapper = styled.div`
   color: #1a56db;
-  font-size: 1.25rem; /* Scaled up to match the new text size */
+  font-size: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: transform 0.3s ease;
-  flex-shrink: 0; /* THE FIX: Stops the icon from squishing/misaligning if the text gets too long */
+  flex-shrink: 0;
   
   transform: ${props => props.$isOpen ? 'rotate(45deg)' : 'rotate(0deg)'};
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 export const AnswerContainer = styled.div`
@@ -117,11 +140,17 @@ export const AnswerTextWrapper = styled.div`
 
 export const AnswerText = styled.p`
   font-family: 'Inter', sans-serif;
-  font-size: 0.95rem; /* Bumped up slightly to match the larger question text */
+  font-size: 15px;
   color: #6b7280;
   line-height: 1.6;
   margin: 0;
   padding-top: ${props => props.$isOpen ? '16px' : '0'};
   padding-left: 18px; 
-  padding-right: 20px; 
+  padding-right: 20px;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    padding-left: 0;
+    padding-right: 0;
+  }
 `;

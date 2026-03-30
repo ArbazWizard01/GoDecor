@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "antd";
 import { useNavigate } from "react-router-dom";
 import {
   SectionWrapper,
@@ -8,12 +7,14 @@ import {
   TitleGroup,
   SectionTitle,
   SectionSubtitle,
+  StyledButton,
   VideoContainer,
   StyledVideo,
 } from "./VideoSection.styles";
 
 const VideoSection = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  
   return (
     <SectionWrapper>
       <InnerContainer>
@@ -26,26 +27,13 @@ const VideoSection = () => {
             </SectionSubtitle>
           </TitleGroup>
 
-          <Button
-            style={{
-              color: "#1a56db",
-              borderColor: "#1a56db",
-              borderRadius: "6px",
-              fontWeight: 500,
-              padding: "8px 24px",
-              height: "auto",
-              marginTop: "8px",
-            }}
-            onClick={() =>navigate('contact')}
-          >
+          <StyledButton onClick={() => navigate('contact')}>
             Schedule Consultation
-          </Button>
+          </StyledButton>
         </HeaderRow>
 
-        {/* Removed the duplicate VideoContainer here! */}
         <VideoContainer>
           <StyledVideo key="interior-video" autoPlay loop muted playsInline>
-            {/* Stable, non-expiring link of a modern interior! */}
             <source src="goRoom2.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </StyledVideo>

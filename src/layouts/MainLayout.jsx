@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Layout, Drawer } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
-import { FiChevronDown } from "react-icons/fi"; // <-- Brought in the crisp React Icon
+import { FiChevronDown } from "react-icons/fi";
 import { useNavigate, useLocation } from "react-router-dom";
 import Footer from "../components/common/Footer";
 import {
@@ -20,23 +20,23 @@ import {
 const { Content } = Layout;
 
 const navItems = [
-  { 
-    key: "services", 
+  {
+    key: "services-dropdown",
     label: (
       <span className="services-label">
-        Services 
+        Services
         <span className="dropdown-circle">
-          <FiChevronDown /> {/* Using the clean Feather icon */}
+          <FiChevronDown />
         </span>
       </span>
     ),
     children: [
-      { key: "services", label: "Modular Kitchens" },
-      { key: "services", label: "Living Spaces" },
-      { key: "services", label: "Bedroom Designs" },
-      { type: 'divider' }, 
+      { key: "services/moduler-kitchens", label: "Modular Kitchens" },
+      { key: "services/living-spaces", label: "Living Spaces" },
+      { key: "services/bedroom-designs", label: "Bedroom Designs" },
+      { type: "divider" },
       { key: "services", label: "View All Services" },
-    ]
+    ],
   },
   { key: "packages", label: "Packages" },
   { key: "projects", label: "Projects" },
@@ -54,7 +54,11 @@ const MainLayout = ({ children }) => {
   const closeDrawer = () => setDrawerVisible(false);
 
   const handleMenuClick = (e) => {
-    navigate(`/${e.key}`);
+    if (e.key.startsWith('services/')) {
+      navigate('/services');
+    } else {
+      navigate(`/${e.key}`);
+    }
     setDrawerVisible(false);
   };
 
@@ -75,7 +79,7 @@ const MainLayout = ({ children }) => {
             <LogoImage src="/godecor-text-logo.png" alt="goDecor" />
           </Logo>
 
-          <StyledMenu 
+          <StyledMenu
             mode="horizontal"
             items={navItems}
             disabledOverflow={true}
@@ -84,11 +88,7 @@ const MainLayout = ({ children }) => {
           />
 
           <RightActions>
-            <ActionButton
-              type="primary"
-              // shape="round"
-              onClick={() => navigate("/projects")}
-            >
+            <ActionButton type="primary" onClick={() => navigate("/projects")}>
               Plan Your Space
             </ActionButton>
 

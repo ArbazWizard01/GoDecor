@@ -4,7 +4,7 @@ import {
   SectionWrapper,
   HeaderContainer,
   SectionTitle,
-  TitleAccent, // <-- Brought this back!
+  TitleAccent,
   SectionSubtitle,
   FAQContainer,
   FAQItem,
@@ -70,7 +70,7 @@ const FAQSection = () => {
     <SectionWrapper>
       <HeaderContainer>
         <SectionTitle>Frequently Asked Questions</SectionTitle>
-        <TitleAccent /> {/* <-- Rendered here! */}
+        <TitleAccent />
         <SectionSubtitle>
           Clear answers to help you plan your space with confidence.
         </SectionSubtitle>

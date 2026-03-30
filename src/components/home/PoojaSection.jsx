@@ -38,7 +38,7 @@ const PoojaSection = () => {
         </BottomGlassCard>
 
         <ExploreButton onClick={() => navigate('/projects')}>
-          Explore Pooja Room Designs <ArrowRightOutlined style={{ fontSize: '0.8rem' }} />
+          Explore Pooja Room Designs <ArrowRightOutlined style={{ fontSize: '14px' }} />
         </ExploreButton>
         
       </ImageWrapper>

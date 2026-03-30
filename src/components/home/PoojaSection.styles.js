@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-/* FORCING FULL SCREEN WIDTH */
 export const FullScreenContainer = styled.section`
   width: 100vw;
   position: relative;
@@ -14,10 +13,8 @@ export const FullScreenContainer = styled.section`
 export const ImageWrapper = styled.div`
   position: relative;
   width: 100%;
-  
-  /* THE BIG FIX: Massive increase in height for negative space */
-  height: 100vh; 
-  min-height: 800px; 
+  height: 100vh;
+  min-height: 800px;
 
   &::before {
     content: '';
@@ -25,6 +22,10 @@ export const ImageWrapper = styled.div`
     top: 0; left: 0; right: 0; bottom: 0;
     background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.7) 100%);
     z-index: 1;
+  }
+
+  @media (max-width: 768px) {
+    min-height: 650px;
   }
 `;
 
@@ -39,22 +40,22 @@ export const MainImage = styled.img`
 
 export const TopTextOverlay = styled.div`
   position: absolute;
-  top: 15%; 
-  left: 8%; 
+  top: 15%;
+  left: 8%;
   text-align: left;
   z-index: 2;
   width: 90%;
   max-width: 600px;
 
   @media (max-width: 768px) {
-    top: 12%;
+    top: 10%;
     left: 5%;
   }
 `;
 
 export const Title = styled.h2`
   font-family: 'Playfair Display', serif;
-  font-size: 3rem; /* Dropped from 3.8rem/3.2rem */
+  font-size: 48px;
   color: #ffffff;
   margin: 0 0 16px 0;
   font-weight: 600;
@@ -62,17 +63,22 @@ export const Title = styled.h2`
   text-shadow: 0 4px 12px rgba(0,0,0,0.4);
 
   @media (max-width: 768px) {
-    font-size: 2.2rem;
+    font-size: 32px;
+    margin: 0 0 8px 0;
   }
 `;
 
 export const Subtitle = styled.p`
   font-family: 'Inter', sans-serif;
-  font-size: 0.95rem; /* Dropped for cleaner look */
+  font-size: 16px;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.95);
   margin: 0;
   text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 `;
 
 export const BottomGlassCard = styled.div`
@@ -81,39 +87,40 @@ export const BottomGlassCard = styled.div`
   left: 8%;
   z-index: 2;
   width: 100%;
-  max-width: 650px; /* Increased from 500px to give text room */
-  background: rgba(0, 0, 0, 0.35); 
+  max-width: 650px;
+  background: rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-  padding: 30px 40px; /* Slightly wider padding inside */
+  padding: 30px 40px;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.2);
 
   @media (max-width: 768px) {
     left: 5%;
     right: 5%;
-    bottom: 5%;
+    bottom: 14%;
     max-width: 90%;
-    padding: 20px;
+    padding: 12px;
   }
 `;
 
 export const CardText = styled.p`
   font-family: 'Inter', sans-serif;
-  font-size: 0.85rem; /* Down from 0.95/1.05rem for an editorial feel */
-  line-height: 1.7; /* Slightly taller line height for readability */
+  font-size: 14px;
+  line-height: 1.7;
   color: #ffffff;
   margin: 0;
   text-shadow: 0 1px 4px rgba(0,0,0,0.3);
 
   @media (max-width: 768px) {
-    font-size: 0.8rem;
+    font-size: 13px;
+    line-height: 1.5;
   }
 `;
 
 export const ExploreButton = styled.button`
   position: absolute;
-  bottom: 12%; /* Must match the BottomGlassCard so they align perfectly */
+  bottom: 8%;
   right: 8%;
   z-index: 2;
   background: #ffffff;
@@ -124,7 +131,7 @@ export const ExploreButton = styled.button`
   border-radius: 8px;
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  font-size: 0.95rem; 
+  font-size: 15px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -137,7 +144,11 @@ export const ExploreButton = styled.button`
     box-shadow: 0 15px 30px rgba(0,0,0,0.2);
   }
 
-  @media (max-width: 1024px) {
-    display: none;
+  @media (max-width: 768px) {
+    bottom: 4%;
+    left: 5%;
+    right: 5%;
+    width: 90%;
+    justify-content: center;
   }
 `;

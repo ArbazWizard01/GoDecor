@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { Layout, Menu, Button } from 'antd';
+import styled from "styled-components";
+import { Layout, Menu, Button } from "antd";
 
 export const StyledLayout = styled(Layout)`
   min-height: 100vh;
@@ -8,30 +8,30 @@ export const StyledLayout = styled(Layout)`
 
 export const NavbarWrapper = styled.div`
   position: fixed;
-  top: 0; 
+  top: 0;
   left: 0;
   right: 0;
   display: flex;
   justify-content: center;
   z-index: 1000;
-  padding: 0; 
-  background-color: #ffffff; 
+  padding: 0;
+  background-color: #ffffff;
   border-bottom: 1px solid #eaeaea;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03); 
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
 `;
 
 export const GlassNav = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: transparent; 
-  border: none; 
-  border-radius: 0; 
-  
-  padding: 0 5%; 
+  background: transparent;
+  border: none;
+  border-radius: 0;
+
+  padding: 0 5%;
   width: 100%;
   max-width: 1440px;
-  height: 70px; 
+  height: 70px;
   box-shadow: none;
 `;
 
@@ -47,7 +47,7 @@ export const LogoImage = styled.img`
   height: 24px;
   width: auto;
   object-fit: contain;
-  display: block; 
+  display: block;
   transition: transform 0.3s ease;
 
   &:hover {
@@ -59,26 +59,25 @@ export const StyledMenu = styled(Menu)`
   flex: 1;
   justify-content: center;
   border-bottom: none !important;
-  background: transparent !important; 
-  font-family: 'Inter', sans-serif;
+  background: transparent !important;
+  font-family: "Inter", sans-serif;
   font-weight: 500;
   line-height: 46px;
 
   &.ant-menu-horizontal > .ant-menu-item::after,
   &.ant-menu-horizontal > .ant-menu-submenu::after {
-    display: none !important; 
+    display: none !important;
   }
-  
+
   .ant-menu-title-content {
     position: relative;
     display: inline-block;
   }
 
-  /* Left-to-Right sweep animation */
   .ant-menu-title-content::after {
-    content: '';
+    content: "";
     position: absolute;
-    bottom: 4px; 
+    bottom: 4px;
     left: 0;
     width: 0;
     height: 2px;
@@ -94,38 +93,37 @@ export const StyledMenu = styled(Menu)`
     width: 100%;
   }
 
-  .ant-menu-item, .ant-menu-submenu {
+  .ant-menu-item,
+  .ant-menu-submenu {
     background: transparent !important;
   }
-  
-  .ant-menu-item-selected, 
+
+  .ant-menu-item-selected,
   .ant-menu-submenu-selected > .ant-menu-submenu-title {
     background: transparent !important;
     color: #1a56db !important;
   }
 
-  /* --- CUSTOM SERVICES DROPDOWN CIRCLE --- */
   .services-label {
     display: flex;
     align-items: center;
-    gap: 8px; 
+    gap: 8px;
   }
 
   .dropdown-circle {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 18px; 
+    width: 18px;
     height: 18px;
     border: 1px solid currentColor;
-    border-radius: 50%; 
+    border-radius: 50%;
     transition: all 0.3s ease;
 
     svg {
-      width: 12px; /* Set exact width/height for React Icons */
+      width: 12px;
       height: 12px;
-      stroke-width: 2.5; /* Makes the chevron lines slightly thicker and crisper */
-      /* Removed the margin-top hack since Feather icons center perfectly */
+      stroke-width: 2.5;
     }
   }
 
@@ -147,32 +145,24 @@ export const RightActions = styled.div`
 `;
 
 export const ActionButton = styled(Button)`
-  /* Locked in base styles to override Ant Design defaults */
-  background-color: #1a56db !important; 
+  background-color: #1a56db !important;
   color: #ffffff !important;
   border: none !important;
   box-shadow: none !important;
-  
-  font-family: 'Inter', sans-serif;
+
+  font-family: "Inter", sans-serif;
   font-weight: 500;
   font-size: 0.95rem;
-  height: 40px; 
-  padding: 0 24px; 
-  border-radius: 4px; 
-  
-  /* Smooth transition for the upward movement */
+  height: 40px;
+  padding: 0 24px;
+  border-radius: 4px;
   transition: all 0.3s ease !important;
 
   &:hover {
-    /* Keeps the exact same clean blue color, no weird Ant Design flashes */
-    background-color: #1a56db !important; 
+    background-color: #1a56db !important;
     color: #ffffff !important;
-    
-    /* The slight upward lift you wanted */
-    transform: translateY(-2px); 
-    
-    /* Added a very soft shadow just so the "lift" makes physical sense */
-    box-shadow: 0 6px 16px rgba(26, 86, 219, 0.2) !important; 
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(26, 86, 219, 0.2) !important;
   }
 
   @media (max-width: 600px) {
@@ -181,7 +171,7 @@ export const ActionButton = styled(Button)`
 `;
 
 export const MobileMenuButton = styled.div`
-  display: none; 
+  display: none;
   font-size: 1.5rem;
   color: #1f2937;
   cursor: pointer;
@@ -195,7 +185,7 @@ export const MobileMenuButton = styled.div`
 export const MobileMenu = styled(Menu)`
   border-right: none !important;
   font-size: 1.1rem;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 
   .ant-menu-item-selected {
     background-color: rgba(26, 86, 219, 0.05) !important;

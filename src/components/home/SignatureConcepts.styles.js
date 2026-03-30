@@ -1,8 +1,13 @@
 import styled from "styled-components";
+import { Button } from 'antd';
 
 export const SectionWrapper = styled.section`
   padding: 80px 8%;
   background-color: #fdfbf9;
+
+  @media (max-width: 768px) {
+    padding: 60px 5%;
+  }
 `;
 
 export const HeaderRow = styled.div`
@@ -10,6 +15,13 @@ export const HeaderRow = styled.div`
   justify-content: space-between;
   align-items: flex-end;
   margin-bottom: 40px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 32px;
+  }
 `;
 
 export const TitleGroup = styled.div``;
@@ -19,6 +31,10 @@ export const SectionTitle = styled.h2`
   font-size: 40px;
   color: #1f2937;
   margin: 0 0 8px 0;
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+  }
 `;
 
 export const SectionSubtitle = styled.p`
@@ -26,6 +42,20 @@ export const SectionSubtitle = styled.p`
   font-size: 16px;
   color: #6b7280;
   margin: 0;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+`;
+
+export const StyledAntButton = styled(Button)`
+  color: #1a56db !important;
+  border-color: #1a56db !important;
+  border-radius: 6px !important;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export const SwiperWrapper = styled.div`
