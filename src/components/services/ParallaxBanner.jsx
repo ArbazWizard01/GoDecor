@@ -14,8 +14,7 @@ const ParallaxBanner = () => {
       <ContentContainer>
         <Title>Premium Materials. Verified Partners.</Title>
         <Subtitle>
-          Every surface finish, hardware element, and lighting fixture is selected through our 
-          quality-verified supplier network for durability and aesthetic consistency.
+          Every surface finish, hardware element, and lighting fixture is selected through our quality-verified supplier network for durability and aesthetic consistency.
         </Subtitle>
       </ContentContainer>
     </BannerWrapper>

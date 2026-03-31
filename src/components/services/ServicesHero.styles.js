@@ -1,109 +1,146 @@
 import styled from 'styled-components';
 
-export const HeroWrapper = styled.section`
-  /* Uses the same background color as the Home page hero */
-  background-color: #f8f6f3;
-  min-height: 100vh;
-  padding: 120px 5% 60px 5%; /* Top padding clears the fixed navbar */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  @media (max-width: 992px) {
-    padding-top: 140px;
-    min-height: auto;
-  }
+export const FullScreenContainer = styled.section`
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: hidden;
 `;
 
-export const HeroContainer = styled.div`
+export const ImageWrapper = styled.div`
+  position: relative;
   width: 100%;
-  max-width: 1200px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
+  height: 100vh;
+  min-height: 700px;
 
-  @media (max-width: 992px) {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.6) 100%);
+    z-index: 1;
+  }
+
+  @media (max-width: 768px) {
+    min-height: 800px;
   }
 `;
 
-export const TextContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  max-width: 500px;
-
-  @media (max-width: 992px) {
-    max-width: 100%;
-    text-align: center;
-    align-items: center;
-  }
+export const MainImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
 `;
 
-export const Subtitle = styled.span`
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  color: #1a56db;
-  margin-bottom: 16px;
-  letter-spacing: 0.5px;
+export const TopTextOverlay = styled.div`
+  position: absolute;
+  top: 18%;
+  left: 8%;
+  text-align: left;
+  z-index: 2;
+  width: 90%;
+  max-width: 800px;
+
+  @media (max-width: 768px) {
+    top: 12%;
+    left: 5%;
+  }
 `;
 
 export const Title = styled.h1`
   font-family: 'Playfair Display', serif;
-  font-size: 4rem;
-  color: #1f2937;
+  font-size: 54px;
+  color: #ffffff;
+  margin: 0 0 16px 0;
+  font-weight: 500;
   line-height: 1.1;
-  margin: 0 0 24px 0;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
 
   @media (max-width: 768px) {
-    font-size: 2.8rem;
+    font-size: 36px;
   }
 `;
 
-export const Description = styled.p`
+export const Subtitle = styled.p`
   font-family: 'Inter', sans-serif;
-  font-size: 1.1rem;
-  color: #4b5563;
+  font-size: 18px;
   line-height: 1.6;
-  margin: 0 0 32px 0;
+  color: #ffffff;
+  margin: 0;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
 
   @media (max-width: 768px) {
-    font-size: 1rem;
+    font-size: 15px;
   }
 `;
 
-export const ExploreLink = styled.a`
+export const BottomGlassCard = styled.div`
+  position: absolute;
+  bottom: 8%;
+  left: 8%;
+  z-index: 2;
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  padding: 24px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  @media (max-width: 768px) {
+    left: 5%;
+    right: 5%;
+    bottom: 15%;
+    max-width: 90%;
+    padding: 20px;
+  }
+`;
+
+export const CardText = styled.p`
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #ffffff;
+  margin: 0;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+
+  @media (max-width: 768px) {
+    font-size: 13px;
+  }
+`;
+
+export const ConsultationButton = styled.button`
+  position: absolute;
+  bottom: 8%;
+  right: 8%;
+  z-index: 2;
+  background: #ffffff;
+  color: #1f2937;
+  border: none;
+  height: 48px;
+  padding: 0 32px;
+  border-radius: 4px;
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  font-size: 1rem;
-  color: #1a56db;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+  font-size: 15px;
   cursor: pointer;
-  transition: gap 0.3s ease;
+  transition: transform 0.2s, box-shadow 0.2s;
 
   &:hover {
-    gap: 12px; /* Smoothly pushes the arrow to the right on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
   }
-`;
 
-export const ImageWrapper = styled.div`
-  width: 100%;
-  height: 600px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-
-  @media (max-width: 992px) {
-    height: 400px;
+  @media (max-width: 768px) {
+    bottom: 4%;
+    left: 5%;
+    right: 5%;
+    width: 90%;
   }
-`;
-
-export const HeroImage = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 `;

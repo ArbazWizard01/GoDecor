@@ -1,41 +1,46 @@
 import React from 'react';
-import { ArrowRightOutlined } from '@ant-design/icons';
+import { useNavigate } from 'react-router-dom';
 import {
-  HeroWrapper,
-  HeroContainer,
-  TextContent,
-  Subtitle,
-  Title,
-  Description,
-  ExploreLink,
+  FullScreenContainer,
   ImageWrapper,
-  HeroImage
+  MainImage,
+  TopTextOverlay,
+  Title,
+  Subtitle,
+  BottomGlassCard,
+  CardText,
+  ConsultationButton
 } from './ServicesHero.styles';
 
 const ServicesHero = () => {
-  return (
-    <HeroWrapper>
-      <HeroContainer>
-        <TextContent>
-          <Subtitle>Our Services</Subtitle>
-          <Title>Where Design Meets Structure.</Title>
-          <Description>
-            GoDecor brings together thoughtful interior design, defined execution systems, 
-            and scalable residential frameworks, built for modern urban living.
-          </Description>
-          <ExploreLink>
-            Explore Packages <ArrowRightOutlined />
-          </ExploreLink>
-        </TextContent>
+  const navigate = useNavigate();
 
-        <ImageWrapper>
-          <HeroImage 
-            src="https://images.unsplash.com/photo-1600210491369-e753d80a41f3?q=80&w=1000&auto=format&fit=crop" 
-            alt="Modern interior design meeting structure" 
-          />
-        </ImageWrapper>
-      </HeroContainer>
-    </HeroWrapper>
+  return (
+    <FullScreenContainer>
+      <ImageWrapper>
+        <MainImage 
+          src="GoDecor_Service_Hero.jpg" 
+          alt="Modern interior solutions" 
+        />
+        
+        <TopTextOverlay>
+          <Title>Interior Solutions, Designed Around You</Title>
+          <Subtitle>
+            From concept to completion, explore thoughtfully crafted interiors for every space.
+          </Subtitle>
+        </TopTextOverlay>
+
+        <BottomGlassCard>
+          <CardText>
+            At GoDecor, we offer a complete range of interior design solutions tailored to modern homes and workspaces. Whether it's a modular kitchen, a comfortable living area, or a fully integrated interior, our approach combines functionality, aesthetics, and precision execution to bring your vision to life.
+          </CardText>
+        </BottomGlassCard>
+
+        <ConsultationButton onClick={() => navigate('/contact')}>
+          Book a Free Consultation
+        </ConsultationButton>
+      </ImageWrapper>
+    </FullScreenContainer>
   );
 };
 

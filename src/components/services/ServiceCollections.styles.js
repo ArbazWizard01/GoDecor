@@ -1,83 +1,118 @@
 import styled from 'styled-components';
 
 export const SectionWrapper = styled.section`
-  padding: 100px 5%;
-  background-color: #fdfbf9; /* Using the premium cream background for contrast against white cards */
+  padding: 80px 5%;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
 
-export const HeaderContainer = styled.div`
-  text-align: center;
-  margin-bottom: 60px;
-  max-width: 800px;
+  @media (max-width: 768px) {
+    padding: 60px 5%;
+  }
 `;
 
 export const SectionTitle = styled.h2`
   font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
+  font-size: 36px;
   color: #1f2937;
-  margin: 0 0 16px 0;
-`;
+  margin: 0 0 48px 0;
+  text-align: center;
 
-export const SectionSubtitle = styled.p`
-  font-family: 'Inter', sans-serif;
-  font-size: 1.05rem;
-  color: #6b7280;
-  margin: 0;
-  line-height: 1.6;
+  @media (max-width: 768px) {
+    font-size: 28px;
+    margin: 0 0 32px 0;
+  }
 `;
 
 export const GridContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 240px);
+  gap: 24px;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1328px;
 
-  @media (max-width: 992px) {
+  @media (max-width: 1024px) {
     grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-auto-rows: 240px;
+    gap: 20px;
   }
 
-  @media (max-width: 600px) {
-    grid-template-columns: 1fr;
-    gap: 32px;
+  @media (max-width: 768px) {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 0 5% 20px 5%;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 `;
 
-/* THE NEW PREMIUM CARD STRUCTURE */
 export const Card = styled.div`
-  display: flex;
-  flex-direction: column;
-  background-color: #ffffff;
-  border-radius: 16px;
-  border: 1px solid #eaeaea; 
-  
-  /* NEW BOTTOM SHADOW: 
-     The '16px' pushes it straight down. 
-     The '-8px' spread prevents it from leaking out the top/sides! */
-  box-shadow: 0 16px 24px -8px rgba(0, 0, 0, 0.1); 
-  
-  overflow: hidden; 
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Smoother, premium animation curve */
-  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
-    transform: translateY(-8px); 
-    
-    /* Hover state makes the bottom shadow deeper and slightly darker */
-    box-shadow: 0 24px 32px -10px rgba(0, 0, 0, 0.18); 
-    border-color: #d1d5db;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
   }
-`;
 
-export const ImageWrapper = styled.div`
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-  /* Removed border radius and margin because the Card handles it now */
+  &:nth-child(1) {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+  }
+  &:nth-child(2) {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+  &:nth-child(3) {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+  }
+  &:nth-child(4) {
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
+  }
+  &:nth-child(5) {
+    grid-column: 4 / 5;
+    grid-row: 1 / 2;
+  }
+  &:nth-child(6) {
+    grid-column: 4 / 5;
+    grid-row: 2 / 3;
+  }
+
+  @media (max-width: 1024px) {
+    &:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(5), &:nth-child(6) {
+      grid-column: span 1;
+      grid-row: span 1;
+    }
+    &:nth-child(4) {
+      grid-column: span 2;
+      grid-row: span 1;
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 240px;
+    min-width: 240px;
+    height: 300px;
+    scroll-snap-align: start;
+    
+    &:nth-child(n) {
+      grid-column: auto;
+      grid-row: auto;
+    }
+  }
 `;
 
 export const CardImage = styled.img`
@@ -91,47 +126,28 @@ export const CardImage = styled.img`
   }
 `;
 
-/* NEW COMPONENT: Adds padding inside the card below the image */
-export const CardContent = styled.div`
-  padding: 28px 24px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1; /* Ensures buttons align at the bottom if text heights differ */
+export const CardOverlay = styled.div`
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0) 100%);
+  pointer-events: none;
 `;
 
 export const CardTitle = styled.h4`
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
   font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 1.2rem;
-  color: #1f2937;
-  margin: 0 0 12px 0;
-  transition: color 0.3s ease;
+  font-weight: 500;
+  font-size: 16px;
+  color: #ffffff;
+  margin: 0;
 
-  ${Card}:hover & {
-    color: #1a56db;
-  }
-`;
-
-export const CardDesc = styled.p`
-  font-family: 'Inter', sans-serif;
-  font-size: 0.95rem;
-  color: #6b7280;
-  line-height: 1.6;
-  margin: 0 0 24px 0;
-`;
-
-export const LearnMoreLink = styled.span`
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 0.9rem;
-  color: #1a56db;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: auto;
-  transition: gap 0.3s ease;
-
-  ${Card}:hover & {
-    gap: 12px;
+  @media (max-width: 768px) {
+    font-size: 15px;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
   }
 `;
