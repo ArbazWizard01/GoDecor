@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { ArrowRightOutlined, ArrowLeftOutlined } from "@ant-design/icons";
 import {
   SectionWrapper,
+  InnerContainer,
   HeaderRow,
   HeaderText,
   SectionTitle,
@@ -60,38 +61,40 @@ const ModernKitchens = () => {
 
   return (
     <SectionWrapper>
-      <HeaderRow>
-        <HeaderText>
-          <SectionTitle>Modern Kitchens, Smarter Living</SectionTitle>
-          <TitleAccent />
-          <SectionSubtitle>
-            Functional designs built for today's homes.
-          </SectionSubtitle>
-        </HeaderText>
-        <SliderControls>
-          <ControlButton onClick={() => scroll("left")}>
-            <ArrowLeftOutlined style={{ fontSize: "16px" }} />
-          </ControlButton>
-          <ControlButton onClick={() => scroll("right")}>
-            <ArrowRightOutlined style={{ fontSize: "16px" }} />
-          </ControlButton>
-        </SliderControls>
-      </HeaderRow>
+      <InnerContainer>
+        <HeaderRow>
+          <HeaderText>
+            <SectionTitle>Modern Kitchens, Smarter Living</SectionTitle>
+            <TitleAccent />
+            <SectionSubtitle>
+              Functional designs built for today's homes.
+            </SectionSubtitle>
+          </HeaderText>
+          <SliderControls>
+            <ControlButton onClick={() => scroll("left")}>
+              <ArrowLeftOutlined style={{ fontSize: "16px" }} />
+            </ControlButton>
+            <ControlButton onClick={() => scroll("right")}>
+              <ArrowRightOutlined style={{ fontSize: "16px" }} />
+            </ControlButton>
+          </SliderControls>
+        </HeaderRow>
 
-      <CardsSlider ref={sliderRef}>
-        {kitchenData.map((item) => (
-          <Card key={item.id}>
-            <CardImage src={item.image} alt={item.title} />
-            <CardContent>
-              <CardTitle>{item.title}</CardTitle>
-              <CardPrice>Starting from {item.price}</CardPrice>
-              <ExploreButton>
-                Explore Concept <ArrowRightOutlined style={{ fontSize: "12px" }} />
-              </ExploreButton>
-            </CardContent>
-          </Card>
-        ))}
-      </CardsSlider>
+        <CardsSlider ref={sliderRef}>
+          {kitchenData.map((item) => (
+            <Card key={item.id}>
+              <CardImage src={item.image} alt={item.title} />
+              <CardContent>
+                <CardTitle>{item.title}</CardTitle>
+                <CardPrice>Starting from {item.price}</CardPrice>
+                <ExploreButton>
+                  Explore Concept <ArrowRightOutlined style={{ fontSize: "12px" }} />
+                </ExploreButton>
+              </CardContent>
+            </Card>
+          ))}
+        </CardsSlider>
+      </InnerContainer>
     </SectionWrapper>
   );
 };

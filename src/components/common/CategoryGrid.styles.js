@@ -4,12 +4,19 @@ export const SectionWrapper = styled.section`
   padding: 80px 5%;
   background-color: #ffffff;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  width: 100%;
 
   @media (max-width: 768px) {
-    padding: 30px 5%;
+    padding: 60px 5%;
   }
+`;
+
+export const InnerContainer = styled.div`
+  width: 100%;
+  max-width: 1328px;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const HeaderRow = styled.div`
@@ -17,8 +24,7 @@ export const HeaderRow = styled.div`
   justify-content: space-between;
   align-items: flex-end;
   width: 100%;
-  max-width: 1328px;
-  margin: 0 auto 40px auto;
+  margin-bottom: 40px;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -102,11 +108,9 @@ export const CardsSlider = styled.div`
   display: flex;
   gap: 24px;
   width: 100%;
-  max-width: 1328px;
-  margin: 0 auto;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  padding: 16px 8px 40px 8px;
+  padding: 16px 0 40px 0;
   -ms-overflow-style: none;
   scrollbar-width: none;
   scroll-behavior: smooth;

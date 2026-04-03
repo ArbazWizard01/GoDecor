@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { ArrowRightOutlined, ArrowLeftOutlined } from "@ant-design/icons";
 import {
   SectionWrapper,
+  InnerContainer,
   HeaderRow,
   HeaderText,
   SectionTitle,
@@ -60,38 +61,40 @@ const LivingSpaces = () => {
 
   return (
     <SectionWrapper>
-      <HeaderRow>
-        <HeaderText>
-          <SectionTitle>Living Spaces, Reimagined</SectionTitle>
-          <TitleAccent />
-          <SectionSubtitle>
-            Structured layouts and modern finishes built for comfort and clarity.
-          </SectionSubtitle>
-        </HeaderText>
-        <SliderControls>
-          <ControlButton onClick={() => scroll("left")}>
-            <ArrowLeftOutlined style={{ fontSize: "16px" }} />
-          </ControlButton>
-          <ControlButton onClick={() => scroll("right")}>
-            <ArrowRightOutlined style={{ fontSize: "16px" }} />
-          </ControlButton>
-        </SliderControls>
-      </HeaderRow>
+      <InnerContainer>
+        <HeaderRow>
+          <HeaderText>
+            <SectionTitle>Living Spaces, Reimagined</SectionTitle>
+            <TitleAccent />
+            <SectionSubtitle>
+              Structured layouts and modern finishes built for comfort and clarity.
+            </SectionSubtitle>
+          </HeaderText>
+          <SliderControls>
+            <ControlButton onClick={() => scroll("left")}>
+              <ArrowLeftOutlined style={{ fontSize: "16px" }} />
+            </ControlButton>
+            <ControlButton onClick={() => scroll("right")}>
+              <ArrowRightOutlined style={{ fontSize: "16px" }} />
+            </ControlButton>
+          </SliderControls>
+        </HeaderRow>
 
-      <CardsSlider ref={sliderRef}>
-        {livingData.map((item) => (
-          <Card key={item.id}>
-            <CardImage src={item.image} alt={item.title} />
-            <CardContent>
-              <CardTitle>{item.title}</CardTitle>
-              <CardPrice>Starting from {item.price}</CardPrice>
-              <ExploreButton>
-                Explore Concept <ArrowRightOutlined style={{ fontSize: "12px" }} />
-              </ExploreButton>
-            </CardContent>
-          </Card>
-        ))}
-      </CardsSlider>
+        <CardsSlider ref={sliderRef}>
+          {livingData.map((item) => (
+            <Card key={item.id}>
+              <CardImage src={item.image} alt={item.title} />
+              <CardContent>
+                <CardTitle>{item.title}</CardTitle>
+                <CardPrice>Starting from {item.price}</CardPrice>
+                <ExploreButton>
+                  Explore Concept <ArrowRightOutlined style={{ fontSize: "12px" }} />
+                </ExploreButton>
+              </CardContent>
+            </Card>
+          ))}
+        </CardsSlider>
+      </InnerContainer>
     </SectionWrapper>
   );
 };

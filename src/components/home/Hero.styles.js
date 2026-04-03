@@ -1,17 +1,23 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const HeroSectionWrapper = styled.div`
   width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 80px 5% 0 5%; 
+  padding: 80px 5% 0 5%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   background-color: #ffffff;
 
   @media (max-width: 768px) {
-    padding: 90px 5% 0 5%; 
+    padding: 80px 5% 0 5%;
   }
+`;
+
+export const HeroInnerContainer = styled.div`
+  width: 100%;
+  max-width: 1328px;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const ImageCard = styled.div`
@@ -19,7 +25,8 @@ export const ImageCard = styled.div`
   height: 95vh;
   min-height: 550px;
   border-radius: 12px;
-  background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.65)), url(${props => props.$bgImage});
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.65)),
+    url(${(props) => props.$bgImage});
   background-size: cover;
   background-position: center;
   position: relative;
@@ -43,12 +50,12 @@ export const HeroContent = styled.div`
   @media (max-width: 768px) {
     display: flex;
     flex-direction: column;
-    flex: 1; 
+    flex: 1;
   }
 `;
 
 export const HeroTitle = styled.h1`
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 72px;
   line-height: 1.1;
   color: #ffffff;
@@ -58,26 +65,26 @@ export const HeroTitle = styled.h1`
   @media (max-width: 768px) {
     font-size: 40px;
     margin-top: 10px;
-    margin-bottom: auto; 
+    margin-bottom: auto;
   }
 `;
 
 export const SubtitleBox = styled.div`
   background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(1px); 
+  backdrop-filter: blur(1px);
   padding: 20px;
   border-radius: 4px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 
   @media (max-width: 768px) {
     padding: 16px;
-    margin-bottom: 24px; 
+    margin-bottom: 24px;
   }
 `;
 
 export const HeroSubtitle = styled.p`
-  font-family: 'Inter', sans-serif;
-  font-size: 15px; 
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.9);
   margin: 0;
@@ -136,7 +143,7 @@ export const PrimaryBtn = styled.button`
   height: 50px;
   padding: 0 32px;
   border-radius: 8px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 600;
   font-size: 16px;
   cursor: pointer;
@@ -144,7 +151,7 @@ export const PrimaryBtn = styled.button`
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
   }
 
   @media (max-width: 768px) {
@@ -163,11 +170,10 @@ export const StatsRow = styled.div`
   @media (max-width: 900px) {
     grid-template-columns: repeat(2, 1fr);
   }
-  
-  /* THE FIX: Keep it a 2x2 grid on mobile and tighten the padding/gaps */
+
   @media (max-width: 600px) {
     grid-template-columns: repeat(2, 1fr);
-    gap: 24px 16px; /* 24px vertical gap, 16px horizontal gap */
+    gap: 24px 16px;
     padding: 32px 0;
   }
 `;
@@ -201,7 +207,7 @@ export const StatIcon = styled.div`
 `;
 
 export const StatText = styled.p`
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 15px;
   font-weight: 500;
   color: #4b5563;

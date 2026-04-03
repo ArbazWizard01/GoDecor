@@ -6,6 +6,7 @@ import 'swiper/css';
 
 import {
   SectionWrapper,
+  InnerContainer,
   HeaderRow,
   TitleGroup,
   SectionTitle,
@@ -55,52 +56,54 @@ const conceptsData = [
 const SignatureConcepts = () => {
   return (
     <SectionWrapper>
-      <HeaderRow>
-        <TitleGroup>
-          <SectionTitle>Signature Spaces</SectionTitle>
-          <SectionSubtitle>A curated selection of our most requested modern transformations.</SectionSubtitle>
-        </TitleGroup>
-        <StyledAntButton size="large">
-          Explore More <ArrowRightOutlined />
-        </StyledAntButton>
-      </HeaderRow>
+      <InnerContainer>
+        <HeaderRow>
+          <TitleGroup>
+            <SectionTitle>Signature Spaces</SectionTitle>
+            <SectionSubtitle>A curated selection of our most requested modern transformations.</SectionSubtitle>
+          </TitleGroup>
+          <StyledAntButton size="large">
+            Explore More <ArrowRightOutlined />
+          </StyledAntButton>
+        </HeaderRow>
 
-      <SwiperWrapper>
-        <Swiper
-          modules={[Autoplay]} 
-          spaceBetween={24}
-          slidesPerView={1}
-          loop={true} 
-          autoplay={{
-            delay: 3000, 
-            disableOnInteraction: false, 
-          }}
-          grabCursor={true}
-          breakpoints={{
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-          }}
-        >
-          {conceptsData.map((concept) => (
-            <SwiperSlide key={concept.id}>
-              <SliderCard>
-                <CardImage src={concept.image} alt={concept.title} />
-                <CardContent>
-                  <CardTitle>{concept.title}</CardTitle>
-                  <CardDescription>{concept.description}</CardDescription>
-                  
-                  <div style={{ marginTop: 'auto' }}>
-                    <CardPrice>Starting from {concept.price}</CardPrice>
-                    <CardLink>
-                      Explore Concept <ArrowRightOutlined style={{ fontSize: '12px' }}/>
-                    </CardLink>
-                  </div>
-                </CardContent>
-              </SliderCard>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </SwiperWrapper>
+        <SwiperWrapper>
+          <Swiper
+            modules={[Autoplay]} 
+            spaceBetween={24}
+            slidesPerView={1}
+            loop={true} 
+            autoplay={{
+              delay: 3000, 
+              disableOnInteraction: false, 
+            }}
+            grabCursor={true}
+            breakpoints={{
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
+          >
+            {conceptsData.map((concept) => (
+              <SwiperSlide key={concept.id}>
+                <SliderCard>
+                  <CardImage src={concept.image} alt={concept.title} />
+                  <CardContent>
+                    <CardTitle>{concept.title}</CardTitle>
+                    <CardDescription>{concept.description}</CardDescription>
+                    
+                    <div style={{ marginTop: 'auto' }}>
+                      <CardPrice>Starting from {concept.price}</CardPrice>
+                      <CardLink>
+                        Explore Concept <ArrowRightOutlined style={{ fontSize: '12px' }}/>
+                      </CardLink>
+                    </div>
+                  </CardContent>
+                </SliderCard>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </SwiperWrapper>
+      </InnerContainer>
     </SectionWrapper>
   );
 };

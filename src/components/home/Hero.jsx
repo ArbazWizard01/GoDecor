@@ -10,6 +10,7 @@ import {
 } from "@ant-design/icons";
 import {
   HeroSectionWrapper,
+  HeroInnerContainer,
   ImageCard,
   HeroContent,
   HeroTitle,
@@ -27,8 +28,7 @@ import {
 
 const heroSlides = [
   {
-    image:
-      "Hero_Image.png",
+    image: "Hero_Image.png",
     title: (
       <>
         Belong
@@ -41,7 +41,7 @@ const heroSlides = [
   },
   {
     image:
-      "https://images.pexels.com/photos/2062426/pexels-photo-2062426.jpeg?auto=compress&cs=tinysrgb&w=1920", // Kitchen image
+      "https://images.pexels.com/photos/2062426/pexels-photo-2062426.jpeg?auto=compress&cs=tinysrgb&w=1920",
     title: (
       <>
         Crafted
@@ -70,6 +70,7 @@ const heroSlides = [
 const Hero = () => {
   const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(0);
+
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % heroSlides.length);
   };
@@ -82,56 +83,58 @@ const Hero = () => {
 
   return (
     <HeroSectionWrapper>
-      <ImageCard $bgImage={heroSlides[currentIndex].image}>
-        <HeroContent>
-          <HeroTitle>{heroSlides[currentIndex].title}</HeroTitle>
+      <HeroInnerContainer>
+        <ImageCard $bgImage={heroSlides[currentIndex].image}>
+          <HeroContent>
+            <HeroTitle>{heroSlides[currentIndex].title}</HeroTitle>
 
-          <SubtitleBox>
-            <HeroSubtitle>{heroSlides[currentIndex].subtitle}</HeroSubtitle>
-          </SubtitleBox>
-        </HeroContent>
+            <SubtitleBox>
+              <HeroSubtitle>{heroSlides[currentIndex].subtitle}</HeroSubtitle>
+            </SubtitleBox>
+          </HeroContent>
 
-        <HeroControls>
-          <ArrowGroup>
-            <ArrowBtn onClick={prevSlide}>
-              <ArrowLeftOutlined />
-            </ArrowBtn>
-            <ArrowBtn onClick={nextSlide}>
-              <ArrowRightOutlined />
-            </ArrowBtn>
-          </ArrowGroup>
-          <PrimaryBtn onClick={() => navigate("/projects")}>
-            Start Your Design Journey
-          </PrimaryBtn>
-        </HeroControls>
-      </ImageCard>
+          <HeroControls>
+            <ArrowGroup>
+              <ArrowBtn onClick={prevSlide}>
+                <ArrowLeftOutlined />
+              </ArrowBtn>
+              <ArrowBtn onClick={nextSlide}>
+                <ArrowRightOutlined />
+              </ArrowBtn>
+            </ArrowGroup>
+            <PrimaryBtn onClick={() => navigate("/projects")}>
+              Start Your Design Journey
+            </PrimaryBtn>
+          </HeroControls>
+        </ImageCard>
 
-      <StatsRow>
-        <StatItem>
-          <StatIcon>
-            <HomeOutlined />
-          </StatIcon>
-          <StatText>50+ Homes Transformed</StatText>
-        </StatItem>
-        <StatItem>
-          <StatIcon>
-            <StarOutlined />
-          </StatIcon>
-          <StatText>4.8★ Client Satisfaction</StatText>
-        </StatItem>
-        <StatItem>
-          <StatIcon>
-            <SafetyCertificateOutlined />
-          </StatIcon>
-          <StatText>Verified Decor Experts</StatText>
-        </StatItem>
-        <StatItem>
-          <StatIcon>
-            <ClockCircleOutlined />
-          </StatIcon>
-          <StatText>On-Time Project Delivery</StatText>
-        </StatItem>
-      </StatsRow>
+        <StatsRow>
+          <StatItem>
+            <StatIcon>
+              <HomeOutlined />
+            </StatIcon>
+            <StatText>50+ Homes Transformed</StatText>
+          </StatItem>
+          <StatItem>
+            <StatIcon>
+              <StarOutlined />
+            </StatIcon>
+            <StatText>4.8★ Client Satisfaction</StatText>
+          </StatItem>
+          <StatItem>
+            <StatIcon>
+              <SafetyCertificateOutlined />
+            </StatIcon>
+            <StatText>Verified Decor Experts</StatText>
+          </StatItem>
+          <StatItem>
+            <StatIcon>
+              <ClockCircleOutlined />
+            </StatIcon>
+            <StatText>On-Time Project Delivery</StatText>
+          </StatItem>
+        </StatsRow>
+      </HeroInnerContainer>
     </HeroSectionWrapper>
   );
 };

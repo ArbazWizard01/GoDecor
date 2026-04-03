@@ -1,21 +1,22 @@
 import styled from 'styled-components';
 
 export const SectionWrapper = styled.section`
-  padding: 80px 0;
+  padding: 80px 5%;
   background-color: #ffffff;
-  width: 100%;
   display: flex;
   justify-content: center;
+  width: 100%;
 
   @media (max-width: 768px) {
-    padding: 60px 0;
+    padding: 60px 5%;
   }
 `;
 
 export const Container = styled.div`
   width: 100%;
   max-width: 1328px;
-  padding: 0 5%;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const HeaderRow = styled.div`
@@ -143,4 +144,3 @@ export const CityTag = styled.div`
     min-width: 70px;
   }
 `;
-

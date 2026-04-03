@@ -2,12 +2,22 @@ import styled from "styled-components";
 import { Button } from 'antd';
 
 export const SectionWrapper = styled.section`
-  padding: 80px 8%;
+  padding: 80px 5%;
   background-color: #fdfbf9;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 
   @media (max-width: 768px) {
     padding: 60px 5%;
   }
+`;
+
+export const InnerContainer = styled.div`
+  width: 100%;
+  max-width: 1328px;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const HeaderRow = styled.div`

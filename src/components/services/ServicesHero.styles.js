@@ -7,22 +7,9 @@ export const FullScreenContainer = styled.section`
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  overflow: hidden;
-`;
-
-export const ImageWrapper = styled.div`
-  position: relative;
-  width: 100%;
   height: 100vh;
   min-height: 700px;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.6) 100%);
-    z-index: 1;
-  }
+  overflow: hidden;
 
   @media (max-width: 768px) {
     min-height: 800px;
@@ -36,20 +23,42 @@ export const MainImage = styled.img`
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 1;
+`;
+
+export const ContentOverlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.6) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 5%;
+  pointer-events: none;
+`;
+
+export const GridBoundingBox = styled.div`
+  width: 100%;
+  max-width: 1328px;
+  position: relative;
+  height: 100%;
+  pointer-events: auto;
 `;
 
 export const TopTextOverlay = styled.div`
   position: absolute;
   top: 18%;
-  left: 8%;
+  left: 0;
   text-align: left;
-  z-index: 2;
-  width: 90%;
+  width: 100%;
   max-width: 800px;
 
   @media (max-width: 768px) {
     top: 12%;
-    left: 5%;
   }
 `;
 
@@ -83,21 +92,18 @@ export const Subtitle = styled.p`
 export const BottomGlassCard = styled.div`
   position: absolute;
   bottom: 8%;
-  left: 8%;
-  z-index: 2;
+  left: 0;
   max-width: 500px;
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(1px);
-  -webkit-backdrop-filter: blur(1px);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   padding: 24px;
   border-radius: 4px;
   border: 1px solid rgba(255, 255, 255, 0.2);
 
   @media (max-width: 768px) {
-    left: 5%;
-    right: 5%;
     bottom: 15%;
-    max-width: 90%;
+    max-width: 100%;
     padding: 20px;
   }
 `;
@@ -118,8 +124,7 @@ export const CardText = styled.p`
 export const ConsultationButton = styled.button`
   position: absolute;
   bottom: 8%;
-  right: 8%;
-  z-index: 2;
+  right: 0;
   background: #ffffff;
   color: #1f2937;
   border: none;
@@ -139,8 +144,8 @@ export const ConsultationButton = styled.button`
 
   @media (max-width: 768px) {
     bottom: 4%;
-    left: 5%;
-    right: 5%;
-    width: 90%;
+    left: 0;
+    right: 0;
+    width: 100%;
   }
 `;
