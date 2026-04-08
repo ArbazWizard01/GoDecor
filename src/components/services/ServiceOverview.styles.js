@@ -1,7 +1,13 @@
 import styled from "styled-components";
 
 export const SectionWrapper = styled.section`
-  width: 100%;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: hidden;
 `;
 
 export const BannerContainer = styled.div`
@@ -12,7 +18,6 @@ export const BannerContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
 
   @media (max-width: 768px) {
     padding: 50px 5%;
@@ -87,7 +92,7 @@ export const SubText = styled.p`
   color: #6b7280;
   line-height: 1.7;
   margin: 0;
-  max-width: 750px;
+  max-width: 950px;
 
   @media (max-width: 768px) {
     font-size: 14px;
