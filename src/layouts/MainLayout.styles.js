@@ -192,4 +192,8 @@ export const MobileMenu = styled(Menu)`
     color: #1a56db !important;
     font-weight: 600;
   }
+
+  .dropdown-circle {
+    display: none !important;
+  }
 `;
