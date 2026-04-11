@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const HeroSectionWrapper = styled.div`
   width: 100%;
-  padding: 80px 5% 0 5%;
+  /* Using 8% fluid padding so the edges scale dynamically with the screen */
+  padding: 80px 8% 0 8%; 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,7 +16,8 @@ export const HeroSectionWrapper = styled.div`
 
 export const HeroInnerContainer = styled.div`
   width: 100%;
-  max-width: 1328px;
+  /* The layout is now fully fluid until it hits 1600px, protecting ultrawide users */
+  max-width: 1600px; 
   display: flex;
   flex-direction: column;
 `;

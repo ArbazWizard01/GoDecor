@@ -1,20 +1,21 @@
 import styled from 'styled-components';
 
 export const SectionWrapper = styled.section`
-  padding: 80px 5%;
+  padding: 80px 8%;
   background-color: #ffffff;
   display: flex;
   justify-content: center;
+  width: 100%;
 
   @media (max-width: 768px) {
-    padding: 40px 5%;
+    padding: 60px 5%;
   }
 `;
 
 export const BannerContainer = styled.div`
   position: relative;
   width: 100%;
-  max-width: 1328px;
+  max-width: 1600px;
   border-radius: 12px;
   height: 260px;
   display: flex;

@@ -1,15 +1,13 @@
 import styled from 'styled-components';
 
 export const FullScreenContainer = styled.section`
-  width: 100vw;
   position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
+  width: 100%;
   height: 100vh;
   min-height: 800px;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
 
   @media (max-width: 768px) {
     min-height: 650px;
@@ -30,20 +28,25 @@ export const ContentOverlay = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
   z-index: 2;
   background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.7) 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 5%;
+  padding: 0 8%;
   pointer-events: none;
+
+  @media (max-width: 768px) {
+    padding: 0 5%;
+  }
 `;
 
 export const GridBoundingBox = styled.div`
   width: 100%;
-  max-width: 1328px;
+  max-width: 1600px;
   position: relative;
   height: 100%;
   pointer-events: auto;

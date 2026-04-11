@@ -1,47 +1,45 @@
 import styled from 'styled-components';
 
 export const FullScreenContainer = styled.section`
-  width: 100vw;
   position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
+  width: 100%;
   height: 100vh;
   min-height: 700px;
+  display: flex;
+  justify-content: center;
   overflow: hidden;
 `;
 
 export const MainImage = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   z-index: 1;
 `;
 
 export const ContentOverlay = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  position: relative;
   z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 5%;
-  pointer-events: none; 
+  width: 100%;
+  height: 100%;
+  max-width: 1600px;
+  padding: 0 8%;
+  box-sizing: border-box;
+  pointer-events: none;
+
+  @media (max-width: 768px) {
+    padding: 0 5%;
+  }
 `;
 
 export const GridBoundingBox = styled.div`
-  width: 100%;
-  max-width: 1328px;
   position: relative;
+  width: 100%;
   height: 100%;
-  pointer-events: auto; 
+  pointer-events: auto;
 `;
 
 export const TopTextOverlay = styled.div`
@@ -91,7 +89,7 @@ export const BottomGlassCard = styled.div`
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  padding: 24px 32px;
+  padding: 24px 18px;
   border-radius: 4px;
   border: 1px solid rgba(255, 255, 255, 0.3);
 

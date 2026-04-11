@@ -1,15 +1,22 @@
 import styled from 'styled-components';
 
 export const BannerWrapper = styled.section`
-  padding: 60px 0;
+  padding: 80px 8%;
   background-color: #ffffff;
+  display: flex;
+  justify-content: center;
   width: 100%;
+
+  @media (max-width: 768px) {
+    padding: 60px 5%;
+  }
 `;
 
 export const Container = styled.div`
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 5%;
+  width: 100%;
+  max-width: 1600px;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const BannerCard = styled.div`

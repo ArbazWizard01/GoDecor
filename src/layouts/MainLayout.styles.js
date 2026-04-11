@@ -14,10 +14,14 @@ export const NavbarWrapper = styled.div`
   display: flex;
   justify-content: center;
   z-index: 1000;
-  padding: 0;
+  padding: 0 8%;
   background-color: #ffffff;
   border-bottom: 1px solid #eaeaea;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+
+  @media (max-width: 768px) {
+    padding: 0 5%;
+  }
 `;
 
 export const GlassNav = styled.div`
@@ -27,10 +31,9 @@ export const GlassNav = styled.div`
   background: transparent;
   border: none;
   border-radius: 0;
-
-  padding: 0 5%;
+  padding: 0;
   width: 100%;
-  max-width: 1440px;
+  max-width: 1600px;
   height: 70px;
   box-shadow: none;
 `;
@@ -196,4 +199,4 @@ export const MobileMenu = styled(Menu)`
   .dropdown-circle {
     display: none !important;
   }
-`;
+`;  

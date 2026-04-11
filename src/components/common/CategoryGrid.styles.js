@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const SectionWrapper = styled.section`
-  padding: 80px 5%;
+  padding: 80px 8%;
   background-color: #ffffff;
   display: flex;
   justify-content: center;
@@ -14,7 +14,7 @@ export const SectionWrapper = styled.section`
 
 export const InnerContainer = styled.div`
   width: 100%;
-  max-width: 1328px;
+  max-width: 1600px;
   display: flex;
   flex-direction: column;
 `;
