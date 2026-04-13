@@ -1,13 +1,26 @@
 import styled from 'styled-components';
 
-export const BannerWrapper = styled.section`
+export const SectionContainer = styled.section`
+  padding: 80px 8%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    padding: 60px 5%;
+  }
+`;
+
+export const BannerBox = styled.div`
   position: relative;
   width: 100%;
-  min-height: 400px;
+  max-width: 1600px;
+  min-height: 360px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 80px 5%;
+  padding: 60px 80px;
   overflow: hidden;
   background-image: url('parallax-bg.jpg');
   background-attachment: fixed;
@@ -18,7 +31,7 @@ export const BannerWrapper = styled.section`
   @media (max-width: 768px) {
     min-height: 300px;
     background-attachment: scroll;
-    padding: 60px 5%;
+    padding: 40px 30px;
   }
 `;
 
@@ -36,7 +49,6 @@ export const ContentContainer = styled.div`
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 1328px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;

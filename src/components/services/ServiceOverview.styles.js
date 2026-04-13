@@ -1,20 +1,17 @@
 import styled from "styled-components";
 
 export const SectionWrapper = styled.section`
-  width: 100vw;
+  width: 100%;
   position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  overflow: hidden;
+  display: flex;
+  justify-content: center;
 `;
 
 export const BannerContainer = styled.div`
   position: relative;
   width: 100%;
   background-color: #fdfbf7;
-  padding: 80px 5%;
+  padding: 80px 8%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,13 +32,14 @@ export const PatternOverlay = styled.div`
   background-position: center;
   opacity: 0.1;
   z-index: 1;
+  pointer-events: none;
 `;
 
 export const BannerContent = styled.div`
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 1328px; 
+  max-width: 1600px; 
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);

@@ -5,8 +5,6 @@ export const FullScreenContainer = styled.section`
   width: 100%;
   height: 100vh;
   min-height: 700px;
-  display: flex;
-  justify-content: center;
   overflow: hidden;
 `;
 
@@ -21,13 +19,16 @@ export const MainImage = styled.img`
 `;
 
 export const ContentOverlay = styled.div`
-  position: relative;
-  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  max-width: 1600px;
-  padding: 0 8%;
+  z-index: 2;
   box-sizing: border-box;
+  padding: 0 8%;
+  display: flex;
+  justify-content: center;
   pointer-events: none;
 
   @media (max-width: 768px) {
@@ -36,8 +37,9 @@ export const ContentOverlay = styled.div`
 `;
 
 export const GridBoundingBox = styled.div`
-  position: relative;
   width: 100%;
+  max-width: 1600px;
+  position: relative;
   height: 100%;
   pointer-events: auto;
 `;

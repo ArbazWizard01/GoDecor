@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const SectionWrapper = styled.section`
-  padding: 100px 5%;
+  padding: 80px 8%;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -99,7 +99,7 @@ export const GridContainer = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1600px;
 
   @media (max-width: 1024px) {
     grid-template-columns: repeat(2, 1fr);

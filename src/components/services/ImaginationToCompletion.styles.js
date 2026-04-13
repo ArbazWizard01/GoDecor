@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const SectionWrapper = styled.section`
-  padding: 100px 5%;
+  padding: 80px 8%;
   background-color: #fdfbf7;
   display: flex;
   flex-direction: column;
@@ -68,7 +68,7 @@ export const CardsContainer = styled.div`
   grid-template-columns: repeat(4, 1fr);
   gap: 32px;
   width: 100%;
-  max-width: 1328px;
+  max-width: 1600px;
 
   @media (max-width: 1024px) {
     grid-template-columns: repeat(2, 1fr);
@@ -78,7 +78,6 @@ export const CardsContainer = styled.div`
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
     gap: 24px;
-    padding: 0 16px;
   }
 `;
 
