@@ -1,41 +1,51 @@
-import React from 'react';
-import { ArrowRightOutlined } from '@ant-design/icons';
+import React from "react";
+import { ArrowRightOutlined } from "@ant-design/icons";
 import {
-  HeroWrapper,
-  HeroContainer,
-  TextContent,
-  Subtitle,
+  FullScreenContainer,
+  MainImage,
+  ContentOverlay,
+  GridBoundingBox,
+  TopTextOverlay,
   Title,
-  Description,
-  ExploreLink,
-  ImageWrapper,
-  HeroImage
-} from './AboutHero.styles';
+  Subtitle,
+  BottomGlassCard,
+  CardText,
+  ExploreButton,
+} from "./AboutHero.styles";
 
 const AboutHero = () => {
   return (
-    <HeroWrapper>
-      <HeroContainer>
-        <TextContent>
-          <Subtitle>About GoDecor</Subtitle>
-          <Title>Designed With Structure.<br/>Delivered With Precision.</Title>
-          <Description>
-            GoDecore wa buit to simplify residential design execution through 
-            structured planning and coordinated implementation.
-          </Description>
-          <ExploreLink>
-            View Our Proccess <ArrowRightOutlined />
-          </ExploreLink>
-        </TextContent>
+    <FullScreenContainer>
+      <MainImage
+        src="aboutHero.jpg"
+        alt="Designing spaces that feel like you"
+      />
+      <ContentOverlay>
+        <GridBoundingBox>
+          <TopTextOverlay>
+            <Title>Designing Spaces That Feel Like You</Title>
+            <Subtitle>
+              Thoughtful interiors crafted with purpose, precision, and
+              personality.
+            </Subtitle>
+          </TopTextOverlay>
 
-        <ImageWrapper>
-          <HeroImage 
-            src="https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=1000&auto=format&fit=crop" 
-            alt="Modern interior design studio" 
-          />
-        </ImageWrapper>
-      </HeroContainer>
-    </HeroWrapper>
+          <BottomGlassCard>
+            <CardText>
+              At GoDecor, we believe every space should reflect the way you live
+              and feel. Our approach combines modern design, functionality, and
+              attention to detail to create interiors that are both beautiful
+              and meaningful.
+            </CardText>
+          </BottomGlassCard>
+
+          <ExploreButton>
+            Start Your Design Journey{" "}
+            <ArrowRightOutlined style={{ marginLeft: "8px" }} />
+          </ExploreButton>
+        </GridBoundingBox>
+      </ContentOverlay>
+    </FullScreenContainer>
   );
 };
 

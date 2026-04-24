@@ -1,10 +1,10 @@
-import React from 'react';
-import { 
-  FacebookOutlined, 
-  InstagramOutlined, 
-  LinkedinOutlined, 
-  TwitterOutlined 
-} from '@ant-design/icons';
+import React from "react";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaTwitter,
+} from "react-icons/fa";
 
 import {
   FooterWrapper,
@@ -19,8 +19,8 @@ import {
   BrandDescription,
   Copyright,
   SocialContainer,
-  SocialIcon
-} from './Footer.styles';
+  SocialIcon,
+} from "./Footer.styles";
 
 const Footer = () => {
   return (
@@ -67,16 +67,29 @@ const Footer = () => {
 
         <BottomSection>
           <BrandInfo>
-            <FooterLogo>goDecor</FooterLogo>
+            <FooterLogo>GoDecor</FooterLogo>
             <BrandDescription>
-              Premium interior design marketplace. Verified agencies, standardized quality.
+              Premium interior design marketplace. Verified agencies,
+              standardized quality.
             </BrandDescription>
-            <Copyright>© {new Date().getFullYear()} GoDecor. All rights reserved.</Copyright>
+            <Copyright>
+              © {new Date().getFullYear()} GoDecor. All rights reserved.
+            </Copyright>
           </BrandInfo>
 
           <SocialContainer>
-            <SocialIcon href='https://www.instagram.com/godecor.co.in?igsh=YTl3anl0a3Z1Ymlp'><InstagramOutlined /></SocialIcon>
-            <SocialIcon href='https://www.linkedin.com/company/decoreline/'><LinkedinOutlined /></SocialIcon>
+            <SocialIcon href="#">
+              <FaFacebookF />
+            </SocialIcon>
+            <SocialIcon href="https://www.instagram.com/godecor.co.in?igsh=YTl3anl0a3Z1Ymlp">
+              <FaInstagram />
+            </SocialIcon>
+            <SocialIcon href="https://www.linkedin.com/company/decoreline/">
+              <FaLinkedinIn />
+            </SocialIcon>
+            <SocialIcon href="#">
+              <FaTwitter />
+            </SocialIcon>
           </SocialContainer>
         </BottomSection>
       </FooterContent>

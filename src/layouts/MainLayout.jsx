@@ -40,7 +40,7 @@ const navItems = [
   },
   { key: "packages", label: "Packages" },
   { key: "projects", label: "Projects" },
-  { key: "about", label: "About" },
+  { key: "about", label: "About Us" },
   { key: "contact", label: "Contact" },
   { key: "budget", label: "Budget Calculator" },
 ];
