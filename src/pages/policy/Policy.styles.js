@@ -45,7 +45,7 @@ export const PageTitle = styled.h1`
 
 export const Container = styled.div`
   width: 100%;
-  max-width: 900px;
+  max-width: 1128px;
   padding: 80px 5%;
   display: flex;
   flex-direction: column;
@@ -130,7 +130,7 @@ export const SectionTitle = styled.h4`
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 48px;
+    width: 15%;
     height: 3px;
     background-color: #1a56db;
   }

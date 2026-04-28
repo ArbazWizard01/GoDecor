@@ -11,8 +11,8 @@ import {
   SectionTitle,
   Paragraph,
   ContactInfo,
-} from "./TermsAndConditions.styles";
-import Footer from "../../components/common/Footer"; 
+} from "./Policy.styles";
+import Footer from "../../components/common/Footer";
 
 const termsData = [
   {

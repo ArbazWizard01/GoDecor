@@ -9,6 +9,9 @@ import ProjectsPage from "./pages/ProjectsPage";
 import ScrollToTop from "./components/common/ScrollToTop";
 import BudgetPage from "./pages/BudgetPage";
 import TermsAndConditions from "./pages/policy/TermsAndConditions";
+import PrivacyPolicy from "./pages/policy/PrivacyPolicy";
+import RefundPolicy from "./pages/policy/RefundPolicy";
+import DeliveryPolicy from "./pages/policy/DeliveryPolicy";
 
 const App = () => {
   return (
@@ -23,6 +26,9 @@ const App = () => {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/budget" element={<BudgetPage />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/refund-policy" element={<RefundPolicy />} />
+        <Route path="/delivery-policy" element={<DeliveryPolicy />} />
       </Routes>
     </Router>
   );
