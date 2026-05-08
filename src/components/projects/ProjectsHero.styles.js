@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const HeroWrapper = styled.section`
-  background-color: #fdfbf9; /* A very soft, warm off-white */
+  background-color: #fdfbf9;
   min-height: 90vh;
   padding: 140px 5% 80px 5%;
   display: flex;
@@ -9,8 +9,13 @@ export const HeroWrapper = styled.section`
   justify-content: center;
 
   @media (max-width: 992px) {
-    padding-top: 140px;
+    padding-top: 120px;
     min-height: auto;
+  }
+
+  @media (max-width: 480px) {
+    padding-top: 100px;
+    padding-bottom: 60px;
   }
 `;
 
@@ -64,6 +69,11 @@ export const Title = styled.h1`
   @media (max-width: 768px) {
     font-size: 2.8rem;
   }
+
+  @media (max-width: 480px) {
+    font-size: 2.2rem;
+    word-break: break-word;
+  }
 `;
 
 export const Description = styled.p`
@@ -81,7 +91,7 @@ export const Description = styled.p`
 export const ScrollText = styled.p`
   font-family: 'Inter', sans-serif;
   font-size: 0.9rem;
-  color: #9ca3af; /* Light grey */
+  color: #9ca3af;
   margin: 0;
   font-style: italic;
 `;
@@ -95,6 +105,10 @@ export const ImageWrapper = styled.div`
 
   @media (max-width: 992px) {
     height: 400px;
+  }
+
+  @media (max-width: 480px) {
+    height: 300px;
   }
 `;
 
