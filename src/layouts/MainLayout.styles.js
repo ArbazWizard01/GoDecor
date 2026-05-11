@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Layout, Menu, Button } from "antd";
+import { Layout, Menu } from "antd";
 
 export const StyledLayout = styled(Layout)`
   min-height: 100vh;
@@ -14,58 +14,52 @@ export const NavbarWrapper = styled.div`
   display: flex;
   justify-content: center;
   z-index: 1000;
-  padding: 0 8%;
   background-color: #ffffff;
-  border-bottom: 1px solid #eaeaea;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-
-  @media (max-width: 768px) {
-    padding: 0 5%;
-  }
+  border-bottom: 1px solid #f0f0f0;
+  padding: 0 5%;
 `;
 
 export const GlassNav = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  padding: 0;
+  gap: 28px;
   width: 100%;
-  max-width: 1600px;
-  height: 70px;
-  box-shadow: none;
+  max-width: 1064px;
+  height: 64px;
 `;
 
 export const Logo = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-right: 32px;
   cursor: pointer;
+  flex-shrink: 0;
 `;
 
 export const LogoImage = styled.img`
-  height: 24px;
+  height: 22px;
   width: auto;
   object-fit: contain;
   display: block;
-  transition: transform 0.3s ease;
-
-  &:hover {
-    transform: scale(1.02);
-  }
 `;
 
 export const StyledMenu = styled(Menu)`
   flex: 1;
-  justify-content: center;
+  display: flex;
+  flex-wrap: nowrap !important;
+  min-width: 0;
   border-bottom: none !important;
   background: transparent !important;
   font-family: "Inter", sans-serif;
+  font-size: 14px;
   font-weight: 500;
-  line-height: 46px;
+  line-height: 64px;
+
+  &.ant-menu-horizontal > .ant-menu-item,
+  &.ant-menu-horizontal > .ant-menu-submenu {
+    padding: 0 16px;
+    margin: 0;
+    color: #4b5563;
+  }
 
   &.ant-menu-horizontal > .ant-menu-item::after,
   &.ant-menu-horizontal > .ant-menu-submenu::after {
@@ -80,96 +74,130 @@ export const StyledMenu = styled(Menu)`
   .ant-menu-title-content::after {
     content: "";
     position: absolute;
-    bottom: 4px;
+    bottom: 10px;
     left: 0;
     width: 0;
     height: 2px;
-    background-color: #1a56db;
+    background-color: #223F9A;
     transition: width 0.3s ease-out;
     border-radius: 2px;
   }
 
   .ant-menu-item:hover .ant-menu-title-content::after,
-  .ant-menu-item-selected .ant-menu-title-content::after,
   .ant-menu-submenu:hover .ant-menu-title-content::after,
+  .ant-menu-item-selected .ant-menu-title-content::after,
   .ant-menu-submenu-selected .ant-menu-title-content::after {
     width: 100%;
-  }
-
-  .ant-menu-item,
-  .ant-menu-submenu {
-    background: transparent !important;
   }
 
   .ant-menu-item-selected,
   .ant-menu-submenu-selected > .ant-menu-submenu-title {
     background: transparent !important;
-    color: #1a56db !important;
+    color: #223F9A !important;
   }
 
   .services-label {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
   }
 
   .dropdown-circle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 18px;
-    height: 18px;
-    border: 1px solid currentColor;
-    border-radius: 50%;
-    transition: all 0.3s ease;
-
-    svg {
-      width: 12px;
-      height: 12px;
-      stroke-width: 2.5;
-    }
+    display: none;
   }
 
-  .ant-menu-submenu:hover .dropdown-circle,
-  .ant-menu-submenu-selected .dropdown-circle {
-    border-color: #1a56db;
+  @media (max-width: 1100px) {
+    display: none !important;
+  }
+`;
+
+export const LocationBox = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 38px;
+  padding: 0 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  color: #4b5563;
+  cursor: pointer;
+  background-color: #f9fafb;
+  flex-shrink: 0;
+
+  .icon-grey {
+    color: #6b7280;
+    font-size: 14px;
+  }
+
+  &.hide-mobile {
+    @media (max-width: 992px) {
+      display: none;
+    }
+  }
+`;
+
+export const SearchBox = styled.div`
+  display: flex;
+  align-items: center;
+  height: 38px;
+  padding: 0 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  background-color: #ffffff;
+  flex-shrink: 0;
+
+  .icon-grey {
+    color: #6b7280;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 8px;
+  }
+
+  &.hide-mobile {
+    @media (max-width: 992px) {
+      display: none;
+    }
+  }
+`;
+
+export const SearchInput = styled.input`
+  border: none;
+  outline: none;
+  width: 200px;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  background: transparent;
+  color: #1f2937;
+
+  &::placeholder {
+    color: #9ca3af;
+  }
+
+  @media (max-width: 1200px) {
+    width: 140px;
+  }
+`;
+
+export const IconButton = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: #4b5563;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  flex-shrink: 0;
+
+  &:hover {
     color: #1a56db;
   }
 
-  @media (max-width: 992px) {
-    display: none !important;
-  }
-`;
-
-export const RightActions = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 16px;
-`;
-
-export const ActionButton = styled(Button)`
-  background-color: #1a56db !important;
-  color: #ffffff !important;
-  border: none !important;
-  box-shadow: none !important;
-
-  font-family: "Inter", sans-serif;
-  font-weight: 500;
-  font-size: 0.95rem;
-  height: 40px;
-  padding: 0 24px;
-  border-radius: 4px;
-  transition: all 0.3s ease !important;
-
-  &:hover {
-    background-color: #1a56db !important;
-    color: #ffffff !important;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(26, 86, 219, 0.2) !important;
-  }
-
-  @media (max-width: 600px) {
-    display: none !important;
+  &.hide-mobile {
+    @media (max-width: 992px) {
+      display: none;
+    }
   }
 `;
 
@@ -179,9 +207,10 @@ export const MobileMenuButton = styled.div`
   color: #1f2937;
   cursor: pointer;
 
-  @media (max-width: 992px) {
+  @media (max-width: 1100px) {
     display: flex;
     align-items: center;
+    margin-left: auto;
   }
 `;
 
@@ -191,12 +220,8 @@ export const MobileMenu = styled(Menu)`
   font-family: "Inter", sans-serif;
 
   .ant-menu-item-selected {
-    background-color: rgba(26, 86, 219, 0.05) !important;
-    color: #1a56db !important;
+    background-color: rgba(34, 63, 154, 0.05) !important;
+    color: #223F9A !important;
     font-weight: 600;
   }
-
-  .dropdown-circle {
-    display: none !important;
-  }
-`;  
+`;

@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import { Layout, Drawer } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
-import { FiChevronDown } from "react-icons/fi";
+import {
+  FiChevronDown,
+  FiMapPin,
+  FiSearch,
+  FiShoppingCart,
+  FiSmile,
+} from "react-icons/fi";
 import { useNavigate, useLocation } from "react-router-dom";
 import Footer from "../components/common/Footer";
 import {
@@ -11,15 +17,17 @@ import {
   Logo,
   LogoImage,
   StyledMenu,
-  RightActions,
-  ActionButton,
+  LocationBox,
+  SearchBox,
+  SearchInput,
+  IconButton,
   MobileMenuButton,
   MobileMenu,
 } from "./MainLayout.styles";
 
 const { Content } = Layout;
 
-const navItems = [
+const desktopNavItems = [
   {
     key: "services-dropdown",
     label: (
@@ -38,11 +46,28 @@ const navItems = [
       { key: "services", label: "View All Services" },
     ],
   },
-  { key: "packages", label: "Packages" },
-  { key: "projects", label: "Projects" },
+  { key: "explore", label: "Explore" },
   { key: "about", label: "About Us" },
+  { key: "blog", label: "Blog" },
   { key: "contact", label: "Contact" },
-  { key: "budget", label: "Budget Calculator" },
+];
+
+const mobileNavItems = [
+  {
+    key: "services-dropdown",
+    label: "Services",
+    children: [
+      { key: "services/moduler-kitchens", label: "Modular Kitchens" },
+      { key: "services/living-spaces", label: "Living Spaces" },
+      { key: "services/bedroom-designs", label: "Bedroom Designs" },
+      { type: "divider" },
+      { key: "services", label: "View All Services" },
+    ],
+  },
+  { key: "explore", label: "Explore" },
+  { key: "about", label: "About Us" },
+  { key: "blog", label: "Blog" },
+  { key: "contact", label: "Contact" },
 ];
 
 const MainLayout = ({ children }) => {
@@ -54,8 +79,8 @@ const MainLayout = ({ children }) => {
   const closeDrawer = () => setDrawerVisible(false);
 
   const handleMenuClick = (e) => {
-    if (e.key.startsWith('services/')) {
-      navigate('/services');
+    if (e.key.startsWith("services/")) {
+      navigate("/services");
     } else {
       navigate(`/${e.key}`);
     }
@@ -66,36 +91,47 @@ const MainLayout = ({ children }) => {
     navigate("/");
   };
 
-  const activeKey = location.pathname.substring(1) || "";
+  const activeKey =
+    location.pathname === "/" ? "" : location.pathname.substring(1);
 
   return (
     <StyledLayout>
       <NavbarWrapper>
         <GlassNav>
-          <Logo
-            onClick={goHome}
-            style={{ cursor: "pointer", display: "flex", alignItems: "center" }}
-          >
+          <Logo onClick={goHome}>
             <LogoImage src="/godecor-text-logo.png" alt="goDecor" />
           </Logo>
 
           <StyledMenu
             mode="horizontal"
-            items={navItems}
+            items={desktopNavItems}
             disabledOverflow={true}
             onClick={handleMenuClick}
             selectedKeys={[activeKey]}
           />
 
-          <RightActions>
-            <ActionButton type="primary" onClick={() => navigate("/projects")}>
-              Plan Your Space
-            </ActionButton>
+          <LocationBox className="hide-mobile">
+            <FiMapPin className="icon-grey" />
+            <span>Mumbai</span>
+            <FiChevronDown className="icon-grey" />
+          </LocationBox>
 
-            <MobileMenuButton onClick={showDrawer}>
-              <MenuOutlined />
-            </MobileMenuButton>
-          </RightActions>
+          <SearchBox className="hide-mobile">
+            <SearchInput placeholder="Search for services, e.g., False Ceiling" />
+            <FiSearch className="icon-grey" />
+          </SearchBox>
+
+          <IconButton className="hide-mobile">
+            <FiShoppingCart />
+          </IconButton>
+
+          <IconButton className="hide-mobile">
+            <FiSmile />
+          </IconButton>
+
+          <MobileMenuButton onClick={showDrawer}>
+            <MenuOutlined />
+          </MobileMenuButton>
         </GlassNav>
       </NavbarWrapper>
 
@@ -108,7 +144,7 @@ const MainLayout = ({ children }) => {
       >
         <MobileMenu
           mode="inline"
-          items={navItems}
+          items={mobileNavItems}
           onClick={handleMenuClick}
           selectedKeys={[activeKey]}
         />
