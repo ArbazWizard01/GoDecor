@@ -16,7 +16,6 @@ export const NavbarWrapper = styled.div`
   z-index: 1000;
   background-color: #ffffff;
   border-bottom: 1px solid #f0f0f0;
-  padding: 0 5%;
 `;
 
 export const GlassNav = styled.div`
@@ -24,8 +23,9 @@ export const GlassNav = styled.div`
   align-items: center;
   gap: 28px;
   width: 100%;
-  max-width: 1064px;
+  max-width: 1200px;
   height: 64px;
+  padding: 0 5%;
 `;
 
 export const Logo = styled.div`
