@@ -4,14 +4,24 @@ export const SectionContainer = styled.section`
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 5% 80px 5%;
+  padding: 32px 5% 48px 5%;
+
+  @media (max-width: 768px) {
+    padding: 24px 5% 32px 5%;
+  }
 `;
 
 export const SectionHeader = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
 `;
 
 export const SectionTitle = styled.h2`
@@ -20,6 +30,10 @@ export const SectionTitle = styled.h2`
   font-weight: 600;
   color: #1f2937;
   margin: 0;
+
+  @media (max-width: 480px) {
+    font-size: 20px;
+  }
 `;
 
 export const ExploreButton = styled.button`
@@ -46,24 +60,23 @@ export const ExploreButton = styled.button`
 
 export const CardsContainer = styled.div`
   display: flex;
-  gap: 24px;
+  gap: 20px;
   overflow-x: auto;
-  padding-top: 16px;
-  padding-bottom: 24px;
-  padding-left: 4px;
-  padding-right: 4px;
-  margin-top: -16px;
-  margin-left: -4px;
-  margin-right: -4px;
+  padding: 16px 8px 32px 8px;
+  margin: -16px -8px -32px -8px;
   scrollbar-width: none;
   
   &::-webkit-scrollbar {
     display: none;
   }
+
+  @media (max-width: 480px) {
+    gap: 16px;
+  }
 `;
 
 export const Card = styled.div`
-  min-width: 280px;
+  min-width: 260px;
   flex: 1;
   background-color: #ffffff;
   border: 1px solid #f0f0f0;
@@ -73,26 +86,30 @@ export const Card = styled.div`
   cursor: pointer;
 
   &:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  @media (max-width: 480px) {
+    min-width: 240px;
   }
 `;
 
 export const CardImage = styled.img`
   width: 100%;
-  height: 180px;
+  height: 160px;
   object-fit: cover;
 `;
 
 export const CardContent = styled.div`
-  padding: 20px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
 `;
 
 export const CardTitle = styled.h3`
   font-family: "Inter", sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   color: #1f2937;
   margin-bottom: 8px;
@@ -103,7 +120,7 @@ export const CardDescription = styled.p`
   font-size: 13px;
   color: #6b7280;
   line-height: 1.5;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   min-height: 40px;
 `;
 
@@ -115,39 +132,39 @@ export const CardPrice = styled.span`
 `;
 
 export const HighlightsWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  margin-top:24px;
-  padding: 32px 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 32px;
+  padding-top: 32px;
   border-top: 1px solid #f0f0f0;
-  border-bottom: 1px solid #f0f0f0;
-  overflow-x: auto;
-  scrollbar-width: none;
 
-  &::-webkit-scrollbar {
-    display: none;
+  @media (max-width: 992px) {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 24px;
+    padding-top: 24px;
   }
 
-  @media (max-width: 1100px) {
-    flex-wrap: wrap;
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 16px;
+    padding-top: 24px;
   }
 `;
 
 export const HighlightItem = styled.div`
   display: flex;
   align-items: center;
-  gap: 16px;
-  flex: 1;
-  min-width: 250px;
-  padding: 16px 20px;
+  gap: 12px;
+  padding: 16px;
   border: 1px solid #e5e7eb;
   border-radius: 12px;
   background-color: #ffffff;
 `;
 
 export const HighlightIcon = styled.div`
-  font-size: 24px;
+  font-size: 22px;
   color: #4b5563;
   display: flex;
   align-items: center;

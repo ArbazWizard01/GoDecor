@@ -4,20 +4,31 @@ export const CTAContainer = styled.section`
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px 5% 80px 5%;
+  padding: 24px 5% 64px 5%;
+
+  @media (max-width: 768px) {
+    padding: 16px 5% 48px 5%;
+  }
 `;
 
 export const CTABanner = styled.div`
   position: relative;
   width: 100%;
-  height: 480px;
+  height: 400px;
   background-image: url(${(props) => props.$bgImage});
   background-size: cover;
   background-position: center;
   display: flex;
-  align-items: center;
   overflow: hidden;
   border-radius: 12px;
+
+  @media (max-width: 768px) {
+    height: 320px;
+  }
+
+  @media (max-width: 480px) {
+    height: 280px;
+  }
 `;
 
 export const CTAOverlay = styled.div`
@@ -37,11 +48,20 @@ export const CTAOverlay = styled.div`
 export const CTAContent = styled.div`
   position: relative;
   z-index: 2;
-  padding: 0 80px;
-  max-width: 700px;
+  padding: 56px 64px;
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
 
   @media (max-width: 768px) {
-    padding: 0 32px;
+    padding: 40px 32px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 32px 24px;
   }
 `;
 
@@ -51,10 +71,14 @@ export const CTATitle = styled.h2`
   font-weight: 600;
   color: #ffffff;
   line-height: 1.2;
-  margin: 0 0 32px 0;
+  margin: 0;
 
   @media (max-width: 768px) {
-    font-size: 32px;
+    font-size: 28px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 24px;
   }
 `;
 
@@ -81,11 +105,15 @@ export const CTAButton = styled.button`
 
   &:hover {
     background-color: #f3f4f6;
-
     color: #223F9A;
 
     .arrow-icon {
       transform: translateX(4px);
     }
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    height: 44px;
   }
 `;

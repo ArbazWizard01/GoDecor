@@ -4,18 +4,24 @@ export const SectionContainer = styled.section`
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0px 5% 80px 5%;
+  padding: 48px 5%;
+
+  @media (max-width: 768px) {
+    padding: 32px 5%;
+  }
 `;
 
 export const SectionHeader = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
   gap: 24px;
 
   @media (max-width: 768px) {
     flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
   }
 `;
 
@@ -29,6 +35,11 @@ export const SectionTitle = styled.h2`
   font-weight: 600;
   color: #1f2937;
   margin: 0 0 12px 0;
+
+  @media (max-width: 480px) {
+    font-size: 20px;
+    margin: 0 0 8px 0;
+  }
 `;
 
 export const SectionDescription = styled.p`
@@ -37,6 +48,10 @@ export const SectionDescription = styled.p`
   color: #6b7280;
   line-height: 1.5;
   margin: 0;
+
+  @media (max-width: 480px) {
+    font-size: 13px;
+  }
 `;
 
 export const ExploreButton = styled.button`
@@ -70,7 +85,7 @@ export const FeaturedCard = styled.div`
   background-image: url(${(props) => props.$bgImage});
   background-size: cover;
   background-position: center;
-  margin: 0 auto 48px auto;   
+  margin: 0 auto 32px auto;   
 `;
 
 export const FeaturedOverlay = styled.div`
@@ -79,7 +94,7 @@ export const FeaturedOverlay = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.2) 55%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 55%, rgba(0, 0, 0, 0) 100%);
   z-index: 1;
 
   @media (max-width: 768px) {
@@ -90,14 +105,19 @@ export const FeaturedOverlay = styled.div`
 export const FeaturedCardInner = styled.div`
   position: relative;
   z-index: 2;
-  padding: 48px;
+  padding: 40px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 480px;
+  min-height: 420px;
 
   @media (max-width: 768px) {
     padding: 32px 24px;
+    min-height: auto;
+  }
+
+  @media (max-width: 480px) {
+    padding: 24px 16px;
   }
 `;
 
@@ -107,18 +127,28 @@ export const FeaturedContent = styled.div`
 
 export const FeaturedTitle = styled.h3`
   font-family: "Inter", sans-serif;
-  font-size: 28px; 
+  font-size: 26px; 
   font-weight: 600;
   color: #ffffff;
   margin: 0 0 16px 0;
+
+  @media (max-width: 480px) {
+    font-size: 22px;
+    margin: 0 0 12px 0;
+  }
 `;
 
 export const FeaturedDescription = styled.p`
   font-family: "Inter", sans-serif;
-  font-size: 15px;
+  font-size: 14px;
   color: #d1d5db;
   line-height: 1.6;
-  margin: 0 0 32px 0;
+  margin: 0 0 24px 0;
+
+  @media (max-width: 480px) {
+    font-size: 13px;
+    margin: 0 0 20px 0;
+  }
 `;
 
 export const FeaturesList = styled.div`
@@ -127,7 +157,7 @@ export const FeaturesList = styled.div`
     font-size: 12px;
     font-weight: 500;
     color: #9ca3af;
-    margin: 0 0 16px 0;
+    margin: 0 0 12px 0;
     text-transform: uppercase;
     letter-spacing: 1px;
   }
@@ -138,14 +168,19 @@ export const FeatureItem = styled.div`
   align-items: center;
   gap: 12px;
   font-family: "Inter", sans-serif;
-  font-size: 15px;
+  font-size: 14px;
   color: #ffffff;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   font-weight: 400;
 
   .feature-icon {
-    font-size: 18px;
+    font-size: 16px;
     color: #ffffff;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 13px;
+    gap: 8px;
   }
 `;
 
@@ -154,12 +189,13 @@ export const FeaturedBottom = styled.div`
   align-items: flex-end;
   justify-content: space-between;
   width: 100%;
-  margin-top: 40px;
+  margin-top: 32px;
 
   @media (max-width: 600px) {
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
+    margin-top: 24px;
   }
 `;
 
@@ -171,18 +207,26 @@ export const PriceBlock = styled.div`
 
 export const PriceLabel = styled.span`
   font-family: "Playfair Display", serif;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
   color: #ffffff;
   line-height: 1.1;
+
+  @media (max-width: 480px) {
+    font-size: 16px;
+  }
 `;
 
 export const FeaturedPrice = styled.div`
   font-family: "Playfair Display", serif;
-  font-size: 38px;
+  font-size: 32px;
   font-weight: 700;
   color: #ffffff;
   line-height: 1.1;
+
+  @media (max-width: 480px) {
+    font-size: 26px;
+  }
 `;
 
 export const PackageButton = styled.button`
@@ -190,7 +234,7 @@ export const PackageButton = styled.button`
   align-items: center;
   justify-content: center;
   gap: 8px;
-  height: 48px;
+  height: 44px;
   padding: 0 24px;
   background-color: #ffffff;
   color: #1f2937;
@@ -205,12 +249,16 @@ export const PackageButton = styled.button`
   &:hover {
     background-color: #f3f4f6;
   }
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 export const GridContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 20px;
 
   @media (max-width: 992px) {
     grid-template-columns: repeat(2, 1fr);
@@ -236,40 +284,61 @@ export const SubCard = styled.div`
 
 export const SubCardImage = styled.img`
   width: 100%;
-  height: 240px;
+  height: 200px;
   object-fit: cover;
+
+  @media (max-width: 480px) {
+    height: 180px;
+  }
 `;
 
 export const SubCardContent = styled.div`
-  padding: 24px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  height: calc(100% - 240px);
+
+  @media (max-width: 480px) {
+    padding: 16px;
+  }
 `;
 
 export const SubCardTitle = styled.h4`
   font-family: "Inter", sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   color: #1f2937;
   margin: 0 0 8px 0;
+
+  @media (max-width: 480px) {
+    font-size: 15px;
+  }
 `;
 
 export const SubCardDescription = styled.p`
   font-family: "Inter", sans-serif;
-  font-size: 14px;
+  font-size: 13px;
   color: #6b7280;
   line-height: 1.5;
-  margin: 0 0 24px 0;
-  min-height: 42px;
+  margin: 0 0 20px 0;
+  min-height: 40px;
+
+  @media (max-width: 480px) {
+    margin: 0 0 16px 0;
+    min-height: auto;
+  }
 `;
 
 export const SubFeaturesGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px 8px;
-  margin-bottom: 32px;
+  gap: 10px 8px;
+  margin-bottom: 24px;
   flex-grow: 1;
+
+  @media (max-width: 480px) {
+    margin-bottom: 20px;
+    gap: 8px;
+  }
 `;
 
 export const SubFeatureItem = styled.div`
@@ -277,7 +346,7 @@ export const SubFeatureItem = styled.div`
   border-radius: 4px;
   padding: 8px;
   font-family: "Inter", sans-serif;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500;
   color: #4b5563;
   display: flex;
@@ -294,7 +363,7 @@ export const SubFeatureItem = styled.div`
 export const SubCardBottom = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
   margin-top: auto;
 `;
 
@@ -303,6 +372,10 @@ export const SubCardPrice = styled.div`
   font-size: 14px;
   font-weight: 600;
   color: #223F9A;
+
+  @media (max-width: 480px) {
+    font-size: 13px;
+  }
 `;
 
 export const ExplorePackageButton = styled.button`
@@ -311,13 +384,13 @@ export const ExplorePackageButton = styled.button`
   justify-content: center;
   gap: 8px;
   width: 100%;
-  height: 44px;
+  height: 40px;
   background-color: transparent;
   color: #223F9A;
   border: 1px solid #e5e7eb;
   border-radius: 6px;
   font-family: "Inter", sans-serif;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;

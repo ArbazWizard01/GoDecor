@@ -4,11 +4,15 @@ export const SectionContainer = styled.section`
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 64px 5%;
+  padding: 40px 5%;
   border-bottom: 1px solid #f3f4f6;
 
   &:last-of-type {
     border-bottom: none;
+  }
+
+  @media (max-width: 768px) {
+    padding: 32px 5%;
   }
 `;
 
@@ -16,15 +20,25 @@ export const SectionHeader = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
 `;
 
 export const SectionTitle = styled.h2`
   font-family: "Inter", sans-serif;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 600;
   color: #1f2937;
   margin: 0;
+
+  @media (max-width: 480px) {
+    font-size: 20px;
+  }
 `;
 
 export const ExploreButton = styled.button`
@@ -65,7 +79,7 @@ export const SliderWrapper = styled.div`
 
 export const SliderContainer = styled.div`
   display: flex;
-  gap: 24px;
+  gap: 20px;
   overflow-x: auto;
   scroll-behavior: smooth;
   scrollbar-width: none;
@@ -75,6 +89,10 @@ export const SliderContainer = styled.div`
   &::-webkit-scrollbar {
     display: none;
   }
+
+  @media (max-width: 480px) {
+    gap: 16px;
+  }
 `;
 
 export const NavButton = styled.button`
@@ -83,8 +101,8 @@ export const NavButton = styled.button`
   transform: translateY(-50%);
   ${(props) => (props.$direction === "left" ? "left: -20px;" : "right: -20px;")}
   z-index: 10;
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background-color: #ffffff;
   border: 1px solid #e5e7eb;
@@ -94,7 +112,7 @@ export const NavButton = styled.button`
   justify-content: center;
   cursor: pointer;
   color: #4b5563;
-  font-size: 22px;
+  font-size: 20px;
   transition: all 0.2s ease;
 
   &:hover {
@@ -109,7 +127,7 @@ export const NavButton = styled.button`
 `;
 
 export const Card = styled.div`
-  flex: 0 0 320px;
+  flex: 0 0 280px;
   background-color: #ffffff;
   border: 1px solid #f0f0f0;
   border-radius: 8px;
@@ -120,31 +138,42 @@ export const Card = styled.div`
   flex-direction: column;
 
   &:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
   }
 
   @media (max-width: 600px) {
-    flex: 0 0 280px;
+    flex: 0 0 260px;
+  }
+  @media (max-width: 480px) {
+    flex: 0 0 240px;
   }
 `;
 
 export const CardImage = styled.img`
   width: 100%;
-  height: 200px;
+  height: 180px;
   object-fit: cover;
+
+  @media (max-width: 480px) {
+    height: 160px;
+  }
 `;
 
 export const CardContent = styled.div`
-  padding: 20px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+
+  @media (max-width: 480px) {
+    padding: 14px;
+  }
 `;
 
 export const CardTitle = styled.h4`
   font-family: "Inter", sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   color: #1f2937;
   margin: 0 0 8px 0;
@@ -155,8 +184,13 @@ export const CardDescription = styled.p`
   font-size: 13px;
   color: #6b7280;
   line-height: 1.5;
-  margin: 0 0 24px 0;
+  margin: 0 0 20px 0;
   flex-grow: 1;
+
+  @media (max-width: 480px) {
+    font-size: 12px;
+    margin: 0 0 16px 0;
+  }
 `;
 
 export const CardPrice = styled.div`

@@ -18,10 +18,7 @@ import {
   PrimaryButton,
   SecondaryButton,
   HeroImages,
-  ImageColumn,
-  ImageTall,
-  ImageShort,
-  ImageSquare
+  GridImage
 } from "./ExploreHero.styles";
 
 const categories = [
@@ -75,15 +72,11 @@ const ExploreHero = () => {
       </HeroContent>
 
       <HeroImages>
-        <ImageColumn>
-          <ImageTall src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=800" alt="Living Room" />
-          <ImageShort src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=800" alt="Lighting" />
-        </ImageColumn>
-        <ImageColumn>
-          <ImageSquare src="explore-right.jpg" alt="Kitchen" />
-          <ImageSquare src="explore-right-middle.jpg" alt="Ceiling" />
-          <ImageSquare src="explore-right-bottom.jpg" alt="Wardrobe" />
-        </ImageColumn>
+        <GridImage className="img-tall" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=800" alt="Living Room" />
+        <GridImage className="img-short" src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=800" alt="Lighting" />
+        <GridImage className="img-sq-1" src="explore-right.jpg" alt="Kitchen" />
+        <GridImage className="img-sq-2" src="explore-right-middle.jpg" alt="Ceiling" />
+        <GridImage className="img-sq-3" src="explore-right-bottom.jpg" alt="Wardrobe" />
       </HeroImages>
     </HeroContainer>
   );
