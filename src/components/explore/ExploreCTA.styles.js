@@ -7,23 +7,25 @@ export const CTAContainer = styled.section`
   padding: 24px 5% 64px 5%;
 
   @media (max-width: 768px) {
-    padding: 16px 5% 48px 5%;
+    padding: 14px 5% 48px 5%;
   }
 `;
 
 export const CTABanner = styled.div`
   position: relative;
   width: 100%;
-  height: 400px;
+  height: 380px;
   background-image: url(${(props) => props.$bgImage});
   background-size: cover;
   background-position: center;
   display: flex;
+  align-items: center;
   overflow: hidden;
   border-radius: 12px;
 
   @media (max-width: 768px) {
     height: 320px;
+    align-items: stretch;
   }
 
   @media (max-width: 480px) {
@@ -37,27 +39,30 @@ export const CTAOverlay = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.1) 100%);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.3) 100%);
   z-index: 1;
 
   @media (max-width: 768px) {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 100%);
   }
 `;
 
 export const CTAContent = styled.div`
   position: relative;
   z-index: 2;
-  padding: 56px 64px;
-  max-width: 600px;
+  padding: 0 64px;
+  max-width: 840px;
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
+  gap: 24px;
 
   @media (max-width: 768px) {
     padding: 40px 32px;
+    justify-content: space-between;
+    gap: 0;
   }
 
   @media (max-width: 480px) {
@@ -74,11 +79,11 @@ export const CTATitle = styled.h2`
   margin: 0;
 
   @media (max-width: 768px) {
-    font-size: 28px;
+    font-size: 32px;
   }
 
   @media (max-width: 480px) {
-    font-size: 24px;
+    font-size: 26px;
   }
 `;
 

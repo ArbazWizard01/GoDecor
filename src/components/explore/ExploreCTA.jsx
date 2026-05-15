@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { FiArrowRight } from "react-icons/fi";
 import {
   CTAContainer,
@@ -10,13 +11,14 @@ import {
 } from "./ExploreCTA.styles";
 
 const ExploreCTA = () => {
+  const navigate = useNavigate();
   return (
     <CTAContainer>
       <CTABanner $bgImage="explore-cta.jpg">
         <CTAOverlay />
         <CTAContent>
           <CTATitle>Interior Experiences Crafted Around You</CTATitle>
-          <CTAButton>
+          <CTAButton onClick={() => navigate("/contact")}>
             Book Free Consultation <FiArrowRight className="arrow-icon" />
           </CTAButton>
         </CTAContent>
