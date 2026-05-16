@@ -2,7 +2,6 @@ import React from 'react';
 import {
   SectionWrapper,
   BannerContainer,
-  PatternOverlay,
   BannerContent,
   MainTitle,
   SubTextBold,
@@ -13,7 +12,6 @@ const ServiceOverview = () => {
   return (
     <SectionWrapper>
       <BannerContainer>
-        <PatternOverlay />
         <BannerContent>
           <MainTitle>Beautiful Spaces Begin With Clear Systems.</MainTitle>
           <SubTextBold>

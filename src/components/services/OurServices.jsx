@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowRightOutlined } from '@ant-design/icons';
 import {
   SectionWrapper,
+  InnerContainer,
   HeaderContainer,
   SectionTitle,
   TitleAccent,
@@ -77,28 +78,30 @@ const servicesData = [
 const OurServices = () => {
   return (
     <SectionWrapper>
-      <HeaderContainer>
-        <SectionTitle>Our Interior Services</SectionTitle>
-        <TitleAccent />
-        <SectionSubtitle>
-          End-to-end design and execution services tailored for modern homes and workspaces.
-        </SectionSubtitle>
-      </HeaderContainer>
+      <InnerContainer>
+        <HeaderContainer>
+          <SectionTitle>Our Interior Services</SectionTitle>
+          <TitleAccent />
+          <SectionSubtitle>
+            End-to-end design and execution services tailored for modern homes and workspaces.
+          </SectionSubtitle>
+        </HeaderContainer>
 
-      <GridContainer>
-        {servicesData.map((service) => (
-          <Card key={service.id}>
-            <CardImage src={service.img} alt={service.title} />
-            <CardContent>
-              <CardTitle>{service.title}</CardTitle>
-              <CardDesc>{service.desc}</CardDesc>
-              <CardButton>
-                {service.buttonText} <ArrowRightOutlined style={{ fontSize: '12px' }} />
-              </CardButton>
-            </CardContent>
-          </Card>
-        ))}
-      </GridContainer>
+        <GridContainer>
+          {servicesData.map((service) => (
+            <Card key={service.id}>
+              <CardImage src={service.img} alt={service.title} />
+              <CardContent>
+                <CardTitle>{service.title}</CardTitle>
+                <CardDesc>{service.desc}</CardDesc>
+                <CardButton>
+                  {service.buttonText} <ArrowRightOutlined style={{ fontSize: '12px' }} />
+                </CardButton>
+              </CardContent>
+            </Card>
+          ))}
+        </GridContainer>
+      </InnerContainer>
     </SectionWrapper>
   );
 };

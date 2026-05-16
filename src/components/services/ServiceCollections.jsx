@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   SectionWrapper,
+  InnerContainer,
   SectionTitle,
   GridContainer,
   Card,
@@ -21,17 +22,19 @@ const collectionsData = [
 const ServiceCollections = () => {
   return (
     <SectionWrapper>
-      <SectionTitle>Curated Interior Collections</SectionTitle>
-      
-      <GridContainer>
-        {collectionsData.map((item) => (
-          <Card key={item.id}>
-            <CardImage src={item.img} alt={item.title} />
-            <CardOverlay />
-            <CardTitle>{item.title}</CardTitle>
-          </Card>
-        ))}
-      </GridContainer>
+      <InnerContainer>
+        <SectionTitle>Curated Interior Collections</SectionTitle>
+        
+        <GridContainer>
+          {collectionsData.map((item) => (
+            <Card key={item.id}>
+              <CardImage src={item.img} alt={item.title} />
+              <CardOverlay />
+              <CardTitle>{item.title}</CardTitle>
+            </Card>
+          ))}
+        </GridContainer>
+      </InnerContainer>
     </SectionWrapper>
   );
 };

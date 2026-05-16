@@ -1,6 +1,7 @@
 import React from 'react';
 import {
-  SectionContainer,
+  SectionWrapper,
+  InnerContainer,
   BannerBox,
   Overlay,
   ContentContainer,
@@ -10,17 +11,19 @@ import {
 
 const ParallaxBanner = () => {
   return (
-    <SectionContainer>
-      <BannerBox>
-        <Overlay />
-        <ContentContainer>
-          <Title>Premium Materials. Verified Partners.</Title>
-          <Subtitle>
-            Every surface finish, hardware element, and lighting fixture is selected through our quality-verified supplier network for durability and aesthetic consistency.
-          </Subtitle>
-        </ContentContainer>
-      </BannerBox>
-    </SectionContainer>
+    <SectionWrapper>
+      <InnerContainer>
+        <BannerBox>
+          <Overlay />
+          <ContentContainer>
+            <Title>Premium Materials. Verified Partners.</Title>
+            <Subtitle>
+              Every surface finish, hardware element, and lighting fixture is selected through our quality-verified supplier network for durability and aesthetic consistency.
+            </Subtitle>
+          </ContentContainer>
+        </BannerBox>
+      </InnerContainer>
+    </SectionWrapper>
   );
 };
 

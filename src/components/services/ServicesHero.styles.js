@@ -8,7 +8,6 @@ export const FullScreenContainer = styled.section`
   overflow: hidden;
   display: flex;
   justify-content: center;
-  padding: 0 8%;
 
   &::after {
     content: '';
@@ -24,7 +23,6 @@ export const FullScreenContainer = styled.section`
 
   @media (max-width: 768px) {
     min-height: 800px;
-    padding: 0 5%;
   }
 `;
 
@@ -42,7 +40,8 @@ export const ContentOverlay = styled.div`
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 1600px;
+  max-width: 1200px;
+  padding: 0 5%;
   height: 100%;
   pointer-events: none;
 `;
@@ -56,14 +55,14 @@ export const GridBoundingBox = styled.div`
 
 export const TopTextOverlay = styled.div`
   position: absolute;
-  top: 18%;
+  top: 20%;
   left: 0;
   text-align: left;
   width: 100%;
   max-width: 800px;
 
   @media (max-width: 768px) {
-    top: 12%;
+    top: 15%;
   }
 `;
 
@@ -78,6 +77,9 @@ export const Title = styled.h1`
 
   @media (max-width: 768px) {
     font-size: 36px;
+  }
+  @media (max-width: 480px) {
+    font-size: 32px;
   }
 `;
 
@@ -107,7 +109,7 @@ export const BottomGlassCard = styled.div`
   border: 1px solid rgba(255, 255, 255, 0.2);
 
   @media (max-width: 768px) {
-    bottom: 15%;
+    bottom: 120px;
     max-width: 100%;
     padding: 20px;
   }
@@ -135,7 +137,7 @@ export const ConsultationButton = styled.button`
   border: none;
   height: 48px;
   padding: 0 32px;
-  border-radius: 4px;
+  border-radius: 6px;
   font-family: 'Inter', sans-serif;
   font-weight: 600;
   font-size: 15px;
@@ -148,7 +150,7 @@ export const ConsultationButton = styled.button`
   }
 
   @media (max-width: 768px) {
-    bottom: 4%;
+    bottom: 5%;
     left: 0;
     right: 0;
     width: 100%;

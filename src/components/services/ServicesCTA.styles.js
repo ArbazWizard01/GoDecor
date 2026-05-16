@@ -1,8 +1,16 @@
 import styled from 'styled-components';
 
 export const SectionWrapper = styled.section`
-  padding: 80px 8%;
+  width: 100%;
   background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+`;
+
+export const InnerContainer = styled.div`
+  width: 100%;
+  max-width: 1200px;
+  padding: 80px 5%;
   display: flex;
   justify-content: center;
 
@@ -14,7 +22,6 @@ export const SectionWrapper = styled.section`
 export const BannerContainer = styled.div`
   position: relative;
   width: 100%;
-  max-width: 1600px;
   min-height: 380px;
   border-radius: 12px;
   overflow: hidden;
@@ -57,14 +64,14 @@ export const ContentWrapper = styled.div`
 
 export const CtaTitle = styled.h2`
   font-family: 'Playfair Display', serif;
-  font-size: 30px;
+  font-size: 36px;
   color: #ffffff;
   margin: 0 0 32px 0;
   font-weight: 600;
   line-height: 1.2;
 
   @media (max-width: 768px) {
-    font-size: 22px;
+    font-size: 26px;
     margin: 0 0 24px 0;
   }
 `;
@@ -72,6 +79,7 @@ export const CtaTitle = styled.h2`
 export const CtaButton = styled.button`
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
   padding: 14px 28px;
   background-color: #ffffff;
@@ -80,7 +88,7 @@ export const CtaButton = styled.button`
   border-radius: 4px;
   font-family: 'Inter', sans-serif;
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
 
@@ -100,7 +108,7 @@ export const CtaButton = styled.button`
 
   @media (max-width: 768px) {
     width: 100%;
-    padding: 12px 24px;
+    padding: 14px 24px;
     font-size: 14px;
   }
 `;

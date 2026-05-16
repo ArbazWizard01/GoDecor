@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   SectionWrapper,
+  InnerContainer,
   HeaderContainer,
   SectionTitle,
   TitleAccentLine,
@@ -39,26 +40,28 @@ const ImaginationToCompletion = () => {
 
   return (
     <SectionWrapper>
-      <HeaderContainer>
-        <SectionTitle>Imagination to Completion</SectionTitle>
-        <TitleAccentLine />
-        <SectionSubtitle>
-          A streamlined execution framework designed to ensure clarity, precision, and on-time delivery.
-        </SectionSubtitle>
-      </HeaderContainer>
+      <InnerContainer>
+        <HeaderContainer>
+          <SectionTitle>Imagination to Completion</SectionTitle>
+          <TitleAccentLine />
+          <SectionSubtitle>
+            A streamlined execution framework designed to ensure clarity, precision, and on-time delivery.
+          </SectionSubtitle>
+        </HeaderContainer>
 
-      <CardsContainer>
-        {stepsData.map((stepItem) => (
-          <StepCard key={stepItem.step}>
-            <StepNumberLabel>STEP {stepItem.step}</StepNumberLabel>
-            <LargeBackgroundNumber>
-              {stepItem.step < 10 ? `0${stepItem.step}` : stepItem.step}
-            </LargeBackgroundNumber>
-            <CardTitle>{stepItem.title}</CardTitle>
-            <CardDescription>{stepItem.description}</CardDescription>
-          </StepCard>
-        ))}
-      </CardsContainer>
+        <CardsContainer>
+          {stepsData.map((stepItem) => (
+            <StepCard key={stepItem.step}>
+              <StepNumberLabel>STEP {stepItem.step}</StepNumberLabel>
+              <LargeBackgroundNumber>
+                {stepItem.step < 10 ? `0${stepItem.step}` : stepItem.step}
+              </LargeBackgroundNumber>
+              <CardTitle>{stepItem.title}</CardTitle>
+              <CardDescription>{stepItem.description}</CardDescription>
+            </StepCard>
+          ))}
+        </CardsContainer>
+      </InnerContainer>
     </SectionWrapper>
   );
 };

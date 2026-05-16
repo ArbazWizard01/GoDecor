@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowRightOutlined } from '@ant-design/icons';
 import {
   SectionWrapper,
+  InnerContainer,
   HeaderContainer,
   SectionTitle,
   TitleAccent,
@@ -49,26 +50,28 @@ const charmData = [
 const AddCharmSection = () => {
   return (
     <SectionWrapper>
-      <HeaderContainer>
-        <SectionTitle>Add the Charm</SectionTitle>
-        <TitleAccent />
-        <SectionSubtitle>Small details that make a big difference.</SectionSubtitle>
-      </HeaderContainer>
+      <InnerContainer>
+        <HeaderContainer>
+          <SectionTitle>Add the Charm</SectionTitle>
+          <TitleAccent />
+          <SectionSubtitle>Small details that make a big difference.</SectionSubtitle>
+        </HeaderContainer>
 
-      <GridContainer>
-        {charmData.map((item) => (
-          <Card key={item.id}>
-            <CardImage src={item.image} alt={item.title} />
-            <CardContent>
-              <CardTitle>{item.title}</CardTitle>
-              <CardSubtext>{item.subtext}</CardSubtext>
-              <ExploreButton>
-                {item.buttonText} <ArrowRightOutlined style={{ fontSize: '12px' }} />
-              </ExploreButton>
-            </CardContent>
-          </Card>
-        ))}
-      </GridContainer>
+        <GridContainer>
+          {charmData.map((item) => (
+            <Card key={item.id}>
+              <CardImage src={item.image} alt={item.title} />
+              <CardContent>
+                <CardTitle>{item.title}</CardTitle>
+                <CardSubtext>{item.subtext}</CardSubtext>
+                <ExploreButton>
+                  {item.buttonText} <ArrowRightOutlined style={{ fontSize: '12px' }} />
+                </ExploreButton>
+              </CardContent>
+            </Card>
+          ))}
+        </GridContainer>
+      </InnerContainer>
     </SectionWrapper>
   );
 };

@@ -1,8 +1,16 @@
 import styled from 'styled-components';
 
 export const SectionWrapper = styled.section`
-  padding: 80px 8%;
+  width: 100%;
   background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+`;
+
+export const InnerContainer = styled.div`
+  width: 100%;
+  max-width: 1200px;
+  padding: 80px 5%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -67,7 +75,6 @@ export const GridContainer = styled.div`
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   width: 100%;
-  max-width: 1600px;
 
   @media (max-width: 1024px) {
     grid-template-columns: repeat(2, 1fr);

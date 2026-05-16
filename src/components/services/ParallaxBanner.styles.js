@@ -1,11 +1,19 @@
 import styled from 'styled-components';
 
-export const SectionContainer = styled.section`
-  padding: 80px 8%;
+export const SectionWrapper = styled.section`
+  width: 100%;
   background-color: #ffffff;
   display: flex;
   justify-content: center;
+`;
+
+export const InnerContainer = styled.div`
   width: 100%;
+  max-width: 1200px;
+  padding: 80px 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   @media (max-width: 768px) {
     padding: 60px 5%;
@@ -15,7 +23,6 @@ export const SectionContainer = styled.section`
 export const BannerBox = styled.div`
   position: relative;
   width: 100%;
-  max-width: 1600px;
   min-height: 360px;
   border-radius: 12px;
   display: flex;
@@ -31,7 +38,11 @@ export const BannerBox = styled.div`
   @media (max-width: 768px) {
     min-height: 300px;
     background-attachment: scroll;
-    padding: 40px 30px;
+    padding: 40px 32px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 32px 24px;
   }
 `;
 
@@ -67,6 +78,10 @@ export const Title = styled.h2`
     font-size: 28px;
     margin: 0 0 12px 0;
   }
+
+  @media (max-width: 480px) {
+    font-size: 24px;
+  }
 `;
 
 export const Subtitle = styled.p`
@@ -79,5 +94,9 @@ export const Subtitle = styled.p`
 
   @media (max-width: 768px) {
     font-size: 15px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 14px;
   }
 `;

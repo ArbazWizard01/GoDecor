@@ -1,8 +1,16 @@
 import styled from 'styled-components';
 
 export const SectionWrapper = styled.section`
-  padding: 80px 8%;
+  width: 100%;
   background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+`;
+
+export const InnerContainer = styled.div`
+  width: 100%;
+  max-width: 1200px;
+  padding: 80px 5%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,7 +39,6 @@ export const GridContainer = styled.div`
   grid-template-rows: repeat(2, 240px);
   gap: 24px;
   width: 100%;
-  max-width: 1600px;
 
   @media (max-width: 1024px) {
     grid-template-columns: repeat(2, 1fr);
@@ -44,7 +51,7 @@ export const GridContainer = styled.div`
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    padding: 0 5% 20px 5%;
+    padding: 0 0 20px 0;
     -ms-overflow-style: none;
     scrollbar-width: none;
     
